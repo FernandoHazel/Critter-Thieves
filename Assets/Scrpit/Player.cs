@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private float verticalVelocity;
     private float gravity = 14.0f;
-    private float jumpForce = 4f;
+    public float jumpForce = 4f;
 
     public float speed = 2.0f;
 
@@ -74,16 +74,19 @@ public class Player : MonoBehaviour
 
     void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Score++;
+        if (jumpForce > 2)
+            {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Score++;
 
-            jumpForce = (jumpForce - (Score*.2f));
+                jumpForce = (jumpForce - (Score * .2f));
 
-            //ui.UpdateScore(Score);
-            Cheese.gameObject.SetActive(false);
-            Debug.Log("Player 1: " + Score);
-            cheese.Add(Cheese);
+                //ui.UpdateScore(Score);
+                Cheese.gameObject.SetActive(false);
+                Debug.Log("Player 1: " + Score);
+                cheese.Add(Cheese);
+            }
         }
     }
 
@@ -108,6 +111,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Movement();
+        Debug.Log("jumpForce: " + jumpForce);
     }
 
 
