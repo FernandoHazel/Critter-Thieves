@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private float verticalVelocity;
     private float gravity = 14.0f;
-    public float jumpForce = 4f;
+    private float jumpForce = 4f;
 
     public float speed = 2.0f;
 
