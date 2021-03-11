@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
     private float gravity = 14.0f;
     private float jumpForce = 4f;
 
+    Vector3 posInicial;
+
+    float Hp = 3; //Health
+    float MaxHp = 3; //Max Health
+    float invencibilityTime = 0;
+
     public float speed = 2.0f;
 
     public bool Climb = false;
@@ -23,10 +29,13 @@ public class Player : MonoBehaviour
     int Key = 0;
     int Score = 0;
     List<GameObject> cheese = new List<GameObject>();
+    public MeshRenderer[] meshes;
 
 
     private void Start()
     {
+        posInicial = transform.position;
+
         controller = GetComponent<CharacterController>();
 
         Front = new Vector3(0, 0, -.3f);
@@ -71,6 +80,64 @@ public class Player : MonoBehaviour
         Debug.Log(speed);
     }
 
+    void GetHurt() //Lose a Life
+    {
+        if (invencibilityTime > 0)
+            return;
+
+        Hp--;
+        transform.position = posInicial;
+
+        //ui.UpdateHealth(Hp / MaxHp);
+        invencibilityTime = 3;
+
+        if (Hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die() //Reset Everything
+    {
+        for (int i = 0; i < cheese.Count; i++)
+        {
+            cheese[i].SetActive(true);
+        }
+        cheese.Clear();
+        controller.enabled = false;
+        transform.position = posInicial;
+        controller.enabled = true;
+        Score = 0;
+        //ui.UpdateScore(Score);
+        Hp = MaxHp;
+        //ui.UpdateHealth(1);
+        Debug.Log("Player 1: " + Score);
+
+    }
+
+   /* void Blink() //Invencibility
+    {
+        invencibilityTime -= Time.deltaTime;
+
+        if (invencibilityTime > 0)
+        {
+            for (int i = 0; i < meshes.Length; i++)
+            {
+                meshes[i].enabled = !meshes[i].enabled;
+            }
+        }
+        else
+        {
+            if (!meshes[0].enabled)
+            {
+                for (int i = 0; i < meshes.Length; i++)
+                {
+                    meshes[i].enabled = true;
+                }
+            }
+        }
+    }*/
+
     void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
         if (jumpForce > 2)
@@ -89,7 +156,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void GrabKey(GameObject Stillson)
+    void GrabKey(GameObject Stillson) //Mecanismo para la llave
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -122,11 +189,18 @@ public class Player : MonoBehaviour
         {
             GrabKey(other.gameObject);
         }
+
+        if (other.gameObject.tag == "Trap")
+        {
+            GetHurt();
+        }
     }
 
 
     private void Update()
     {
+
+        //Blink();
         Movement();
         Debug.Log("jumpForce: " + jumpForce);
     }
