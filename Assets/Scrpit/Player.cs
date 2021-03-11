@@ -17,6 +17,11 @@ public class Player : MonoBehaviour
 
     private Vector3 Front;
 
+
+    int Score = 0;
+    List<GameObject> cheese = new List<GameObject>();
+
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -60,12 +65,32 @@ public class Player : MonoBehaviour
         Climb = false;
     }
 
+    void GrabCheese(GameObject Cheese)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Score++;
+            //ui.UpdateScore(Score);
+            Cheese.gameObject.SetActive(false);
+            Debug.Log("Player 1: " + Score);
+            cheese.Add(Cheese);
+        }
+    }
+
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Climb")
         {
             Climb = true;
             Debug.Log("trepo");
+        }
+
+
+        if (other.gameObject.tag == "Cheese")
+        {
+            GrabCheese(other.gameObject);
+
         }
     }
 
