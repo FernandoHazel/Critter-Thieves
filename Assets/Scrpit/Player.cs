@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Player : MonoBehaviour
 {
+
+
     private CharacterController controller;
 
 
@@ -31,7 +35,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Movement()
+    private void Movement() //Movement
     {
         if (controller.isGrounded)
         {
@@ -65,7 +69,7 @@ public class Player : MonoBehaviour
         Climb = false;
     }
 
-    void GrabCheese(GameObject Cheese)
+    void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -78,7 +82,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)  //Tags
     {
         if (other.gameObject.tag == "Climb")
         {
