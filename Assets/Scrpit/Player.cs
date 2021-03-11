@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Update()
+    private void Movement()
     {
         if (controller.isGrounded)
         {
@@ -37,6 +37,12 @@ public class Player : MonoBehaviour
 
         moveVector.x = Input.GetAxis("Horizontal");
         controller.Move(moveVector * Time.deltaTime);
+    }
+
+
+    private void Update()
+    {
+        Movement();
     }
 
 
