@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     private float verticalVelocity;
     private float gravity = 14.0f;
-    private float jumpForce = 10.0f;
+    private float jumpForce = 4f;
 
     private void Start()
     {
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
         Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
 
+        moveVector.x = Input.GetAxis("Horizontal");
         controller.Move(moveVector * Time.deltaTime);
     }
 
