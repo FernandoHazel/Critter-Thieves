@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-
+    public UserInterface ui;
     private CharacterController controller;
 
 
@@ -21,7 +20,7 @@ public class Player : MonoBehaviour
 
     private Vector3 Front;
 
-
+    int Key = 0;
     int Score = 0;
     List<GameObject> cheese = new List<GameObject>();
 
@@ -90,6 +89,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    void GrabKey(GameObject Stillson)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Key++;
+
+            //ui.UpdateScore(Score);
+            Stillson.gameObject.SetActive(false);
+            Debug.Log("Player 1: " + Key);
+            cheese.Add(Stillson);
+        }
+    }
+
 
     private void OnTriggerStay(Collider other)  //Tags
     {
@@ -104,6 +116,11 @@ public class Player : MonoBehaviour
         {
             GrabCheese(other.gameObject);
 
+        }
+
+        if (other.gameObject.tag == "Stillson")
+        {
+            GrabKey(other.gameObject);
         }
     }
 
