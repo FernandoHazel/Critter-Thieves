@@ -190,8 +190,14 @@ public class Player : MonoBehaviour
             GrabKey(other.gameObject);
         }
 
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.tag == "Trap")
         {
+            Debug.Log("Ouch");
             GetHurt();
         }
     }
