@@ -4,59 +4,40 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    public CharacterController controller;
-    public float speed = 5f;
-    Vector3 movement;
-
-    public float jumpForce = 3f;
-    public float maxSpeed = -3;
-    public float gravity = -3;
-    public bool isGrounded;
-
-    public Vector3 jump;
-
-    public bool Climber;
+    private CharacterController controller;
 
 
+    private float verticalVelocity;
+    private float gravity = 14.0f;
+    private float jumpForce = 10.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-    }
-
-    void Movement()
-    {
-        movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-
-        if (Climber == true)
-            movement.y = Input.GetAxis("Vertical");
-
-        Climber = false;
-    }
-
-    void OnCollisionStay()
-    {
-        isGrounded = true;
+        controller = GetComponent<CharacterController>();
     }
 
 
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Movement();
-        controller.Move(movement * speed * Time.deltaTime);
+        if (controller.isGrounded)
+        {
+            verticalVelocity = -gravity * Time.deltaTime;
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                verticalVelocity = jumpForce;
+            }
+        }
+        else
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+        }
+
+        Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
+
+        controller.Move(moveVector * Time.deltaTime);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Climb")
-            Climber = true;
 
-        if (other.gameObject.tag == "Floor")
-            isGrounded = true;
-    }
+
 }
-
