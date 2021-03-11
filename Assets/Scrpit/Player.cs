@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
 
                 //ui.UpdateScore(Score);
                 Cheese.gameObject.SetActive(false);
-                Debug.Log("Player 1: " + Score);
+                Debug.Log("Food: " + Score);
                 cheese.Add(Cheese);
             }
         }
@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
 
             //ui.UpdateScore(Score);
             Stillson.gameObject.SetActive(false);
-            Debug.Log("Player 1: " + Key);
+            Debug.Log("Stillson Parts: " + Key);
             cheese.Add(Stillson);
         }
     }
