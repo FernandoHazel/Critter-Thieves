@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
 
     private float verticalVelocity;
     private float gravity = 14.0f;
-    private float jumpForce = 4f;
+    private float jumpForce = 3f;
 
-    public float speed = 1.0f;
+    public float speed = 2.0f;
 
     public bool Climb = false;
 
@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
 
     private void Movement() //Movement
     {
+
         if (controller.isGrounded)
         {
             verticalVelocity = -gravity * Time.deltaTime;
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
         Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
 
         moveVector.x = Input.GetAxis("Horizontal");
-        controller.Move(moveVector * Time.deltaTime);
+        controller.Move(speed * moveVector * Time.deltaTime);
 
         if (Climb == true)
         {
@@ -67,6 +68,10 @@ public class Player : MonoBehaviour
         }
 
         Climb = false;
+
+        speed -= Score;
+
+        Debug.Log(speed);
     }
 
     void GrabCheese(GameObject Cheese) //Mecanismo para el queso
