@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
 
         if (Climb == true)
         {
-            //transform.position = Vector3.Lerp(transform.position,  , speed * Time.deltaTime);
-
+            //if (Input.GetKey(KeyCode.W))
+               // moveVector.y = speed;
         }
         else
         {
@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Climb")
         {
             Climb = true;
+            Debug.Log("trepo");
         }
     }
 
