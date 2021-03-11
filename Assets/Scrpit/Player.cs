@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private float verticalVelocity;
     private float gravity = 14.0f;
-    private float jumpForce = 3f;
+    private float jumpForce = 4f;
 
     public float speed = 2.0f;
 
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
 
         moveVector.x = Input.GetAxis("Horizontal");
-        controller.Move(speed * moveVector * Time.deltaTime);
+        controller.Move(moveVector * Time.deltaTime);
 
         if (Climb == true)
         {
@@ -69,8 +69,6 @@ public class Player : MonoBehaviour
 
         Climb = false;
 
-        speed -= Score;
-
         Debug.Log(speed);
     }
 
@@ -79,6 +77,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Score++;
+
+            jumpForce = (jumpForce - (Score*.2f));
+
             //ui.UpdateScore(Score);
             Cheese.gameObject.SetActive(false);
             Debug.Log("Player 1: " + Score);
