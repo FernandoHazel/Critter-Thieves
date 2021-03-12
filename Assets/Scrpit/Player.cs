@@ -16,8 +16,8 @@ public class Player : MonoBehaviour
 
     Vector3 posInicial;
 
-    float Hp = 3; //Health
-    float MaxHp = 3; //Max Health
+    int Hp = 3; //Health
+    int MaxHp = 3; //Max Health
     float invencibilityTime = 0;
 
     public float speed = 2.0f;
@@ -31,14 +31,16 @@ public class Player : MonoBehaviour
     List<GameObject> cheese = new List<GameObject>();
     public MeshRenderer[] meshes;
 
-
-    private void Start()
+     void Start()
     {
         posInicial = transform.position;
 
         controller = GetComponent<CharacterController>();
 
         Front = new Vector3(0, 0, -.3f);
+
+        ui.UpdateHearts(Hp);
+
 
     }
 
@@ -88,7 +90,7 @@ public class Player : MonoBehaviour
         Hp--;
         transform.position = posInicial;
 
-        //ui.UpdateHealth(Hp / MaxHp);
+        ui.UpdateHearts(Hp / MaxHp);
         invencibilityTime = 3;
 
         if (Hp <= 0)
@@ -110,7 +112,7 @@ public class Player : MonoBehaviour
         Score = 0;
         //ui.UpdateScore(Score);
         Hp = MaxHp;
-        //ui.UpdateHealth(1);
+        ui.UpdateHearts(1);
         Debug.Log("Player 1: " + Score);
 
     }
@@ -208,7 +210,6 @@ public class Player : MonoBehaviour
 
         //Blink();
         Movement();
-        Debug.Log("jumpForce: " + jumpForce);
     }
 
 

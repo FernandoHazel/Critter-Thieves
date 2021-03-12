@@ -6,12 +6,23 @@ using UnityEngine.UI;
 public class UserInterface : MonoBehaviour
 {
 
-
+    public Image[] Hearts;
     // Start is called before the first frame update
     void Start()
     {
         
     }
+    public void UpdateHearts(int numberOfHearts)
+    {
+        for (int i = 0; i < Hearts.Length; i++)
+        {
+           if (i <= numberOfHearts)
+            {
+                Hearts[i].enabled = i <= numberOfHearts;
+            }
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 107973303}
   - component: {fileID: 107973302}
   - component: {fileID: 107973301}
+  - component: {fileID: 107973305}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -461,6 +462,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &107973305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107973300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c52217542631a4eb3c2ba2dbef2643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hearts: []
 --- !u!1 &130362362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,7 +2507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e49cab6a8d8b4b43ae68fc3cb0cb440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 0}
+  ui: {fileID: 107973305}
   speed: 2
   Climb: 0
   meshes: []
@@ -5071,7 +5085,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.09, z: 1.19}
+  m_Size: {x: 1, y: 25, z: 1.19}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1521808175
 MeshRenderer:
