@@ -7,6 +7,8 @@ public class UserInterface : MonoBehaviour
 {
 
     public Image[] Hearts;
+    public Image ButtonLight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,11 @@ public class UserInterface : MonoBehaviour
                 Hearts[i].enabled = i <= numberOfHearts;
             }
         }
+    }
+
+    public void UpdateButton()
+    {
+
     }
 
 

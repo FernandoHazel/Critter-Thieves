@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     int Hp = 3; //Health
     int MaxHp = 3; //Max Health
-    float invencibilityTime = 0;
+    //float invencibilityTime = 0;
 
     public float speed = 2.0f;
 
@@ -78,25 +78,13 @@ public class Player : MonoBehaviour
         }
 
         Climb = false;
-
-        Debug.Log(speed);
     }
 
     void GetHurt() //Lose a Life
     {
-        if (invencibilityTime > 0)
-            return;
-
         Hp--;
-        transform.position = posInicial;
-
         ui.UpdateHearts(Hp / MaxHp);
-        invencibilityTime = 3;
-
-        if (Hp <= 0)
-        {
-            Die();
-        }
+        transform.position = posInicial;
     }
 
     void Die() //Reset Everything
@@ -117,7 +105,7 @@ public class Player : MonoBehaviour
 
     }
 
-   /* void Blink() //Invencibility
+    /*void Blink() //Invencibility
     {
         invencibilityTime -= Time.deltaTime;
 
@@ -199,8 +187,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Trap")
         {
-            Debug.Log("Ouch");
             GetHurt();
+            Debug.Log("Ouch");
         }
     }
 
