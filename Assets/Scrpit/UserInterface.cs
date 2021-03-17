@@ -6,23 +6,16 @@ using UnityEngine.UI;
 public class UserInterface : MonoBehaviour
 {
 
-    public Image[] Hearts;
+    public Image Hearts;
     public Image ButtonLight;
 
     // Start is called before the first frame update
-    void Start()
+
+
+    public void UpdateHearts(float hp)
     {
-        
-    }
-    public void UpdateHearts(int numberOfHearts)
-    {
-        for (int i = 0; i < Hearts.Length; i++)
-        {
-           if (i <= numberOfHearts)
-            {
-                Hearts[i].enabled = i <= numberOfHearts;
-            }
-        }
+        Hearts.fillAmount = hp;
+
     }
 
     public void UpdateButton()
@@ -30,10 +23,4 @@ public class UserInterface : MonoBehaviour
 
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

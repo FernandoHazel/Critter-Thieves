@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     Vector3 posInicial;
 
-    int Hp = 3; //Health
+    public float Hp = 3; //Health
     int MaxHp = 3; //Max Health
     //float invencibilityTime = 0;
 
@@ -82,12 +82,24 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Lose a Life
     {
+        //if (invencibilityTime > 0)
+          //  return;
+
         Hp--;
+
         ui.UpdateHearts(Hp / MaxHp);
+
         transform.position = posInicial;
+
+        //invencibilityTime = 3;
+
+        if (Hp <= 0)
+        {
+            Die();
+        }
     }
 
-    void Die() //Reset Everything
+    public void Die() //Reset Everything
     {
         for (int i = 0; i < cheese.Count; i++)
         {
