@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
         queso = 0;
         jumpForce = 4f;
         Key = 0;
+        ui.UpdateStillson(Key);
         ui.UpdateCheese(queso);
 
     }
