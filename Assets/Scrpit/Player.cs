@@ -170,6 +170,7 @@ public class Player : MonoBehaviour
             Stillson.gameObject.SetActive(false);
             Debug.Log("Stillson Parts: " + Key);
             cheese.Add(Stillson);
+            ui.UpdateStillson(Key);
         }
     }
 
