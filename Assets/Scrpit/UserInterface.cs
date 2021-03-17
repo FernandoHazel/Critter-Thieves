@@ -18,9 +18,9 @@ public class UserInterface : MonoBehaviour
 
     }
 
-    public void UpdateButton()
+    public void UpdateButton(bool boton)
     {
-
+        ButtonLight.enabled = boton;
     }
 
 }

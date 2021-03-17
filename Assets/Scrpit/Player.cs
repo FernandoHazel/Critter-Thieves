@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     int MaxHp = 3; //Max Health
     //float invencibilityTime = 0;
 
+    bool Boton = false;
+
     public float speed = 2.0f;
 
     public bool Climb = false;
@@ -174,6 +176,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)  //Tags
     {
+        Boton = true;
         if (other.gameObject.tag == "Climb")
         {
             Climb = true;
@@ -184,6 +187,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Cheese")
         {
             GrabCheese(other.gameObject);
+            
 
         }
 
@@ -193,6 +197,11 @@ public class Player : MonoBehaviour
         }
 
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Boton = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -210,6 +219,7 @@ public class Player : MonoBehaviour
 
         //Blink();
         Movement();
+        ui.UpdateButton(Boton);
     }
 
 
