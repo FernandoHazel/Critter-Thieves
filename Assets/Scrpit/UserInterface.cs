@@ -6,16 +6,20 @@ using UnityEngine.UI;
 public class UserInterface : MonoBehaviour
 {
 
-    public Image Hearts;
+    public Image[] Hearts;
     public Image ButtonLight;
     public Image[] Stillson;
+    public Image[] Cheese;
 
     // Start is called before the first frame update
 
 
-    public void UpdateHearts(float hp)
+    public void UpdateHearts(int hp)
     {
-        Hearts.fillAmount = hp;
+        for (int i = 0; i < Hearts.Length; i++)
+        {
+            Hearts[i].enabled = i < hp;
+        }
 
     }
 
@@ -32,7 +36,14 @@ public class UserInterface : MonoBehaviour
             Stillson[i].enabled = i < keys;
         }
 
+    }
 
+    public void UpdateCheese(int cheese)
+    {
+        for (int i = 0; i < Cheese.Length; i++)
+        {
+            Cheese[i].enabled = i < cheese;
+        }
     }
 
 }
