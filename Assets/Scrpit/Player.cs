@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     public float Hp = 3; //Health
     int MaxHp = 3; //Max Health
-    //float invencibilityTime = 0;
+    float invencibilityTime = 0;
 
     bool Boton = false;
 
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     int Key = 0;
     int Score = 0;
     List<GameObject> cheese = new List<GameObject>();
-    public MeshRenderer[] meshes;
+    public SpriteRenderer[] sprites;
 
      void Start()
     {
@@ -84,8 +84,8 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Lose a Life
     {
-        //if (invencibilityTime > 0)
-          //  return;
+        if (invencibilityTime > 0)
+            return;
 
         Hp--;
 
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
 
         transform.position = posInicial;
 
-        //invencibilityTime = 3;
+        invencibilityTime = 2;
 
         if (Hp <= 0)
         {
@@ -119,28 +119,28 @@ public class Player : MonoBehaviour
 
     }
 
-    /*void Blink() //Invencibility
+    void Blink() //Invencibility
     {
         invencibilityTime -= Time.deltaTime;
 
         if (invencibilityTime > 0)
         {
-            for (int i = 0; i < meshes.Length; i++)
+            for (int i = 0; i < sprites.Length; i++)
             {
-                meshes[i].enabled = !meshes[i].enabled;
+                sprites[i].enabled = !sprites[i].enabled;
             }
         }
         else
         {
-            if (!meshes[0].enabled)
+            if (!sprites[0].enabled)
             {
-                for (int i = 0; i < meshes.Length; i++)
+                for (int i = 0; i < sprites.Length; i++)
                 {
-                    meshes[i].enabled = true;
+                    sprites[i].enabled = true;
                 }
             }
         }
-    }*/
+    }
 
     void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        //Blink();
+        Blink();
         Movement();
         ui.UpdateButton(Boton);
     }
