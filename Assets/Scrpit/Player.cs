@@ -79,12 +79,12 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Lose a Life
     {
-        Hp--;
-
-        ui.UpdateHearts(Hp);
 
         if (invencibilityTime > 0)
             return;
+        Hp--;
+
+        ui.UpdateHearts(Hp);
 
 
         transform.position = posInicial;
