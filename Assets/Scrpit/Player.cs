@@ -162,6 +162,8 @@ public class Player : MonoBehaviour
                 cheese.Add(Cheese);
                 queso++;
                 ui.UpdateCheese(queso);
+                Boton = false;
+
             }
         }
     }
@@ -177,13 +179,15 @@ public class Player : MonoBehaviour
             Debug.Log("Stillson Parts: " + Key);
             cheese.Add(Stillson);
             ui.UpdateStillson(Key);
+            Boton = false;
+
         }
     }
 
 
     private void OnTriggerStay(Collider other)  //Tags
     {
-        Boton = true;
+        
         if (other.gameObject.tag == "Climb")
         {
             Climb = true;
@@ -194,13 +198,15 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Cheese")
         {
             GrabCheese(other.gameObject);
-            
+            Boton = true;
+
 
         }
 
         if (other.gameObject.tag == "Stillson")
         {
             GrabKey(other.gameObject);
+            Boton = true;
         }
 
 
@@ -208,12 +214,24 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Boton = false;
+
 
         if (other.gameObject.tag == "Climb")
         {
             Climb = false;
             //Debug.Log("no trepo");
+        }
+        if (other.gameObject.tag == "Cheese")
+        {
+            GrabCheese(other.gameObject);
+            Boton = false;
+
+        }
+
+        if (other.gameObject.tag == "Stillson")
+        {
+            GrabKey(other.gameObject);
+            Boton = false;
         }
     }
 
