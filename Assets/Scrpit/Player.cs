@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     private float verticalVelocity;
     private float gravity = 14.0f;
-    public float jumpForce = 4f;
+    public float jumpForce = 2f;
 
     Vector3 posInicial;
 
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     bool Boton = false;
 
-    public float speed = 2.0f;
+    public float speed = 3.0f;
 
     public bool Climb = false;
 
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
 
         moveVector.x = Input.GetAxis("Horizontal");
-        controller.Move(moveVector * Time.deltaTime);
+        controller.Move(moveVector *speed * Time.deltaTime);
 
         if (Climb == true)
         {
@@ -79,6 +79,9 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Lose a Life
     {
+        if (GameManager.pause){
+            return;
+        }
 
         if (invencibilityTime > 0)
             return;
@@ -105,6 +108,7 @@ public class Player : MonoBehaviour
         {
             cheese[i].SetActive(true);
         }
+        speed = 3;
         Score = 0;
         cheese.Clear();
         controller.enabled = false;
@@ -214,7 +218,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
+        if (GameManager.pause){
+            return;
+        }
 
         if (other.gameObject.tag == "Climb")
         {
@@ -233,20 +239,40 @@ public class Player : MonoBehaviour
             GrabKey(other.gameObject);
             Boton = false;
         }
+
+        if (other.gameObject.tag == "GlueTrap")
+        {
+            speed = 3.0f;
+            Debug.Log("Out" + speed);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (GameManager.pause){
+            return;
+        }
+
         if (other.gameObject.tag == "Trap")
         {
             GetHurt();
             //Debug.Log("Ouch");
+        }
+
+        if (other.gameObject.tag == "GlueTrap")
+        {
+            speed = 0.5f;
+            Debug.Log("In" + speed);
         }
     }
 
 
     private void Update()
     {
+        //pause
+        if (GameManager.pause){
+            return;
+        }
 
         Blink();
         Movement();
