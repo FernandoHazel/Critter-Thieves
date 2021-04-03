@@ -10,11 +10,7 @@ public class GameManager : MonoBehaviour
     //this variables holds the different canvas objects of the pause and the running game
     public GameObject inGame;
     public GameObject inPause;
-
-    // Start is called before the first frame update
-    //void Start(){}
-
-
+    
     // Update is called once per frame
     void Update()
     {
