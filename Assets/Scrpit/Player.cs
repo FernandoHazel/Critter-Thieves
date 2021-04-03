@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     int queso = 0;
     List<GameObject> cheese = new List<GameObject>();
     public SpriteRenderer[] sprites;
+    //public GameObject F;
 
      void Start()
     {
@@ -151,24 +152,20 @@ public class Player : MonoBehaviour
     void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Score++;
 
-        if (jumpForce > 2)
-            {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Score++;
+            jumpForce = (jumpForce - (Score * .1f));
 
-                jumpForce = (jumpForce - (Score * .1f));
+            
+            Cheese.gameObject.SetActive(false);
+            Debug.Log("Food: " + Score);
+            cheese.Add(Cheese);
+            queso++;
+            ui.UpdateCheese(queso);
+            Boton = false;
 
-               
-                Cheese.gameObject.SetActive(false);
-                Debug.Log("Food: " + Score);
-                cheese.Add(Cheese);
-                queso++;
-                ui.UpdateCheese(queso);
-                Boton = false;
-
-            }
         }
     }
 
@@ -203,9 +200,9 @@ public class Player : MonoBehaviour
         {
             GrabCheese(other.gameObject);
             Boton = true;
-
-
+            
         }
+        
 
         if (other.gameObject.tag == "Stillson")
         {
@@ -221,6 +218,7 @@ public class Player : MonoBehaviour
         if (GameManager.pause){
             return;
         }
+        
 
         if (other.gameObject.tag == "Climb")
         {
@@ -231,7 +229,7 @@ public class Player : MonoBehaviour
         {
             GrabCheese(other.gameObject);
             Boton = false;
-
+            //F.SetActive(false);
         }
 
         if (other.gameObject.tag == "Stillson")
@@ -264,6 +262,11 @@ public class Player : MonoBehaviour
             speed = 0.5f;
             Debug.Log("In" + speed);
         }
+        if (other.gameObject.tag == "Cheese")
+        {
+            //F.SetActive(true);
+        }
+        
     }
 
 

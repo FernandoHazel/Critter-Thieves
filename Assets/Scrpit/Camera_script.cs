@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class Camera_script : MonoBehaviour
 {
     public GameObject character;
     public Vector2 minCamPos, maxCamPos;
     public float smoothTime;  //this is the time of delay of the camera movement
     private Vector2 velocity;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate()
