@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
         queso = 0;
-        jumpForce = 4f;
+        jumpForce = 2f;
         Key = 0;
         ui.UpdateStillson(Key);
         ui.UpdateCheese(queso);
