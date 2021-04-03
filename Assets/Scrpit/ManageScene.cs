@@ -9,4 +9,9 @@ public class ManageScene : MonoBehaviour
    public void LoadScene(string sceneToLoad){
        SceneManager.LoadScene(sceneToLoad);
    }
+
+   public void Exit(){
+       Application.Quit();
+       Debug.Log("Quit");
+   }
 }
