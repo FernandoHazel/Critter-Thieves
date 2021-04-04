@@ -10,7 +10,20 @@ public class GameManager : MonoBehaviour
     //this variables holds the different canvas objects of the pause and the running game
     public GameObject inGame;
     public GameObject inPause;
+    public GameObject how_to_play;
     
+    //This void activates and desactivates the menu if in pause or in game
+    void ManageMenu(){
+        if (pause){
+            inGame.SetActive(false);
+            inPause.SetActive(true);
+        }
+        if (!pause){
+            inGame.SetActive(true);
+            inPause.SetActive(false);
+            how_to_play.SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -20,15 +33,8 @@ public class GameManager : MonoBehaviour
             pause = !pause;
             Debug.Log("pause is " + pause);
         }
-
-        if (pause){
-            inGame.SetActive(false);
-            inPause.SetActive(true);
-        }
-        if (!pause){
-            inGame.SetActive(true);
-            inPause.SetActive(false);
-        }
+        ManageMenu();
+        
     }
     
 }
