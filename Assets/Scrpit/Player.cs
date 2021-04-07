@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer[] sprites;
     //public GameObject F;
 
-     void Start()
+    void Start()
     {
         posInicial = transform.position;
 
