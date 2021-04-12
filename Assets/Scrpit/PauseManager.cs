@@ -10,6 +10,7 @@ public class PauseManager : MonoBehaviour
    public GameObject inPause;
    //We take the game object "How to play"
    public GameObject HowToPlay;
+   //public GameObject Holder;
     
 
    //This void displays the "how to play" interface
@@ -38,5 +39,12 @@ public class PauseManager : MonoBehaviour
    public void resume(){
       GameManager.pause=false;
    }
-    
+
+   public void closeHowToPlay(){
+      HowToPlay.SetActive(false);
+   }
+   
+   /*public void closeHolder(){
+      Holder.SetActive(false);
+   }*/
 }

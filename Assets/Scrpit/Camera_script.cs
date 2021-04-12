@@ -12,6 +12,9 @@ public class Camera_script : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        //float posX = character.transform.position.x;
+        //float posY = character.transform.position.y;
         //We save the position of the character in new variables
         //The "smoothDamp" function creates a transition delay between to points and needs a reference of velocity and time
         float posX = Mathf.SmoothDamp(transform.position.x, character.transform.position.x, ref velocity.x, smoothTime);
