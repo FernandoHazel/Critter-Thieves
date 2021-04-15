@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     private float gravity = 14.0f;
     public float jumpForce = 2f;
 
+    public Transform posMarcel;
+    public GameObject cheeseSpawn;
+
     Vector3 posInicial;
 
     int Hp = 3; //Health
@@ -169,6 +172,31 @@ public class Player : MonoBehaviour
         }
     }
 
+    void dropCheese() //Soltar comida
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (Score > 0)
+            {
+                Score--;
+
+                jumpForce = (jumpForce + (Score * .1f));
+
+                //Cheese.gameObject.SetActive(false);
+                Instantiate(cheeseSpawn, posMarcel);
+                Debug.Log("Food: " + Score);
+                //cheese.Add(Cheese);
+                queso--;
+                ui.UpdateCheese(queso);
+                //Boton = false;
+            }
+            else
+            {
+                Debug.Log("No puedes soltar nada porque nada tienes");
+            }
+        }
+    }
+
     void GrabKey(GameObject Stillson) //Mecanismo para la llave
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -279,6 +307,8 @@ public class Player : MonoBehaviour
 
         Blink();
         Movement();
+        dropCheese();
+
         ui.UpdateButton(Boton);
     }
 

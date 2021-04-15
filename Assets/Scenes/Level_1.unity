@@ -3620,6 +3620,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 346676324}
   jumpForce: 2
+  posMarcel: {fileID: 609964617}
+  cheeseSpawn: {fileID: 742085692}
   speed: 3
   Climb: 0
   sprites:
@@ -4191,6 +4193,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &742085692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6354035349535465740, guid: 3299de8105ffa37468f74b21d76d57f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3102976202040070499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819112155
 GameObject:
   m_ObjectHideFlags: 0
