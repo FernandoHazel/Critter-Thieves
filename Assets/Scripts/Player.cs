@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
                 jumpForce = (jumpForce + (Score * .1f));
 
                 //Cheese.gameObject.SetActive(false);
-                Instantiate(cheeseSpawn, posMarcel);
+                Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 Debug.Log("Food: " + Score);
                 //cheese.Add(Cheese);
                 queso--;
