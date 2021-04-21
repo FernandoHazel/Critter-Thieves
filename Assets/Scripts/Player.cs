@@ -325,7 +325,6 @@ public class Player : MonoBehaviour
         Movement();
         dropCheese();
 
-        ui.UpdateButton(Boton);
     }
 
 
