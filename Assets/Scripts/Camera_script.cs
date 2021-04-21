@@ -10,7 +10,7 @@ public class Camera_script : MonoBehaviour
     private Vector2 velocity;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
         //float posX = character.transform.position.x;
@@ -18,7 +18,7 @@ public class Camera_script : MonoBehaviour
         //We save the position of the character in new variables
         //The "smoothDamp" function creates a transition delay between to points and needs a reference of velocity and time
         float posX = Mathf.SmoothDamp(transform.position.x, character.transform.position.x, ref velocity.x, smoothTime);
-        float posY = Mathf.SmoothDamp(transform.position.y, character.transform.position.y, ref velocity.y, smoothTime);
+        float posY = Mathf.SmoothDamp(transform.position.y, character.transform.position.y + .5f, ref velocity.y, smoothTime);
 
         //We move the camera to that position
         //We use the "Clampt" function to limit the camera movement between a minimum and a maximum position in X and Y axis
