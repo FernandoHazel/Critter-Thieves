@@ -210,6 +210,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Nephew()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Hp = Hp + (queso/2);
+            queso = 0;
+
+            ui.UpdateCheese(queso);
+            ui.UpdateHearts(Hp);
+
+        }
+    }
+
 
     private void OnTriggerStay(Collider other)  //Tags
     {
@@ -232,6 +245,12 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Stillson")
         {
             GrabKey(other.gameObject);
+            Boton = true;
+        }
+
+        if (other.gameObject.tag == "Nephew")
+        {
+            Nephew();
             Boton = true;
         }
 
