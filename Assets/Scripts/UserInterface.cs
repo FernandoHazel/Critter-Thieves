@@ -7,7 +7,6 @@ public class UserInterface : MonoBehaviour
 {
 
     public Image[] hearts;
-    public Image buttonLigth;
     public Image[] stillson;
     public Image[] chesse;
 
@@ -21,11 +20,6 @@ public class UserInterface : MonoBehaviour
             hearts[i].enabled = i < hp;
         }
 
-    }
-
-    public void UpdateButton(bool boton)
-    {
-        buttonLigth.enabled = boton;
     }
 
     public void UpdateStillson(int keys)
