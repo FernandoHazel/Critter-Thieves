@@ -7,7 +7,7 @@ public class UserInterface : MonoBehaviour
 {
 
     public Image[] hearts;
-    //public Image buttonLigth;
+    public Image buttonLigth;
     public Image[] stillson;
     public Image[] chesse;
 
