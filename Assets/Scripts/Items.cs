@@ -6,8 +6,8 @@ public class Items : MonoBehaviour
 {
 
     float rotar = 30;
-    float speed = .03f;
-    float delta = .2f;
+    //float speed = .03f;
+    //float delta = .2f;
 
     Vector3 posInicial;
 
