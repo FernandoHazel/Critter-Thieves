@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_script : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
     public GameObject character;
     public Vector2 minCamPos, maxCamPos;

@@ -14,7 +14,7 @@ public class PauseManager : MonoBehaviour
     
 
    //This void displays the "how to play" interface
-   public void howToPlay(){
+   public void HowToPlayVoid(){
 
       //First we desactivate the rest of the elements of the canvas
       inGame.SetActive(false);
@@ -36,11 +36,11 @@ public class PauseManager : MonoBehaviour
    }
 
     //This void resumes the game
-   public void resume(){
+   public void Resume(){
       GameManager.pause=false;
    }
 
-   public void closeHowToPlay(){
+   public void CloseHowToPlay(){
       HowToPlay.SetActive(false);
    }
    

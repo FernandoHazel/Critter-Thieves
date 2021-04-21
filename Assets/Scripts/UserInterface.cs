@@ -6,43 +6,43 @@ using UnityEngine.UI;
 public class UserInterface : MonoBehaviour
 {
 
-    public Image[] Hearts;
-    public Image ButtonLight;
-    public Image[] Stillson;
-    public Image[] Cheese;
+    public Image[] hearts;
+    public Image buttonLigth;
+    public Image[] stillson;
+    public Image[] chesse;
 
     // Start is called before the first frame update
 
 
     public void UpdateHearts(int hp)
     {
-        for (int i = 0; i < Hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
-            Hearts[i].enabled = i < hp;
+            hearts[i].enabled = i < hp;
         }
 
     }
 
     public void UpdateButton(bool boton)
     {
-        ButtonLight.enabled = boton;
+        buttonLigth.enabled = boton;
     }
 
     public void UpdateStillson(int keys)
     {
 
-        for (int i=0; i < Stillson.Length; i++)
+        for (int i=0; i < stillson.Length; i++)
         {
-            Stillson[i].enabled = i < keys;
+            stillson[i].enabled = i < keys;
         }
 
     }
 
     public void UpdateCheese(int cheese)
     {
-        for (int i = 0; i < Cheese.Length; i++)
+        for (int i = 0; i < chesse.Length; i++)
         {
-            Cheese[i].enabled = i < cheese;
+            chesse[i].enabled = i < cheese;
         }
     }
 
