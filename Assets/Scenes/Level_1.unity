@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 107973303}
   - component: {fileID: 107973302}
   - component: {fileID: 107973301}
+  - component: {fileID: 107973305}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -519,6 +520,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &107973305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107973300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c52217542631a4eb3c2ba2dbef2643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 416301004}
+  - {fileID: 1435048685}
+  - {fileID: 1412167445}
+  buttonLigth: {fileID: 0}
+  stillson:
+  - {fileID: 1091997231}
+  - {fileID: 120805104}
+  - {fileID: 1112949931}
+  chesse:
+  - {fileID: 1028695228}
+  - {fileID: 20983140}
+  - {fileID: 1498761396}
+  - {fileID: 933149220}
 --- !u!1 &120805101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,20 +2452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c52217542631a4eb3c2ba2dbef2643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hearts:
-  - {fileID: 416301004}
-  - {fileID: 1435048685}
-  - {fileID: 1412167445}
-  ButtonLight: {fileID: 271251079}
-  Stillson:
-  - {fileID: 1091997231}
-  - {fileID: 120805104}
-  - {fileID: 1112949931}
-  Cheese:
-  - {fileID: 1028695228}
-  - {fileID: 20983140}
-  - {fileID: 1498761396}
-  - {fileID: 933149220}
+  hearts: []
+  buttonLigth: {fileID: 0}
+  stillson: []
+  chesse: []
 --- !u!1 &350751366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,7 +2780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inGame: {fileID: 346676322}
   inPause: {fileID: 655403333}
-  how_to_play: {fileID: 646800361}
+  howToPlay: {fileID: 0}
 --- !u!4 &383621138
 Transform:
   m_ObjectHideFlags: 0
