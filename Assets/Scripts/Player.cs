@@ -219,6 +219,7 @@ public class Player : MonoBehaviour
 
             ui.UpdateCheese(queso);
             ui.UpdateHearts(Hp);
+            Debug.Log("Food: " + Score);
 
         }
     }
