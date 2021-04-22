@@ -22,7 +22,7 @@ public class Items : MonoBehaviour
     {
 
         //transform.rotation(0, _rotationSpeed* Time.deltaTime, 0);
-        transform.Rotate(0, 0, rotar * Time.deltaTime);
+        transform.Rotate(0, rotar * Time.deltaTime, 0);
     }
 
 
