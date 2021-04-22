@@ -194,6 +194,12 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &27279418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 639568671, guid: 3299de8105ffa37468f74b21d76d57f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1018805452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &29715199
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +631,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2095567226}
     m_Modifications:
+    - target: {fileID: 2065222154, guid: 3299de8105ffa37468f74b21d76d57f0, type: 3}
+      propertyPath: interactionButtonF
+      value: 
+      objectReference: {fileID: 2032430221}
     - target: {fileID: 6354035349535465740, guid: 3299de8105ffa37468f74b21d76d57f0,
         type: 3}
       propertyPath: m_Name
@@ -967,7 +977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180056779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.291276, y: 0.028, z: 0.055102024}
+  m_LocalPosition: {x: -7.291276, y: 0.028, z: 0.72}
   m_LocalScale: {x: 0.38606, y: 0.38606, z: 0.38606}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2394,9 +2404,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c52217542631a4eb3c2ba2dbef2643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts: []
-  stillson: []
-  chesse: []
+  hearts:
+  - {fileID: 416301004}
+  - {fileID: 1435048685}
+  - {fileID: 1412167445}
+  stillson:
+  - {fileID: 1091997231}
+  - {fileID: 120805104}
+  - {fileID: 1112949931}
+  chesse:
+  - {fileID: 20983140}
+  - {fileID: 1498761396}
+  - {fileID: 933149220}
 --- !u!1 &350751366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2740,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inGame: {fileID: 346676322}
   inPause: {fileID: 655403333}
-  howToPlay: {fileID: 0}
 --- !u!4 &383621138
 Transform:
   m_ObjectHideFlags: 0
@@ -4122,6 +4140,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &810591643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 639568671, guid: 3299de8105ffa37468f74b21d76d57f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3102976202040070499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819112155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,6 +4887,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2095567226}
     m_Modifications:
+    - target: {fileID: 2065222154, guid: 3299de8105ffa37468f74b21d76d57f0, type: 3}
+      propertyPath: interactionButtonF
+      value: 
+      objectReference: {fileID: 27279418}
     - target: {fileID: 6354035349535465740, guid: 3299de8105ffa37468f74b21d76d57f0,
         type: 3}
       propertyPath: m_Name
@@ -5543,14 +5571,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 29715201}
-        m_MethodName: closeHowToPlay
+        m_MethodName: CloseHowToPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1089044091
@@ -7142,7 +7170,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 29715201}
-        m_MethodName: resume
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8335,6 +8363,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572958053}
   m_CullTransparentMesh: 0
+--- !u!1 &1715407807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 639568671, guid: 3299de8105ffa37468f74b21d76d57f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1902961793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1735728602
 GameObject:
   m_ObjectHideFlags: 0
@@ -9038,6 +9072,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2095567226}
     m_Modifications:
+    - target: {fileID: 2065222154, guid: 3299de8105ffa37468f74b21d76d57f0, type: 3}
+      propertyPath: interactionButtonF
+      value: 
+      objectReference: {fileID: 1715407807}
     - target: {fileID: 6354035349535465740, guid: 3299de8105ffa37468f74b21d76d57f0,
         type: 3}
       propertyPath: m_Name
@@ -9339,7 +9377,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 29715201}
-        m_MethodName: howToPlay
+        m_MethodName: HowToPlayVoid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9757,6 +9795,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020075886}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2032430221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 639568671, guid: 3299de8105ffa37468f74b21d76d57f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 124055776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041872635
 GameObject:
   m_ObjectHideFlags: 0
@@ -10249,6 +10293,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2095567226}
     m_Modifications:
+    - target: {fileID: 639568671, guid: 3299de8105ffa37468f74b21d76d57f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065222154, guid: 3299de8105ffa37468f74b21d76d57f0, type: 3}
+      propertyPath: interactionButtonF
+      value: 
+      objectReference: {fileID: 810591643}
     - target: {fileID: 6354035349535465740, guid: 3299de8105ffa37468f74b21d76d57f0,
         type: 3}
       propertyPath: m_Name
