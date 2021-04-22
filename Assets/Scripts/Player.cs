@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
 {
     public UserInterface ui;
     private CharacterController controller;
-
-
     private float verticalVelocity;
     private float gravity = 14.0f;
     public float jumpForce = 2f;
@@ -47,7 +45,6 @@ public class Player : MonoBehaviour
         Front = new Vector3(0, 0, -.3f);
 
         ui.UpdateHearts(Hp);
-
 
     }
 
