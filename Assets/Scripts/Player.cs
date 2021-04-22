@@ -78,6 +78,18 @@ public class Player : MonoBehaviour
       
     }
 
+    void ExitLevel()
+    {
+        if (Key == 3)
+        {
+            Debug.Log("Completaste el nivel!");
+        }
+        else
+        {
+            Debug.Log("Aún no tienes todas las llaves, regresa después");
+        }
+    }
+
     void GetHurt() //Lose a Life
     {
         if (GameManager.pause){
@@ -213,7 +225,7 @@ public class Player : MonoBehaviour
         {
             Hp = Hp + (queso/2);
             queso = 0;
-
+            //Agregar que por cadaqueso que entregas recuperas velocidad y salto
             ui.UpdateCheese(queso);
             ui.UpdateHearts(Hp);
             Debug.Log("Food: " + Score);
@@ -249,6 +261,12 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Nephew")
         {
             Nephew();
+            Boton = true;
+        }
+
+        if (other.gameObject.tag == "Valve")
+        {
+            ExitLevel();
             Boton = true;
         }
 
