@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (Score > 0)
+            if (queso > 0)
             {
                 Score--;
 
