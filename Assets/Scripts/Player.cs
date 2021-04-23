@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private Vector3 Front;
 
     int Key = 0;
-    int Score = 0;
+    float Score = 0;
     int queso = 0;
     List<GameObject> cheese = new List<GameObject>();
     public SpriteRenderer[] sprites;
@@ -186,7 +186,8 @@ public class Player : MonoBehaviour
             {
                 Score--;
 
-                jumpForce = (jumpForce + (Score * .1f));
+                jumpForce = (jumpForce - (Score * .1f));
+
 
                 Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 Debug.Log("Food: " + Score);
@@ -220,12 +221,26 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Hp = Hp + (queso/2);
-            queso = 0;
-            //Agregar que por cadaqueso que entregas recuperas velocidad y salto
-            ui.UpdateCheese(queso);
-            ui.UpdateHearts(Hp);
-            Debug.Log("Food: " + Score);
+            if (queso/2 == 0)
+            {
+                Hp = Hp + (queso / 2);
+                queso = 0;
+                jumpForce = (jumpForce - (Score * .1f));
+
+                ui.UpdateCheese(queso);
+                ui.UpdateHearts(Hp);
+                Debug.Log("Food: " + Score);
+            }
+            else
+            {
+                Hp = Hp + (queso / 2);
+                queso--;
+                //Agregar que por cadaqueso que entregas recuperas velocidad y salto
+                ui.UpdateCheese(queso);
+                ui.UpdateHearts(Hp);
+                Debug.Log("Food: " + Score);
+
+            }
 
         }
     }
