@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
 
-        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal") - queso, verticalVelocity, 0);
+        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
 
         if (Climb == true && Input.GetKey(KeyCode.W))
@@ -164,14 +164,15 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Score++;
+            queso++;
+            jumpForce = (jumpForce - (queso * .1f));
+            speed = (speed - (queso * .1f));
 
-            jumpForce = (jumpForce - (Score * .1f));
 
-            
             Cheese.gameObject.SetActive(false);
             Debug.Log("Food: " + Score);
             cheese.Add(Cheese);
-            queso++;
+            
             ui.UpdateCheese(queso);
             Boton = false;
 
@@ -184,14 +185,17 @@ public class Player : MonoBehaviour
         {
             if (queso > 0)
             {
+                queso--;
                 Score--;
 
-                jumpForce = (jumpForce - (Score * .1f));
+                jumpForce = (jumpForce - (queso * .1f));
+                speed = (speed - (queso * .1f));
+
 
 
                 Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 Debug.Log("Food: " + Score);
-                queso--;
+               
                 ui.UpdateCheese(queso);
             }
             else
@@ -225,7 +229,9 @@ public class Player : MonoBehaviour
             {
                 Hp = Hp + (queso / 2);
                 queso = 0;
-                jumpForce = (jumpForce - (Score * .1f));
+                jumpForce = (jumpForce - (queso * .1f));
+                speed = (speed - (queso * .1f));
+
 
                 ui.UpdateCheese(queso);
                 ui.UpdateHearts(Hp);
@@ -235,6 +241,9 @@ public class Player : MonoBehaviour
             {
                 Hp = Hp + (queso / 2);
                 queso--;
+                jumpForce = (jumpForce - (queso * .1f));
+                speed = (speed - (queso * .1f));
+
                 //Agregar que por cadaqueso que entregas recuperas velocidad y salto
                 ui.UpdateCheese(queso);
                 ui.UpdateHearts(Hp);
