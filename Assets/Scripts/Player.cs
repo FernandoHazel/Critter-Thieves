@@ -69,16 +69,15 @@ public class Player : MonoBehaviour
         Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
 
         moveVector.x = Input.GetAxis("Horizontal");
-        controller.Move(moveVector *speed * Time.deltaTime);
+        controller.Move(moveVector * speed * Time.deltaTime);
 
         if (Climb == true)
         {
             verticalVelocity = Input.GetAxis("Vertical");
         }
-      
     }
 
-    void ExitLevel()
+        void ExitLevel()
     {
         if (Key == 3)
         {
