@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private Vector3 Front;
 
     int Key = 0;
-    float Score = 0;
+    int Score = 0;
     int queso = 0;
     List<GameObject> cheese = new List<GameObject>();
     public SpriteRenderer[] sprites;
@@ -165,8 +165,8 @@ public class Player : MonoBehaviour
         {
             Score++;
             queso++;
-            jumpForce = (jumpForce - (queso * .1f));
-            speed = (speed - (queso * .1f));
+            jumpForce = (jumpForce - (Score * .1f));
+            speed = (speed - (Score * .1f));
 
 
             Cheese.gameObject.SetActive(false);
@@ -188,8 +188,8 @@ public class Player : MonoBehaviour
                 queso--;
                 Score--;
 
-                jumpForce = (jumpForce + (queso * .1f));
-                speed = (speed + (queso * .1f));
+                jumpForce = (jumpForce + (Score * .1f));
+                speed = (speed + (Score * .1f));
 
 
 
@@ -227,10 +227,11 @@ public class Player : MonoBehaviour
         {
             if (queso/2 == 0)
             {
-                Hp = Hp + (queso / 2);
+                Hp = Hp + (Score / 2);
                 queso = 0;
-                jumpForce = (jumpForce + (queso * .1f));
-                speed = (speed + (queso * .1f));
+                Score = 0;
+                jumpForce = 2f;
+                speed = 3f;
 
 
                 ui.UpdateCheese(queso);
@@ -239,10 +240,10 @@ public class Player : MonoBehaviour
             }
             else
             {
-                Hp = Hp + (queso / 2);
                 queso--;
-                jumpForce = (jumpForce + (queso * .1f));
-                speed = (speed + (queso * .1f));
+                Score--;
+                jumpForce = (jumpForce + (Score * .1f));
+                speed = (speed + (Score * .1f));
 
                 //Agregar que por cadaqueso que entregas recuperas velocidad y salto
                 ui.UpdateCheese(queso);
