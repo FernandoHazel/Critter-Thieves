@@ -66,12 +66,11 @@ public class Player : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
 
-        Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
+        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
 
-        moveVector.x = Input.GetAxis("Horizontal");
         controller.Move(moveVector *speed * Time.deltaTime);
 
-        if (Climb == true)
+        if (Climb == true && Input.GetKey(KeyCode.W))
         {
             verticalVelocity = Input.GetAxis("Vertical");
         }
