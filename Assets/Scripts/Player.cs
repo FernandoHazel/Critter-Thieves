@@ -188,8 +188,8 @@ public class Player : MonoBehaviour
                 queso--;
                 Score--;
 
-                jumpForce = (jumpForce - (queso * .1f));
-                speed = (speed - (queso * .1f));
+                jumpForce = (jumpForce + (queso * .1f));
+                speed = (speed + (queso * .1f));
 
 
 
@@ -229,8 +229,8 @@ public class Player : MonoBehaviour
             {
                 Hp = Hp + (queso / 2);
                 queso = 0;
-                jumpForce = (jumpForce - (queso * .1f));
-                speed = (speed - (queso * .1f));
+                jumpForce = (jumpForce + (queso * .1f));
+                speed = (speed + (queso * .1f));
 
 
                 ui.UpdateCheese(queso);
@@ -241,8 +241,8 @@ public class Player : MonoBehaviour
             {
                 Hp = Hp + (queso / 2);
                 queso--;
-                jumpForce = (jumpForce - (queso * .1f));
-                speed = (speed - (queso * .1f));
+                jumpForce = (jumpForce + (queso * .1f));
+                speed = (speed + (queso * .1f));
 
                 //Agregar que por cadaqueso que entregas recuperas velocidad y salto
                 ui.UpdateCheese(queso);
