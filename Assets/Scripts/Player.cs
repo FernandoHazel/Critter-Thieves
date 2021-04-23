@@ -66,12 +66,10 @@ public class Player : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
 
-        Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
-
-        moveVector.x = Input.GetAxis("Horizontal");
+        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal") - queso, verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
 
-        if (Climb == true)
+        if (Climb == true && Input.GetKey(KeyCode.W))
         {
             verticalVelocity = Input.GetAxis("Vertical");
         }
@@ -160,7 +158,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void GrabCheese(GameObject Cheese) //Mecanismo para el queso
+    public void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
        
         if (Input.GetKeyDown(KeyCode.F))
