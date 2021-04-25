@@ -61,6 +61,10 @@ public class Player : MonoBehaviour
                 verticalVelocity = jumpForce;
             }
         }
+        else if (Climb == true && Input.GetKey(KeyCode.W))
+        {
+            verticalVelocity = Input.GetAxis("Vertical");
+        }
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;
@@ -68,22 +72,26 @@ public class Player : MonoBehaviour
 
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
-
+        /*
         if (Climb == true && Input.GetKey(KeyCode.W))
         {
             verticalVelocity = Input.GetAxis("Vertical");
         }
+        */
     }
 
         void ExitLevel()
     {
-        if (Key == 3)
+        if (Input.GetKeyDown(KeyCode.F)) //Ahora para salir también es necesario presionar F
         {
-            Debug.Log("Completaste el nivel!");
-        }
-        else
-        {
-            Debug.Log("Aún no tienes todas las llaves, regresa después");
+            if(Key == 3)
+            {
+                Debug.Log("Completaste el nivel!");
+            }
+            else
+            {
+                Debug.Log("Aún no tienes todas las llaves, regresa después");
+            }
         }
     }
 
