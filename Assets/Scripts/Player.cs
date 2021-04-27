@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     public UserInterface ui;
     private CharacterController controller;
     private float verticalVelocity;
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        
+
         posInicial = transform.position;
 
         controller = GetComponent<CharacterController>();
@@ -69,7 +72,8 @@ public class Player : MonoBehaviour
         {
             verticalVelocity -= gravity * Time.deltaTime;
         }
-
+        
+        
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
         /*
@@ -370,6 +374,7 @@ public class Player : MonoBehaviour
         Blink();
         Movement();
         dropCheese();
+            //animator.SetBool("Run", true);
 
     }
 
