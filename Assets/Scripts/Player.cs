@@ -64,10 +64,11 @@ public class Player : MonoBehaviour
                 verticalVelocity = jumpForce;
             }
         }
-        else if (Climb == true && Input.GetKey(KeyCode.W))
+        if (Climb == true && Input.GetKey(KeyCode.W))
         {
             verticalVelocity = Input.GetAxis("Vertical");
         }
+        
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;

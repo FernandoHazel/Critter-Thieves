@@ -20,8 +20,8 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Pico el boton");
-        Application.Quit();
+      Debug.Log("Pico el boton");
+      Application.Quit();
     }
 
     public void CloseHowToPlay(){
