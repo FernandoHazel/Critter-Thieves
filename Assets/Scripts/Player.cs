@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private CharacterController controller;
     private float verticalVelocity;
     private float gravity = 14.0f;
-    public float jumpForce = 2f;
+    public float jumpForce;
 
     public Transform posMarcel;
     public GameObject cheeseSpawn;
@@ -67,6 +67,10 @@ public class Player : MonoBehaviour
         if (Climb == true && Input.GetKey(KeyCode.W))
         {
             verticalVelocity = Input.GetAxis("Vertical");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                verticalVelocity = 4;
+            }
         }
         
         else
