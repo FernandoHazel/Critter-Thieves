@@ -7,14 +7,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    public UserInterface ui;
+    [SerializeField] UserInterface ui;
     private CharacterController controller;
     private float verticalVelocity;
     private float gravity = 14.0f;
-    public float jumpForce;
+    [SerializeField] float jumpForce;
 
-    public Transform posMarcel;
-    public GameObject cheeseSpawn;
+    [SerializeField] Transform posMarcel;
+    [SerializeField] GameObject cheeseSpawn;
 
     Vector3 posInicial;
 
@@ -24,9 +24,9 @@ public class Player : MonoBehaviour
 
     bool Boton = false;
 
-    public float speed = 3.0f;
+    [SerializeField] float speed = 3.0f;
 
-    public bool Climb = false;
+    [SerializeField] bool Climb = false;
 
     private Vector3 Front;
 
@@ -34,13 +34,11 @@ public class Player : MonoBehaviour
     int Score = 0;
     int queso = 0;
     List<GameObject> cheese = new List<GameObject>();
-    public SpriteRenderer[] sprites;
+    [SerializeField] SpriteRenderer[] sprites;
     //public GameObject F;
 
     void Start()
     {
-        
-
         posInicial = transform.position;
 
         controller = GetComponent<CharacterController>();
@@ -48,37 +46,41 @@ public class Player : MonoBehaviour
         Front = new Vector3(0, 0, -.3f);
 
         ui.UpdateHearts(Hp);
-
     }
 
 
     private void Movement() //Movement
     {
-
+        //this is the jump
         if (controller.isGrounded)
         {
             verticalVelocity = -gravity * Time.deltaTime;
-
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 verticalVelocity = jumpForce;
             }
         }
+
+        //this is the climb
         if (Climb == true && Input.GetKey(KeyCode.W))
         {
             verticalVelocity = Input.GetAxis("Vertical");
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                verticalVelocity = 4;
-            }
+        }
+
+        //This is the jump while climbing
+        if (Climb == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            Climb = false;
+            verticalVelocity = jumpForce;
         }
         
         else
         {
+            jumpForce=3;
             verticalVelocity -= gravity * Time.deltaTime;
         }
         
-        
+        //This is the lateral movement
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
         /*
@@ -275,14 +277,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)  //Tags
     {
-        
-        if (other.gameObject.tag == "Climb")
+        if (other.gameObject.tag == "Climb" && controller.isGrounded)
         {
             Climb = true;
-            //Debug.Log("trepo");
         }
-
-
+        
         if (other.gameObject.tag == "Cheese")
         {
             GrabCheese(other.gameObject);
@@ -346,6 +345,12 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Climb")
+        {
+            Climb = true;
+            //Debug.Log("trepo");
+        }
+
         if (GameManager.pause){
             return;
         }
