@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] Platform platformScript;
     [SerializeField] private Animator animator;
     [SerializeField] UserInterface ui;
     private CharacterController controller;
@@ -26,8 +27,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] float speed = 3.0f;
 
-    public bool climb = false;
-    public bool climbJump = false;
+    bool climb = false;
+    bool climbJump = false;
 
     private Vector3 Front;
 
@@ -80,11 +81,14 @@ public class Player : MonoBehaviour
 
         /*if (Input.GetAxisRaw("Horizontal") != 0)
         {
+            climb = false;
+            climbJump = false;
             animator.SetBool("Run", true);
         }*/
 
         else
         {
+            //animator.SetBool("Run", false);
             climbJump = false;
             jumpForce=3;
             verticalVelocity -= gravity * Time.deltaTime;
@@ -389,6 +393,8 @@ public class Player : MonoBehaviour
         Blink();
         Movement();
         dropCheese();
+        platformScript.climbHere = climb;
+        platformScript.climbJumpHere = climbJump;
             //animator.SetBool("Run", true);
 
     }
