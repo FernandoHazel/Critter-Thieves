@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] float speed = 3.0f;
 
-    [SerializeField] bool Climb = false;
+    public bool climb = false;
+    public bool climbJump = false;
 
     private Vector3 Front;
 
@@ -40,42 +41,51 @@ public class Player : MonoBehaviour
     void Start()
     {
         posInicial = transform.position;
-
         controller = GetComponent<CharacterController>();
-
+        animator = GetComponent<Animator>();
         Front = new Vector3(0, 0, -.3f);
-
         ui.UpdateHearts(Hp);
     }
 
 
     private void Movement() //Movement
     {
+        
         //this is the jump
         if (controller.isGrounded)
         {
+            climbJump = false;
             verticalVelocity = -gravity * Time.deltaTime;
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 verticalVelocity = jumpForce;
             }
         }
 
         //this is the climb
-        if (Climb == true && Input.GetKey(KeyCode.W))
+        if (climb == true && Input.GetKey(KeyCode.W))
         {
+            climbJump = false;  
+            //Debug.Log("must climb");
             verticalVelocity = Input.GetAxis("Vertical");
         }
 
         //This is the jump while climbing
-        if (Climb == true && Input.GetKeyDown(KeyCode.Space))
+        if (climb == true && Input.GetKeyDown(KeyCode.Space))
         {
-            Climb = false;
+            climbJump = true;
+            climb = false;
             verticalVelocity = jumpForce;
         }
-        
+
+        /*if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            animator.SetBool("Run", true);
+        }*/
+
         else
         {
+            climbJump = false;
             jumpForce=3;
             verticalVelocity -= gravity * Time.deltaTime;
         }
@@ -83,12 +93,7 @@ public class Player : MonoBehaviour
         //This is the lateral movement
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
-        /*
-        if (Climb == true && Input.GetKey(KeyCode.W))
-        {
-            verticalVelocity = Input.GetAxis("Vertical");
-        }
-        */
+
     }
 
         void ExitLevel()
@@ -279,7 +284,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Climb" && controller.isGrounded)
         {
-            Climb = true;
+            climb = true;
         }
         
         if (other.gameObject.tag == "Cheese")
@@ -320,7 +325,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "Climb")
         {
-            Climb = false;
+            climb = false;
             //Debug.Log("no trepo");
         }
         if (other.gameObject.tag == "Cheese")
@@ -347,7 +352,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Climb")
         {
-            Climb = true;
+            climb = true;
             //Debug.Log("trepo");
         }
 
