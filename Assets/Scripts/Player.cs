@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private CharacterController controller;
     private float verticalVelocity;
     private float gravity = 14.0f;
-    [SerializeField] float jumpForce;
+    [SerializeField] float jumpForce = 3.0f;
 
     [SerializeField] Transform posMarcel;
     [SerializeField] GameObject cheeseSpawn;
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void GetHurt() //Lose a Life
+    void GetHurt() //Loose a Life
     {
         if (GameManager.pause){
             return;
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
         queso = 0;
-        jumpForce = 2f;
+        jumpForce = 3.0f;
         Key = 0;
         ui.UpdateStillson(Key);
         ui.UpdateCheese(queso);
@@ -193,9 +193,11 @@ public class Player : MonoBehaviour
         {
             Score++;
             queso++;
-            jumpForce = (jumpForce - (Score * .1f));
-            speed = (speed - (Score * .1f));
+            //jumpForce = (jumpForce - (Score * .1f));
+            //speed = (speed - (Score * .1f));
 
+            jumpForce = (jumpForce - .5f);
+            speed = (speed - .5f);
 
             Cheese.gameObject.SetActive(false);
             Debug.Log("Food: " + Score);
@@ -216,10 +218,11 @@ public class Player : MonoBehaviour
                 queso--;
                 Score--;
 
-                jumpForce = (jumpForce + (Score * .1f));
-                speed = (speed + (Score * .1f));
+                //jumpForce = (jumpForce + (Score * .1f));
+                //speed = (speed + (Score * .1f));
 
-
+                jumpForce = (jumpForce + .5f);
+                speed = (speed + .5f);
 
                 Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 Debug.Log("Food: " + Score);
@@ -253,6 +256,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            /*
             if (queso/2 == 0)
             {
                 Hp = Hp + (Score / 2);
@@ -266,6 +270,21 @@ public class Player : MonoBehaviour
                 ui.UpdateHearts(Hp);
                 Debug.Log("Food: " + Score);
             }
+            */
+            if (queso > 0)
+            {
+                Hp = Hp + (queso);
+                queso = 0;
+                Score = 0;
+                jumpForce = 2f;
+                speed = 3f;
+
+                ui.UpdateCheese(queso);
+                ui.UpdateHearts(Hp);
+                Debug.Log("Food: " + Score);
+            }
+
+            /*
             else
             {
                 queso--;
@@ -277,12 +296,10 @@ public class Player : MonoBehaviour
                 ui.UpdateCheese(queso);
                 ui.UpdateHearts(Hp);
                 Debug.Log("Food: " + Score);
-
             }
-
+            */
         }
     }
-
 
     private void OnTriggerStay(Collider other)  //Tags
     {
@@ -297,7 +314,6 @@ public class Player : MonoBehaviour
             Boton = true;
             
         }
-        
 
         if (other.gameObject.tag == "Stillson")
         {
@@ -322,7 +338,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (GameManager.pause){
+        if (GameManager.pause)
+        {
             return;
         }
         
@@ -360,7 +377,8 @@ public class Player : MonoBehaviour
             //Debug.Log("trepo");
         }
 
-        if (GameManager.pause){
+        if (GameManager.pause)
+        {
             return;
         }
 
@@ -386,7 +404,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //pause
-        if (GameManager.pause){
+        if (GameManager.pause)
+        {
             return;
         }
 
@@ -396,6 +415,10 @@ public class Player : MonoBehaviour
         platformScript.climbHere = climb;
         platformScript.climbJumpHere = climbJump;
             //animator.SetBool("Run", true);
+        if (Hp > 3)
+        {
+            Hp = 3;
+        }
 
     }
 
