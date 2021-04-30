@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     bool Boton = false;
 
     [SerializeField] float speed = 3.0f;
+    float savedSpeed;
 
     bool climb = false;
     bool climbJump = false;
@@ -256,21 +257,6 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            /*
-            if (queso/2 == 0)
-            {
-                Hp = Hp + (Score / 2);
-                queso = 0;
-                Score = 0;
-                jumpForce = 2f;
-                speed = 3f;
-
-
-                ui.UpdateCheese(queso);
-                ui.UpdateHearts(Hp);
-                Debug.Log("Food: " + Score);
-            }
-            */
             if (queso > 0)
             {
                 Hp = Hp + (queso);
@@ -332,8 +318,6 @@ public class Player : MonoBehaviour
             ExitLevel();
             Boton = true;
         }
-
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -364,7 +348,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "GlueTrap")
         {
-            speed = 3.0f;
+            speed = savedSpeed;
             Debug.Log("Out" + speed);
         }
     }
@@ -390,9 +374,11 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "GlueTrap")
         {
+            savedSpeed = speed;
             speed = 0.5f;
             Debug.Log("In" + speed);
         }
+
         if (other.gameObject.tag == "Cheese")
         {
             //F.SetActive(true);
@@ -419,7 +405,22 @@ public class Player : MonoBehaviour
         {
             Hp = 3;
         }
-
+        if (speed < .1f)
+        {
+            speed = .5f;
+        }
+        if (jumpForce < 1)
+        {
+            jumpForce = .5f;
+        }
+        if (speed > 3)
+        {
+            speed = 3;
+        }
+        if (jumpForce < 3)
+        {
+            jumpForce = 3;
+        }
     }
 
 
