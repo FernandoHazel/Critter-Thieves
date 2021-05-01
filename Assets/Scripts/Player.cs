@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] UserInterface ui;
     private CharacterController controller;
     private float verticalVelocity;
-    private float gravity = 9.8f;
+    private float gravity = 9.81f;
     [SerializeField] float jumpForce = 3.0f;
 
     [SerializeField] Transform posMarcel;
