@@ -18,7 +18,6 @@ public class TutorialPopUps : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Salio del area");
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
