@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class TutorialPopUps : MonoBehaviour
 {
-    private new GameObject gameObject;
-    //popUp = gameObject.GetComponent<>
-
-    private void OnTriggerEnter(Collider other)
+    public new GameObject gameObject;
+ 
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            //PopUp.SetActive(true);
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            //PopUp.SetActive(false);
+            Debug.Log("Salio del area");
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
+    
 }
 
