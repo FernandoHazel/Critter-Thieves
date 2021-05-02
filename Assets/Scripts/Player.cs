@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] Platform platformScript;
+    //[SerializeField] Platform platformScript;
     [SerializeField] private Animator animator;
     [SerializeField] UserInterface ui;
     private CharacterController controller;
     private float verticalVelocity;
-    private float gravity = 9.81f;
+    private float gravity = 14.0f;
     [SerializeField] float jumpForce = 3.0f;
 
     [SerializeField] Transform posMarcel;
@@ -398,8 +398,8 @@ public class Player : MonoBehaviour
         Blink();
         Movement();
         dropCheese();
-        platformScript.climbHere = climb;
-        platformScript.climbJumpHere = climbJump;
+        //platformScript.climbHere = climb;
+        //platformScript.climbJumpHere = climbJump;
             //animator.SetBool("Run", true);
         if (Hp > 3)
         {
