@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private CharacterController controller;
     private float verticalVelocity;
     private float gravity = 9.81f;
-    [SerializeField] float jumpForce = 3.0f;
+    [SerializeField] float jumpForce;
 
     [SerializeField] Transform posMarcel;
     [SerializeField] GameObject cheeseSpawn;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     bool Boton = false;
 
-    [SerializeField] float speed = 3.0f;
+    [SerializeField] float speed;
     float savedSpeed;
 
     bool climb = false;
@@ -39,9 +39,25 @@ public class Player : MonoBehaviour
     List<GameObject> cheese = new List<GameObject>();
     [SerializeField] SpriteRenderer[] sprites;
     //public GameObject F;
+    float initialSpeed;
+    float initialJumpForce;
+    float speedPenalization;
+    float jumpForcePenalization;
 
     void Start()
     {
+        //these variables make the slow down work the same without
+        //having to go back to the code every time we modify the speed
+        //and the jump force
+        //double a =1;
+        //double b =6;
+        initialSpeed = speed;
+        initialJumpForce = jumpForce;
+        speedPenalization = speed * .1666666f;
+        jumpForcePenalization = jumpForce * .1666666f;
+        //Debug.Log(initialSpeed);
+        //Debug.Log(speedPenalization);
+
         posInicial = transform.position;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
@@ -147,7 +163,7 @@ public class Player : MonoBehaviour
         {
             cheese[i].SetActive(true);
         }
-        speed = 3;
+        speed = initialSpeed;
         Score = 0;
         cheese.Clear();
         controller.enabled = false;
@@ -157,7 +173,7 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
         queso = 0;
-        jumpForce = 3.0f;
+        jumpForce = initialJumpForce;
         Key = 0;
         ui.UpdateStillson(Key);
         ui.UpdateCheese(queso);
@@ -197,8 +213,8 @@ public class Player : MonoBehaviour
             //jumpForce = (jumpForce - (Score * .1f));
             //speed = (speed - (Score * .1f));
 
-            jumpForce = (jumpForce - .5f);
-            speed = (speed - .5f);
+            jumpForce = (jumpForce - jumpForcePenalization);
+            speed = (speed - speedPenalization);
 
             Cheese.gameObject.SetActive(false);
             Debug.Log("Food: " + Score);
@@ -222,8 +238,8 @@ public class Player : MonoBehaviour
                 //jumpForce = (jumpForce + (Score * .1f));
                 //speed = (speed + (Score * .1f));
 
-                jumpForce = (jumpForce + .5f);
-                speed = (speed + .5f);
+                jumpForce = (jumpForce + jumpForcePenalization);
+                speed = (speed + speedPenalization);
 
                 Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 Debug.Log("Food: " + Score);
@@ -262,8 +278,8 @@ public class Player : MonoBehaviour
                 Hp = Hp + (queso);
                 queso = 0;
                 Score = 0;
-                jumpForce = 2f;
-                speed = 3f;
+                jumpForce = initialJumpForce;
+                speed = initialSpeed;
 
                 ui.UpdateCheese(queso);
                 ui.UpdateHearts(Hp);
@@ -407,19 +423,19 @@ public class Player : MonoBehaviour
         }
         if (speed < .1f)
         {
-            speed = .5f;
+            speed = speedPenalization;
         }
         if (jumpForce < 1)
         {
-            jumpForce = .5f;
+            jumpForce = jumpForcePenalization;
         }
-        if (speed > 3)
+        if (speed > initialSpeed)
         {
-            speed = 3;
+            speed = initialSpeed;
         }
-        if (jumpForce < 3)
+        if (jumpForce < initialJumpForce)
         {
-            jumpForce = 3;
+            jumpForce = initialJumpForce;
         }
     }
 
