@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     //[SerializeField] Platform platformScript;
     [SerializeField] private Animator animator;
+    //[SerializeField] public Animator animator;
     [SerializeField] UserInterface ui;
     private CharacterController controller;
     private float verticalVelocity;
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 verticalVelocity = jumpForce;
+                //animator.SetBool("Jump", true);
             }
         }
 
@@ -94,30 +96,31 @@ public class Player : MonoBehaviour
             climbJump = true;
             climb = false;
             verticalVelocity = jumpForce;
+            //animator.SetBool("Jump", true);
         }
-
-        /*if (Input.GetAxisRaw("Horizontal") != 0)
+        /*
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
             climb = false;
             climbJump = false;
             animator.SetBool("Run", true);
-        }*/
-
+        }
+        */
         else
         {
             //animator.SetBool("Run", false);
             climbJump = false;
             jumpForce=3;
             verticalVelocity -= gravity * Time.deltaTime;
+            //animator.SetBool("Jump", false);
         }
         
         //This is the lateral movement
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
-
     }
 
-        void ExitLevel()
+    void ExitLevel()
     {
         if (Input.GetKeyDown(KeyCode.F)) //Ahora para salir también es necesario presionar F
         {
