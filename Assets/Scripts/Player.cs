@@ -43,8 +43,6 @@ public class Player : MonoBehaviour
         //these variables make the slow down work the same without
         //having to go back to the code every time we modify the speed
         //and the jump force
-        //double a =1;
-        //double b =6;
         initialSpeed = speed;
         initialJumpForce = jumpForce;
         speedPenalization = speed * .1666666f;
