@@ -19,21 +19,18 @@ public class MarcelAnimations : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            //Debug.Log("Presionando D");
             charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
             animator.SetBool("Run", true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            //Debug.Log("Presionando A");
             animator.SetBool("Run", true);
             charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
         }
         else if (Input.GetKey(KeyCode.Space))
         {
-            //Debug.Log("Presionando A");
             animator.SetBool("Run", true);
-            charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
+            //charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
         }
         else
         {

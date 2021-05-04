@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class RespaldodePlayer : MonoBehaviour
 {
+    //[SerializeField] Platform platformScript;
+    [SerializeField] private Animator animator;
+    //[SerializeField] public Animator animator;
     [SerializeField] UserInterface ui;
     private CharacterController controller;
     private float verticalVelocity;
@@ -29,10 +32,12 @@ public class Player : MonoBehaviour
 
     private Vector3 Front;
 
+    int Key = 0;
     int Score = 0;
     int queso = 0;
     List<GameObject> cheese = new List<GameObject>();
     [SerializeField] SpriteRenderer[] sprites;
+    //public GameObject F;
     float initialSpeed;
     float initialJumpForce;
     float speedPenalization;
@@ -49,9 +54,12 @@ public class Player : MonoBehaviour
         initialJumpForce = jumpForce;
         speedPenalization = speed * .1666666f;
         jumpForcePenalization = jumpForce * .1666666f;
+        //Debug.Log(initialSpeed);
+        //Debug.Log(speedPenalization);
 
         posInicial = transform.position;
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         Front = new Vector3(0, 0, -.3f);
         ui.UpdateHearts(Hp);
     }
@@ -59,7 +67,7 @@ public class Player : MonoBehaviour
 
     private void Movement() //Movement
     {
-        
+
         //this is the jump
         if (controller.isGrounded)
         {
@@ -68,13 +76,15 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 verticalVelocity = jumpForce;
+                //animator.SetBool("Jump", true);
             }
         }
 
         //this is the climb
         if (climb == true && Input.GetKey(KeyCode.W))
         {
-            climbJump = false;  
+            climbJump = false;
+            //Debug.Log("must climb");
             verticalVelocity = Input.GetAxis("Vertical");
         }
 
@@ -84,23 +94,49 @@ public class Player : MonoBehaviour
             climbJump = true;
             climb = false;
             verticalVelocity = jumpForce;
+            //animator.SetBool("Jump", true);
         }
-
+        /*
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            climb = false;
+            climbJump = false;
+            animator.SetBool("Run", true);
+        }
+        */
         else
         {
+            //animator.SetBool("Run", false);
             climbJump = false;
-            jumpForce=3;
+            jumpForce = 3;
             verticalVelocity -= gravity * Time.deltaTime;
+            //animator.SetBool("Jump", false);
         }
-        
+
         //This is the lateral movement
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
     }
 
+    void ExitLevel()
+    {
+        if (Input.GetKeyDown(KeyCode.F)) //Ahora para salir también es necesario presionar F
+        {
+            if (Key == 3)
+            {
+                Debug.Log("Completaste el nivel!");
+            }
+            else
+            {
+                Debug.Log("Aún no tienes todas las llaves, regresa después");
+            }
+        }
+    }
+
     void GetHurt() //Loose a Life
     {
-        if (GameManager.pause){
+        if (GameManager.pause)
+        {
             return;
         }
 
@@ -123,7 +159,7 @@ public class Player : MonoBehaviour
 
     public void Die() //Reset Everything
     {
-        
+
 
         for (int i = 0; i < cheese.Count; i++)
         {
@@ -140,6 +176,8 @@ public class Player : MonoBehaviour
         Debug.Log("Player 1: " + Score);
         queso = 0;
         jumpForce = initialJumpForce;
+        Key = 0;
+        //ui.UpdateStillson(Key);
         ui.UpdateCheese(queso);
 
     }
@@ -169,11 +207,13 @@ public class Player : MonoBehaviour
 
     public void GrabCheese(GameObject Cheese) //Mecanismo para el queso
     {
-       
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             Score++;
             queso++;
+            //jumpForce = (jumpForce - (Score * .1f));
+            //speed = (speed - (Score * .1f));
 
             jumpForce = (jumpForce - jumpForcePenalization);
             speed = (speed - speedPenalization);
@@ -181,7 +221,7 @@ public class Player : MonoBehaviour
             Cheese.gameObject.SetActive(false);
             Debug.Log("Food: " + Score);
             cheese.Add(Cheese);
-            
+
             ui.UpdateCheese(queso);
             Boton = false;
 
@@ -197,18 +237,37 @@ public class Player : MonoBehaviour
                 queso--;
                 Score--;
 
+                //jumpForce = (jumpForce + (Score * .1f));
+                //speed = (speed + (Score * .1f));
+
                 jumpForce = (jumpForce + jumpForcePenalization);
                 speed = (speed + speedPenalization);
 
                 Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 Debug.Log("Food: " + Score);
-               
+
                 ui.UpdateCheese(queso);
             }
             else
             {
                 Debug.Log("No puedes soltar nada porque nada tienes");
             }
+        }
+    }
+
+    void GrabKey(GameObject Stillson) //Mecanismo para la llave
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Key++;
+
+            //ui.UpdateScore(Score);
+            Stillson.gameObject.SetActive(false);
+            Debug.Log("Stillson Parts: " + Key);
+            cheese.Add(Stillson);
+            //ui.UpdateStillson(Key);
+            Boton = false;
+
         }
     }
 
@@ -228,6 +287,21 @@ public class Player : MonoBehaviour
                 ui.UpdateHearts(Hp);
                 Debug.Log("Food: " + Score);
             }
+
+            /*
+            else
+            {
+                queso--;
+                Score--;
+                jumpForce = (jumpForce + (Score * .1f));
+                speed = (speed + (Score * .1f));
+
+                //Agregar que por cadaqueso que entregas recuperas velocidad y salto
+                ui.UpdateCheese(queso);
+                ui.UpdateHearts(Hp);
+                Debug.Log("Food: " + Score);
+            }
+            */
         }
     }
 
@@ -237,12 +311,18 @@ public class Player : MonoBehaviour
         {
             climb = true;
         }
-        
+
         if (other.gameObject.tag == "Cheese")
         {
             GrabCheese(other.gameObject);
             Boton = true;
-            
+
+        }
+
+        if (other.gameObject.tag == "Stillson")
+        {
+            GrabKey(other.gameObject);
+            Boton = true;
         }
 
         if (other.gameObject.tag == "Nephew")
@@ -250,37 +330,12 @@ public class Player : MonoBehaviour
             Nephew();
             Boton = true;
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Climb")
+        if (other.gameObject.tag == "Valve")
         {
-            climb = true;
+            ExitLevel();
+            Boton = true;
         }
-
-        if (GameManager.pause)
-        {
-            return;
-        }
-
-        if (other.gameObject.tag == "Trap")
-        {
-            GetHurt();
-        }
-
-        if (other.gameObject.tag == "GlueTrap")
-        {
-            savedSpeed = speed;
-            speed = 0.5f;
-            Debug.Log("In" + speed);
-        }
-
-        if (other.gameObject.tag == "Cheese")
-        {
-            //F.SetActive(true);
-        }
-        
     }
 
     private void OnTriggerExit(Collider other)
@@ -303,6 +358,12 @@ public class Player : MonoBehaviour
             //F.SetActive(false);
         }
 
+        if (other.gameObject.tag == "Stillson")
+        {
+            GrabKey(other.gameObject);
+            Boton = false;
+        }
+
         if (other.gameObject.tag == "GlueTrap")
         {
             speed = savedSpeed;
@@ -310,10 +371,44 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Climb")
+        {
+            climb = true;
+            //Debug.Log("trepo");
+        }
+
+        if (GameManager.pause)
+        {
+            return;
+        }
+
+        if (other.gameObject.tag == "Trap")
+        {
+            GetHurt();
+            //Debug.Log("Ouch");
+        }
+
+        if (other.gameObject.tag == "GlueTrap")
+        {
+            savedSpeed = speed;
+            speed = 0.5f;
+            Debug.Log("In" + speed);
+        }
+
+        if (other.gameObject.tag == "Cheese")
+        {
+            //F.SetActive(true);
+        }
+
+    }
+
+
     private void Update()
     {
-
-        if (GameManager.pause) //Activar la pausa
+        //pause
+        if (GameManager.pause)
         {
             return;
         }
@@ -321,7 +416,9 @@ public class Player : MonoBehaviour
         Blink();
         Movement();
         dropCheese();
-
+        //platformScript.climbHere = climb;
+        //platformScript.climbJumpHere = climbJump;
+        //animator.SetBool("Run", true);
         if (Hp > 3)
         {
             Hp = 3;
@@ -343,7 +440,4 @@ public class Player : MonoBehaviour
             jumpForce = initialJumpForce;
         }
     }
-
-
-
 }

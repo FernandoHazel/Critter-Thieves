@@ -5,13 +5,9 @@ using UnityEngine.UI;
 
 public class UserInterface : MonoBehaviour
 {
-
     public Image[] hearts;
-    public Image[] stillson;
     public Image[] chesse;
-
-    // Start is called before the first frame update
-
+    //public Image[] stillson;
 
     public void UpdateHearts(int hp)
     {
@@ -19,17 +15,6 @@ public class UserInterface : MonoBehaviour
         {
             hearts[i].enabled = i < hp;
         }
-
-    }
-
-    public void UpdateStillson(int keys)
-    {
-
-        for (int i=0; i < stillson.Length; i++)
-        {
-            stillson[i].enabled = i < keys;
-        }
-
     }
 
     public void UpdateCheese(int cheese)
@@ -40,4 +25,15 @@ public class UserInterface : MonoBehaviour
         }
     }
 
+        /*
+    public void UpdateStillson(int keys)
+    {
+
+        for (int i=0; i < stillson.Length; i++)
+        {
+            stillson[i].enabled = i < keys;
+        }
+
+    }
+    */
 }
