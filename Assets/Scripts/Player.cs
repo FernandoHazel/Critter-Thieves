@@ -276,10 +276,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Push()
-    {
 
-    }
 
     private void OnTriggerStay(Collider other)  //Tags
     {
