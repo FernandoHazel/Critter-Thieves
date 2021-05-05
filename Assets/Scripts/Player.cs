@@ -276,6 +276,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Push()
+    {
+
+    }
+
     private void OnTriggerStay(Collider other)  //Tags
     {
         if (other.gameObject.tag == "Climb" && controller.isGrounded)
