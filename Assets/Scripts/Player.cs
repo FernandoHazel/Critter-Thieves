@@ -31,7 +31,9 @@ public class Player : MonoBehaviour
 
     int Score = 0;
     int queso = 0;
-    List<GameObject> cheese = new List<GameObject>();
+    int fresa = 0;
+    int nuez = 0;
+    List<GameObject> food = new List<GameObject>();
     [SerializeField] SpriteRenderer[] sprites;
     float initialSpeed;
     float initialJumpForce;
@@ -121,13 +123,13 @@ public class Player : MonoBehaviour
     {
         
 
-        for (int i = 0; i < cheese.Count; i++)
+        for (int i = 0; i < food.Count; i++)
         {
-            cheese[i].SetActive(true);
+            food[i].SetActive(true);
         }
         speed = initialSpeed;
         Score = 0;
-        cheese.Clear();
+        food.Clear();
         controller.enabled = false;
         transform.position = posInicial;
         controller.enabled = true;
@@ -135,6 +137,8 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
         queso = 0;
+        fresa = 0;
+        nuez = 0;
         jumpForce = initialJumpForce;
         ui.UpdateCheese(queso);
 
@@ -176,9 +180,52 @@ public class Player : MonoBehaviour
 
             Cheese.gameObject.SetActive(false);
             Debug.Log("Food: " + Score);
-            cheese.Add(Cheese);
+            food.Add(Cheese);
             
             ui.UpdateCheese(queso);
+            Boton = false;
+
+        }
+    }
+
+    public void GrabBerry(GameObject Berry) //Mecanismo para el queso
+    {
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Score++;
+            fresa++;
+
+            jumpForce = (jumpForce - jumpForcePenalization);
+            speed = (speed - speedPenalization);
+
+            Berry.gameObject.SetActive(false);
+            Debug.Log("Food: " + Score);
+            food.Add(Berry);
+
+            ui.UpdateCheese(fresa);
+            Boton = false;
+
+        }
+    }
+
+
+    public void GrabNut(GameObject Nut) //Mecanismo para el queso
+    {
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Score++;
+            nuez++;
+
+            jumpForce = (jumpForce - jumpForcePenalization);
+            speed = (speed - speedPenalization);
+
+            Nut.gameObject.SetActive(false);
+            Debug.Log("Food: " + Score);
+            food.Add(Nut);
+
+            ui.UpdateCheese(nuez);
             Boton = false;
 
         }
@@ -188,7 +235,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (queso > 0)
+            if (Score > 0)
             {
                 queso--;
                 Score--;
@@ -212,10 +259,12 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (queso > 0)
+            if (Score > 0)
             {
-                Hp = Hp + (queso);
+                Hp = Hp + (Score);
                 queso = 0;
+                nuez = 0;
+                fresa = 0;
                 Score = 0;
                 jumpForce = initialJumpForce;
                 speed = initialSpeed;
@@ -239,6 +288,20 @@ public class Player : MonoBehaviour
             GrabCheese(other.gameObject);
             Boton = true;
             
+        }
+
+        if (other.gameObject.tag == "Berry")
+        {
+            GrabBerry(other.gameObject);
+            Boton = true;
+
+        }
+
+        if (other.gameObject.tag == "Nuts")
+        {
+            GrabNut (other.gameObject);
+            Boton = true;
+
         }
 
         if (other.gameObject.tag == "Nephew")
