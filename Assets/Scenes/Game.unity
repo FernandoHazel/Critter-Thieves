@@ -598,10 +598,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 529257272}
+  controller: {fileID: 0}
   jumpForce: 3
   posMarcel: {fileID: 165522958}
   cheeseSpawn: {fileID: 1666802698}
   speed: 10
+  climb: 0
   sprites:
   - {fileID: 1928647329}
 --- !u!1 &170497927
@@ -5855,9 +5857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecad51b1ef417ca4a9a0e593a785d228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1928647330}
+  marcelAnimator: {fileID: 0}
   charTranform: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 165522959}
 --- !u!1 &1941716070
 GameObject:
   m_ObjectHideFlags: 0
