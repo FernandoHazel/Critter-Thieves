@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] UserInterface ui;
-    private CharacterController controller;
+    public CharacterController controller;
     private float verticalVelocity;
     private float gravity = 9.81f;
     [SerializeField] float jumpForce;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
     float savedSpeed;
 
-    bool climb = false;
+    public bool climb = false;
     bool climbJump = false;
 
     private Vector3 Front;
@@ -53,8 +53,6 @@ public class Player : MonoBehaviour
         Front = new Vector3(0, 0, -.3f);
         ui.UpdateHearts(Hp);
     }
-
-
     private void Movement() //Movement
     {
         
