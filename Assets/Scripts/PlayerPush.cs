@@ -17,13 +17,13 @@ public class PlayerPush : MonoBehaviour
     void Push()
     {
         Physics2D.queriesStartInColliders = false;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right * transform.localScale.x, distance, boxMask);
 
         if (hit.collider != null && Input.GetKeyDown(KeyCode.F))
         {
             box = hit.collider.gameObject;
-            box.GetComponent<FixedJoint2D>().enabled = true;
-            //box.GetComponent<FixedJoint2D>().connectedBody = ();
+            box.GetComponent<FixedJoint>().enableCollision = true;
+            box.GetComponent<FixedJoint>().connectedBody = this.GetComponent<Rigidbody>();
         }
     }
     
