@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ControllerCollderHit : MonoBehaviour
+public class ControllerColiderHit : MonoBehaviour
 { 
 
     void OnControllerColliderHit(ControllerColliderHit hit)
