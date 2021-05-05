@@ -231,7 +231,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void dropCheese() //Soltar comida
+    void dropFood() //Soltar comida
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -379,7 +379,7 @@ public class Player : MonoBehaviour
 
         Blink();
         Movement();
-        dropCheese();
+        dropFood();
 
         if (Hp > 3)
         {
