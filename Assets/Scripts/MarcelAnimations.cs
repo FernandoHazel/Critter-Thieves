@@ -100,7 +100,7 @@ public class MarcelAnimations : MonoBehaviour
 
     void GrabFood()
     {
-        runMultiplier = 1.5f - player.Score * 0.2f;
+        runMultiplier = 1.2f - player.Score * 0.15f;
         marcelAnimator.SetFloat("RunMultiplier", runMultiplier);
     }
 }
