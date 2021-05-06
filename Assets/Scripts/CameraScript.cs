@@ -18,7 +18,7 @@ public class CameraScript : MonoBehaviour
         //We save the position of the character in new variables
         //The "smoothDamp" function creates a transition delay between to points and needs a reference of velocity and time
         float posX = Mathf.SmoothDamp(transform.position.x, character.transform.position.x, ref velocity.x, smoothTime);
-        float posY = Mathf.SmoothDamp(transform.position.y, character.transform.position.y + .5f, ref velocity.y, smoothTime);
+        float posY = Mathf.SmoothDamp(transform.position.y, character.transform.position.y + 2.5f, ref velocity.y, smoothTime);
 
         //We move the camera to that position
         //We use the "Clampt" function to limit the camera movement between a minimum and a maximum position in X and Y axis
