@@ -68,9 +68,18 @@ public class MarcelAnimations : MonoBehaviour
             marcelAnimator.SetBool("Jump", false);
         }
         
+        //this is the climb animation
         if (player.climb && Input.GetKey(KeyCode.W))
         {
             marcelAnimator.SetBool("Climb", true);
+            if (Input.GetKey(KeyCode.D))
+            {
+                charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
+            }
         }
         else if (!player.climb || player.controller.isGrounded)
         {
