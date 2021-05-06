@@ -29,15 +29,16 @@ public class MarcelAnimations : MonoBehaviour
         //Run animation
         if (player.controller.isGrounded)
         {
-            if (Input.GetKey(KeyCode.D))
-            {
-                charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-                marcelAnimator.SetBool("Run", true);
-            }
-            else if (Input.GetKey(KeyCode.A))
+            
+            if (Input.GetKey(KeyCode.A))
             {
                 marcelAnimator.SetBool("Run", true);
                 charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                marcelAnimator.SetBool("Run", true);
             }
             else
             {
