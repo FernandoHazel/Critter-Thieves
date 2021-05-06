@@ -8,6 +8,7 @@ public class MarcelAnimations : MonoBehaviour
     [SerializeField] public Animator marcelAnimator;
     [SerializeField] public Transform charTranform;
     [SerializeField] Player player;
+    float runMultiplier;
     void Start()
     {
         marcelAnimator = GetComponent<Animator>();
@@ -17,6 +18,8 @@ public class MarcelAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GrabFood();
+        Debug.Log(runMultiplier);
         //Debug.Log(player.controller.isGrounded);
         //Run animation
         if (player.controller.isGrounded)
@@ -46,8 +49,17 @@ public class MarcelAnimations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             marcelAnimator.SetBool("Jump", true);
-            //charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
         }
+        /*else if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.D))
+        {
+            marcelAnimator.SetBool("Jump", true);
+            charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.A))
+        {
+            marcelAnimator.SetBool("Jump", true);
+            charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
+        }*/
         else if (player.controller.isGrounded)
         {
             marcelAnimator.SetBool("Jump", false);
@@ -61,5 +73,11 @@ public class MarcelAnimations : MonoBehaviour
         {
             marcelAnimator.SetBool("Climb", false);
         }
+    }
+
+    void GrabFood()
+    {
+        runMultiplier = 2 - player.Score * 0.3f;
+        marcelAnimator.SetFloat("RunMultiplier", runMultiplier);
     }
 }

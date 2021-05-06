@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     private Vector3 Front;
 
-    int Score = 0;
+    public int Score = 0;
     int queso = 0;
     int fresa = 0;
     int nuez = 0;
