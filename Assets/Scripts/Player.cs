@@ -6,13 +6,17 @@ public class Player : MonoBehaviour
 {
     public bool slow = false;
     [SerializeField] UserInterface ui;
+    Items item;
     public CharacterController controller;
     private float verticalVelocity;
     private float gravity = 9.81f;
     [SerializeField] float jumpForce;
+    [SerializeField] float speed;
+    float savedSpeed;
 
     [SerializeField] Transform posMarcel;
     [SerializeField] GameObject cheeseSpawn;
+    [SerializeField] GameObject lastCatch; //El ultimo objeto guardado en la lista food
 
     Vector3 posInicial;
 
@@ -22,8 +26,6 @@ public class Player : MonoBehaviour
 
     bool Boton = false;
 
-    [SerializeField] float speed;
-    float savedSpeed;
 
     public bool climb = false;
     //bool climbJump = false;
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
     int queso = 0;
     int fresa = 0;
     int nuez = 0;
+
     List<GameObject> food = new List<GameObject>();
     [SerializeField] SpriteRenderer[] sprites;
     float initialSpeed;
@@ -121,14 +124,15 @@ public class Player : MonoBehaviour
     }
 
     public void Die() //Reset Everything
-    {
-        
-
+    {       
         for (int i = 0; i < food.Count; i++)
         {
             food[i].SetActive(true);
         }
         speed = initialSpeed;
+        queso = 0;
+        fresa = 0;
+        nuez = 0;
         Score = 0;
         food.Clear();
         controller.enabled = false;
@@ -137,9 +141,6 @@ public class Player : MonoBehaviour
         Hp = MaxHp;
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
-        queso = 0;
-        fresa = 0;
-        nuez = 0;
         jumpForce = initialJumpForce;
         ui.UpdateCheese(queso);
 
@@ -168,67 +169,44 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GrabCheese(GameObject Cheese) //Mecanismo para el queso
-    {
-       
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Score++;
-            queso++;
-
-            jumpForce = (jumpForce - jumpForcePenalization);
-            speed = (speed - speedPenalization);
-
-            Cheese.gameObject.SetActive(false);
-            Debug.Log("Food: " + Score);
-            food.Add(Cheese);
-            
-            ui.UpdateCheese(queso);
-            Boton = false;
-
-        }
-    }
-
-    public void GrabBerry(GameObject Berry) //Mecanismo para el queso
+    public void GrabFood(GameObject other) //Mecanismo para el queso
     {
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Score++;
-            fresa++;
+            Debug.Log("Es comida");
+            other.gameObject.SetActive(false);
+            Items comida = other.GetComponent<Items>();
+
+            if (comida.Tipo =="Fresa")
+            {
+                Debug.Log("Es Fresa");
+                fresa++;
+                Score++;
+            }
+            if (comida.Tipo == "Nuez")
+            {
+                Debug.Log("Es Nuez");
+                nuez++;
+                Score++;
+            }
+            if (comida.Tipo == "Queso")
+            {
+                Debug.Log("Es Queso");
+                queso++;
+                Score++;
+            }
 
             jumpForce = (jumpForce - jumpForcePenalization);
             speed = (speed - speedPenalization);
 
-            Berry.gameObject.SetActive(false);
             Debug.Log("Food: " + Score);
-            food.Add(Berry);
+            food.Add(other);
 
-            ui.UpdateCheese(fresa);
+            cheeseSpawn = food[food.Count - 1];
+
+            ui.UpdateCheese(Score);
             Boton = false;
-
-        }
-    }
-
-
-    public void GrabNut(GameObject Nut) //Mecanismo para el queso
-    {
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Score++;
-            nuez++;
-
-            jumpForce = (jumpForce - jumpForcePenalization);
-            speed = (speed - speedPenalization);
-
-            Nut.gameObject.SetActive(false);
-            Debug.Log("Food: " + Score);
-            food.Add(Nut);
-
-            ui.UpdateCheese(nuez);
-            Boton = false;
-
         }
     }
 
@@ -238,16 +216,21 @@ public class Player : MonoBehaviour
         {
             if (Score > 0)
             {
-                queso--;
+                //queso--;
                 Score--;
+                ui.UpdateCheese(Score);
 
                 jumpForce = (jumpForce + jumpForcePenalization);
                 speed = (speed + speedPenalization);
 
-                Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
+                var newDrop = Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
+                newDrop.SetActive(true);
+
                 Debug.Log("Food: " + Score);
-               
-                ui.UpdateCheese(queso);
+
+                food.Remove(cheeseSpawn);
+                lastCatch = food[food.Count - 1];
+                cheeseSpawn = lastCatch;
             }
             else
             {
@@ -270,14 +253,12 @@ public class Player : MonoBehaviour
                 jumpForce = initialJumpForce;
                 speed = initialSpeed;
 
-                ui.UpdateCheese(queso);
+                ui.UpdateCheese(Score);
                 ui.UpdateHearts(Hp);
                 Debug.Log("Food: " + Score);
             }
         }
     }
-
-
 
     private void OnTriggerStay(Collider other)  //Tags
     {
@@ -285,24 +266,10 @@ public class Player : MonoBehaviour
         {
             climb = true;
         }
-        
-        if (other.gameObject.tag == "Cheese")
-        {
-            GrabCheese(other.gameObject);
-            Boton = true;
-            
-        }
 
-        if (other.gameObject.tag == "Berry")
+        if (other.gameObject.tag == "Food")
         {
-            GrabBerry(other.gameObject);
-            Boton = true;
-
-        }
-
-        if (other.gameObject.tag == "Nuts")
-        {
-            GrabNut (other.gameObject);
+            GrabFood(other.gameObject);
             Boton = true;
 
         }
@@ -339,10 +306,12 @@ public class Player : MonoBehaviour
             slow = true;
         }
 
-        if (other.gameObject.tag == "Cheese")
+        
+        if (other.gameObject.tag == "Food")
         {
             //F.SetActive(true);
         }
+        
         
     }
 
@@ -359,9 +328,9 @@ public class Player : MonoBehaviour
             climb = false;
             //Debug.Log("no trepo");
         }
-        if (other.gameObject.tag == "Cheese")
+
+        if (other.gameObject.tag == "Food")
         {
-            GrabCheese(other.gameObject);
             Boton = false;
             //F.SetActive(false);
         }

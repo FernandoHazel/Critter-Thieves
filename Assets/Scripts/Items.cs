@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-
+    public string Tipo;
     float rotar = 30;
     //float speed = .03f;
     //float delta = .2f;
