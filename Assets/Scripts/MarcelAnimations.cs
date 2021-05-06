@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System;
 
 public class MarcelAnimations : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MarcelAnimations : MonoBehaviour
     [SerializeField] public Transform charTranform;
     [SerializeField] Player player;
     float runMultiplier;
+    int number;
+
     void Start()
     {
         marcelAnimator = GetComponent<Animator>();
@@ -18,9 +21,9 @@ public class MarcelAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        number = Random.Range(1, 21);
         GrabFood();
-        Debug.Log(runMultiplier);
-        //Debug.Log(player.controller.isGrounded);
+        Turn();
         //Run animation
         if (player.controller.isGrounded)
         {
@@ -74,10 +77,21 @@ public class MarcelAnimations : MonoBehaviour
             marcelAnimator.SetBool("Climb", false);
         }
     }
+    void Turn()
+    {
+        if (number == 5)
+        {
+            marcelAnimator.SetBool("Turn", true);
+        }
+        else
+        {
+            marcelAnimator.SetBool("Turn", false);
+        }
+    }
 
     void GrabFood()
     {
-        runMultiplier = 2 - player.Score * 0.3f;
+        runMultiplier = 1.5f - player.Score * 0.2f;
         marcelAnimator.SetFloat("RunMultiplier", runMultiplier);
     }
 }
