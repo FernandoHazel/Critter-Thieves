@@ -11,6 +11,7 @@ public class MarcelAnimations : MonoBehaviour
     [SerializeField] Player player;
     float runMultiplier;
     int number;
+    bool onJump = false;
     //float climbScaleX = 0.6f;
     //float counter;
 
@@ -23,14 +24,18 @@ public class MarcelAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(number);
+        Debug.Log(player.controller.isGrounded);
         number = Random.Range(1, 251);
         GrabFood();
         Turn();
+        MovementAnimations();
+    }
+    void MovementAnimations()
+    {
         //Run animation
         if (player.controller.isGrounded)
         {
-            
+            marcelAnimator.SetBool("Fall", false);
             if (Input.GetKey(KeyCode.A))
             {
                 marcelAnimator.SetBool("Run", true);
@@ -56,20 +61,12 @@ public class MarcelAnimations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             marcelAnimator.SetBool("Jump", true);
+            onJump = true;
         }
-        /*else if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.D))
-        {
-            marcelAnimator.SetBool("Jump", true);
-            charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.A))
-        {
-            marcelAnimator.SetBool("Jump", true);
-            charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
-        }*/
         else if (player.controller.isGrounded)
         {
             marcelAnimator.SetBool("Jump", false);
+            onJump = false;
         }
         
         //this is the climb animation
@@ -77,6 +74,7 @@ public class MarcelAnimations : MonoBehaviour
         {
             marcelAnimator.SetBool("Climb", true);
             marcelAnimator.SetBool("Turn", false);
+            marcelAnimator.SetBool("Fall", false);
             if (Input.GetKey(KeyCode.D))
             {
                 marcelAnimator.SetBool("Turn", false);
@@ -91,6 +89,10 @@ public class MarcelAnimations : MonoBehaviour
         else if (!player.climb || player.controller.isGrounded)
         {
             marcelAnimator.SetBool("Climb", false);
+        }
+        if (!player.controller.isGrounded && !onJump && !player.climb)
+        {
+            marcelAnimator.SetBool("Fall", true);
         }
     }
     void Turn()
