@@ -28,7 +28,27 @@ public class MarcelAnimations : MonoBehaviour
         number = Random.Range(1, 251);
         GrabFood();
         Turn();
+        Jump();
         MovementAnimations();
+    }
+    void Jump()
+    {
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && !player.climb && Input.GetKeyDown(KeyCode.Space))
+        {
+            marcelAnimator.SetBool("Jump", false);
+            marcelAnimator.SetBool("Fall", true);
+        }
+        //Jump animation
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            marcelAnimator.SetBool("Jump", true);
+            onJump = true;
+        }
+        else if (player.controller.isGrounded)
+        {
+            marcelAnimator.SetBool("Jump", false);
+            onJump = false;
+        }
     }
     void MovementAnimations()
     {
@@ -54,19 +74,6 @@ public class MarcelAnimations : MonoBehaviour
         else
         {
             marcelAnimator.SetBool("Run", false);
-        }
-        
-
-        //Jump animation
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            marcelAnimator.SetBool("Jump", true);
-            onJump = true;
-        }
-        else if (player.controller.isGrounded)
-        {
-            marcelAnimator.SetBool("Jump", false);
-            onJump = false;
         }
         
         //this is the climb animation
