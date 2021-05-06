@@ -7,42 +7,43 @@ public class Player : MonoBehaviour
     public bool slow = false;
     [SerializeField] UserInterface ui;
     Items item;
-    public CharacterController controller;
-    private float verticalVelocity;
-    private float gravity = 9.81f;
-    [SerializeField] float jumpForce;
-    [SerializeField] float speed;
-    float savedSpeed;
-
-    [SerializeField] Transform posMarcel;
-    [SerializeField] GameObject cheeseSpawn;
-    [SerializeField] GameObject lastCatch; //El ultimo objeto guardado en la lista food
-
-    Vector3 posInicial;
 
     int Hp = 3; //Health
     int MaxHp = 3; //Max Health
     float invencibilityTime = 0;
 
-    bool Boton = false;
+    public CharacterController controller;
 
+    [SerializeField] float jumpForce;
+    [SerializeField] float speed;
+    float savedSpeed;
+    float initialSpeed;
+    float initialJumpForce;
+    float speedPenalization;
+    float jumpForcePenalization;
+
+    private float verticalVelocity;
+    private float gravity = 9.81f;
 
     public bool climb = false;
     //bool climbJump = false;
 
-    private Vector3 Front;
+    Vector3 posInicial;
+    [SerializeField] Transform posMarcel;
+    [SerializeField] GameObject cheeseSpawn;
+    [SerializeField] GameObject lastCatch; //El ultimo objeto guardado en la lista food
+
+    //List<GameObject> food = new List<GameObject>(); //Lista para lo que aparece y desaparece del mundo
+    List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
 
     public int Score = 0;
     int queso = 0;
     int fresa = 0;
     int nuez = 0;
 
-    List<GameObject> food = new List<GameObject>();
+    bool Boton = false;
+    private Vector3 Front;
     [SerializeField] SpriteRenderer[] sprites;
-    float initialSpeed;
-    float initialJumpForce;
-    float speedPenalization;
-    float jumpForcePenalization;
 
     void Start()
     {
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
     }
     private void Movement() //Movement
     {
-        
+
         //this is the jump
         if (controller.isGrounded)
         {
@@ -91,10 +92,10 @@ public class Player : MonoBehaviour
         else
         {
             //climbJump = false;
-            jumpForce=3;
+            jumpForce = 3;
             verticalVelocity -= gravity * Time.deltaTime;
         }
-        
+
         //This is the lateral movement
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Loose a Life
     {
-        if (GameManager.pause){
+        if (GameManager.pause) {
             return;
         }
 
@@ -111,7 +112,6 @@ public class Player : MonoBehaviour
         Hp--;
 
         ui.UpdateHearts(Hp);
-
 
         transform.position = posInicial;
 
@@ -124,24 +124,29 @@ public class Player : MonoBehaviour
     }
 
     public void Die() //Reset Everything
-    {       
-        for (int i = 0; i < food.Count; i++)
+    {
+        for (int i = 0; i < inventory.Count; i++)
         {
-            food[i].SetActive(true);
+            inventory[i].SetActive(true);
         }
+        inventory.Clear();
+
         speed = initialSpeed;
+        jumpForce = initialJumpForce;
+
         queso = 0;
         fresa = 0;
         nuez = 0;
         Score = 0;
-        food.Clear();
+
         controller.enabled = false;
         transform.position = posInicial;
         controller.enabled = true;
+
         Hp = MaxHp;
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
-        jumpForce = initialJumpForce;
+
         ui.UpdateCheese(queso);
 
     }
@@ -178,7 +183,7 @@ public class Player : MonoBehaviour
             other.gameObject.SetActive(false);
             Items comida = other.GetComponent<Items>();
 
-            if (comida.Tipo =="Fresa")
+            if (comida.Tipo == "Fresa")
             {
                 Debug.Log("Es Fresa");
                 fresa++;
@@ -201,9 +206,9 @@ public class Player : MonoBehaviour
             speed = (speed - speedPenalization);
 
             Debug.Log("Food: " + Score);
-            food.Add(other);
+            inventory.Add(other);
 
-            cheeseSpawn = food[food.Count - 1];
+            cheeseSpawn = inventory[inventory.Count - 1];
 
             ui.UpdateCheese(Score);
             Boton = false;
@@ -228,8 +233,8 @@ public class Player : MonoBehaviour
 
                 Debug.Log("Food: " + Score);
 
-                food.Remove(cheeseSpawn);
-                lastCatch = food[food.Count - 1];
+                inventory.Remove(cheeseSpawn);
+                lastCatch = inventory[inventory.Count - 1];
                 cheeseSpawn = lastCatch;
             }
             else
@@ -246,16 +251,20 @@ public class Player : MonoBehaviour
             if (Score > 0)
             {
                 Hp = Hp + (Score);
+
                 queso = 0;
                 nuez = 0;
                 fresa = 0;
                 Score = 0;
+
                 jumpForce = initialJumpForce;
                 speed = initialSpeed;
 
                 ui.UpdateCheese(Score);
                 ui.UpdateHearts(Hp);
                 Debug.Log("Food: " + Score);
+
+                inventory.Clear();
             }
         }
     }
@@ -322,7 +331,6 @@ public class Player : MonoBehaviour
             return;
         }
 
-
         if (other.gameObject.tag == "Climb")
         {
             climb = false;
@@ -341,20 +349,17 @@ public class Player : MonoBehaviour
             Debug.Log("Out" + speed);
             slow = false;
         }
+
+        if (other.gameObject.tag == "Nephew")
+        {
+            Boton = false;
+            posInicial = transform.position;
+            //F.SetActive(false);
+        }
     }
 
-    private void Update()
+    void regulator()
     {
-
-        if (GameManager.pause) //Activar la pausa
-        {
-            return;
-        }
-
-        Blink();
-        Movement();
-        dropFood();
-
         if (Hp > 3)
         {
             Hp = 3;
@@ -377,6 +382,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
 
+        if (GameManager.pause) //Activar la pausa
+        {
+            return;
+        }
 
+        Blink();
+        Movement();
+        dropFood();
+        regulator();
+
+    }
 }
