@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool slow = false;
     [SerializeField] UserInterface ui;
     public CharacterController controller;
     private float verticalVelocity;
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
     float savedSpeed;
 
     public bool climb = false;
-    bool climbJump = false;
+    //bool climbJump = false;
 
     private Vector3 Front;
 
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
         //this is the jump
         if (controller.isGrounded)
         {
-            climbJump = false;
+            //climbJump = false;
             verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -72,21 +73,21 @@ public class Player : MonoBehaviour
         //this is the climb
         if (climb == true && Input.GetKey(KeyCode.W))
         {
-            climbJump = false;  
+            //climbJump = false;  
             verticalVelocity = Input.GetAxis("Vertical");
         }
 
         //This is the jump while climbing
         if (climb == true && Input.GetKeyDown(KeyCode.Space))
         {
-            climbJump = true;
+            //climbJump = true;
             climb = false;
             verticalVelocity = jumpForce;
         }
 
         else
         {
-            climbJump = false;
+            //climbJump = false;
             jumpForce=3;
             verticalVelocity -= gravity * Time.deltaTime;
         }
@@ -335,6 +336,7 @@ public class Player : MonoBehaviour
             savedSpeed = speed;
             speed = 0.5f;
             Debug.Log("In" + speed);
+            slow = true;
         }
 
         if (other.gameObject.tag == "Cheese")
@@ -368,6 +370,7 @@ public class Player : MonoBehaviour
         {
             speed = savedSpeed;
             Debug.Log("Out" + speed);
+            slow = false;
         }
     }
 

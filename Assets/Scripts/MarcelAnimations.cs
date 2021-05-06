@@ -11,6 +11,7 @@ public class MarcelAnimations : MonoBehaviour
     [SerializeField] Player player;
     float runMultiplier;
     int number;
+    //float climbScaleX = 0.6f;
     //float counter;
 
     void Start()
@@ -124,7 +125,15 @@ public class MarcelAnimations : MonoBehaviour
 
     void GrabFood()
     {
-        runMultiplier = 1.2f - player.Score * 0.15f;
+        
+        if (player.slow)
+        {
+            runMultiplier = 0.5f;
+        }
+        else
+        {
+            runMultiplier = 1.2f - player.Score * 0.15f;
+        }
         marcelAnimator.SetFloat("RunMultiplier", runMultiplier);
     }
 }
