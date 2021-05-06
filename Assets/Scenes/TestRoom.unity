@@ -638,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &75882506
 Transform:
   m_ObjectHideFlags: 0
@@ -4310,9 +4310,10 @@ MonoBehaviour:
   ui: {fileID: 1774339611}
   controller: {fileID: 0}
   jumpForce: 3
+  speed: 10
   posMarcel: {fileID: 418422293}
   cheeseSpawn: {fileID: 1528436311}
-  speed: 10
+  lastCatch: {fileID: 0}
   climb: 0
   Score: 0
   sprites:
@@ -10771,7 +10772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1024629703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18775,7 +18776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675596609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -1.08, z: 0.11}
+  m_LocalPosition: {x: -0.323, y: -1.08, z: 0.11}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 418422293}
