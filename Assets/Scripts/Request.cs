@@ -5,30 +5,36 @@ using UnityEngine;
 public class Request : MonoBehaviour
 {
     Player player;
-    int rqFresa;
-    int rqNuez;
-    int rqQueso;
+    public int rqFresa;
+    public int rqNuez;
+    public int rqQueso;
 
     void Start()
     {
 
     }
 
-    /*
-    void Request1()
+    
+    void Request1(GameObject player)
     {
-        rqFresa = 1;
-        rqNuez = 2;
-        rqQueso = 1;
+        //Player variable = player.GetComponent<Player>();
+        //rqFresa = variable.fresa;
+        /*
+            rqFresa = 1;
+            rqNuez = 2;
+            rqQueso = 1;
 
-        if (player.queso == rqQueso) 
-        {
-            Debug.Log("Request 1 COMPLETADO");
-        }
+            if (player.queso == rqQueso) 
+            {
+                Debug.Log("Request 1 COMPLETADO");
+            }
+        */
     }
-    */
+    
     void Update()
     {
-        //Request1();
+        
+
+        //Request1(player.gameObject);
     }
 }

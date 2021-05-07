@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; //TEMPORAL
 
 public class Player : MonoBehaviour
 {
@@ -41,9 +42,21 @@ public class Player : MonoBehaviour
     public int fresa = 0;
     public int nuez = 0;
 
+    int rqQueso = 0; //TEMPORAL
+    int rqFresa = 0; //TEMPORAL
+    int rqNuez = 0; //TEMPORAL
+
+    public Text contQueso; //TEMPORAL
+    public Text contFresa; //TEMPORAL
+    public Text contNuez; //TEMPORAL
+
+    public GameObject final;
+
     bool Boton = false;
     private Vector3 Front;
     [SerializeField] SpriteRenderer[] sprites;
+
+    //public int rq
 
     void Start()
     {
@@ -270,6 +283,10 @@ public class Player : MonoBehaviour
             {
                 Hp = Hp + Score;
 
+                rqQueso = rqQueso + queso; //TEMPORAL
+                rqNuez = rqNuez + nuez; //TEMPORAL
+                rqFresa = rqFresa + fresa; //TEMPORAL
+
                 queso = 0;
                 nuez = 0;
                 fresa = 0;
@@ -283,6 +300,8 @@ public class Player : MonoBehaviour
                 Debug.Log("Food: " + Score);
 
                 inventory.Clear();
+
+                Request1(); //TEMPORAL
             }
         }
     }
@@ -298,7 +317,6 @@ public class Player : MonoBehaviour
         {
             GrabFood(other.gameObject);
             Boton = true;
-
         }
 
         if (other.gameObject.tag == "Nephew")
@@ -329,17 +347,14 @@ public class Player : MonoBehaviour
         {
             savedSpeed = speed;
             speed = 0.5f;
-            Debug.Log("In" + speed);
+            //Debug.Log("In" + speed);
             slow = true;
         }
-
         
         if (other.gameObject.tag == "Food")
         {
             //F.SetActive(true);
-        }
-        
-        
+        }     
     }
 
     private void OnTriggerExit(Collider other)
@@ -364,7 +379,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "GlueTrap")
         {
             speed = savedSpeed;
-            Debug.Log("Out" + speed);
+            //Debug.Log("Out" + speed);
             slow = false;
         }
 
@@ -404,6 +419,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Request1() //TEMPORAL
+    {
+        if (rqFresa >= 1 && rqNuez >= 2 && rqQueso >= 1)
+        {
+            Debug.Log("NIVEL COMPLETADO");
+            Input.GetKey(KeyCode.P);
+            final.SetActive(true);
+        }
+    }
     private void Update()
     {
 
@@ -416,6 +440,10 @@ public class Player : MonoBehaviour
         Movement();
         dropFood();
         regulator();
+
+        contNuez.text = "" + nuez;
+        contQueso.text = "" + queso;
+        contFresa.text = "" + fresa;
 
     }
 }
