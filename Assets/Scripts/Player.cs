@@ -258,7 +258,7 @@ public class Player : MonoBehaviour
                     nuez--;
                     Debug.Log("Nuez: " + nuez);
                 }
-                else if (tipo.Tipo == "queso")
+                else if (tipo.Tipo == "Queso")
                 {
                     queso--;
                     Debug.Log("Queso: " + queso);
