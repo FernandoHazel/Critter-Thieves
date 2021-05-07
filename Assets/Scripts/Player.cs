@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public bool slow = false;
     [SerializeField] UserInterface ui;
     Items item;
+    Request request;
 
     int Hp = 3; //Health
     int MaxHp = 3; //Max Health
@@ -33,13 +34,12 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject cheeseSpawn;
     [SerializeField] GameObject lastCatch; //El ultimo objeto guardado en la lista food
 
-    //List<GameObject> food = new List<GameObject>(); //Lista para lo que aparece y desaparece del mundo
     List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
 
     public int Score = 0;
-    int queso = 0;
-    int fresa = 0;
-    int nuez = 0;
+    public int queso = 0;
+    public int fresa = 0;
+    public int nuez = 0;
 
     bool Boton = false;
     private Vector3 Front;
@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(MaxHp);
         Debug.Log("Player 1: " + Score);
 
-        ui.UpdateCheese(queso);
+        ui.UpdateCheese(Score);
 
     }
 
@@ -188,18 +188,21 @@ public class Player : MonoBehaviour
                 Debug.Log("Es Fresa");
                 fresa++;
                 Score++;
+                Debug.Log("Fresas: " + fresa);
             }
             if (comida.Tipo == "Nuez")
             {
                 Debug.Log("Es Nuez");
                 nuez++;
                 Score++;
+                Debug.Log("Nueces: " + nuez);
             }
             if (comida.Tipo == "Queso")
             {
                 Debug.Log("Es Queso");
                 queso++;
                 Score++;
+                Debug.Log("Queso: " + queso);
             }
 
             jumpForce = (jumpForce - jumpForcePenalization);
@@ -221,9 +224,9 @@ public class Player : MonoBehaviour
         {
             if (Score > 0)
             {
-                //queso--;
                 Score--;
                 ui.UpdateCheese(Score);
+                Debug.Log("Food: " + Score);
 
                 jumpForce = (jumpForce + jumpForcePenalization);
                 speed = (speed + speedPenalization);
@@ -231,7 +234,22 @@ public class Player : MonoBehaviour
                 var newDrop = Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
                 newDrop.SetActive(true);
 
-                Debug.Log("Food: " + Score);
+                Items tipo = newDrop.GetComponent<Items>();
+                if (tipo.Tipo == "Fresa")
+                {
+                    fresa--;
+                    Debug.Log("Fresa: " + fresa);
+                }
+                else if (tipo.Tipo == "Nuez")
+                {
+                    nuez--;
+                    Debug.Log("Nuez: " + nuez);
+                }
+                else if (tipo.Tipo == "queso")
+                {
+                    queso--;
+                    Debug.Log("Queso: " + queso);
+                }
 
                 inventory.Remove(cheeseSpawn);
                 lastCatch = inventory[inventory.Count - 1];
@@ -250,7 +268,7 @@ public class Player : MonoBehaviour
         {
             if (Score > 0)
             {
-                Hp = Hp + (Score);
+                Hp = Hp + Score;
 
                 queso = 0;
                 nuez = 0;
@@ -379,6 +397,10 @@ public class Player : MonoBehaviour
         if (jumpForce < initialJumpForce)
         {
             jumpForce = initialJumpForce;
+        }
+        if (transform.position.z != 0)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
     }
 

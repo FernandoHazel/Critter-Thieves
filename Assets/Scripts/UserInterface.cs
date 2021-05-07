@@ -7,7 +7,6 @@ public class UserInterface : MonoBehaviour
 {
     public Image[] hearts;
     public Image[] chesse;
-    //public Image[] stillson;
 
     public void UpdateHearts(int hp)
     {
@@ -24,16 +23,4 @@ public class UserInterface : MonoBehaviour
             chesse[i].enabled = i < cheese;
         }
     }
-
-        /*
-    public void UpdateStillson(int keys)
-    {
-
-        for (int i=0; i < stillson.Length; i++)
-        {
-            stillson[i].enabled = i < keys;
-        }
-
-    }
-    */
 }

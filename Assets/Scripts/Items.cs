@@ -15,20 +15,17 @@ public class Items : MonoBehaviour
     void Start()
     {
         posInicial = transform.position;
-
     }
 
     void Rotacion()
     {
-
         //transform.rotation(0, _rotationSpeed* Time.deltaTime, 0);
         transform.Rotate(0, rotar * Time.deltaTime, 0);
     }
 
 
 void Update()
-    {
-      
+    {      
         Rotacion();
         // Rotation on y axis
     }

@@ -24,7 +24,7 @@ public class MarcelAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.controller.isGrounded);
+        //Debug.Log(player.controller.isGrounded);
         number = Random.Range(1, 251);
         GrabFood();
         Turn();
