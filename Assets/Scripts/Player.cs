@@ -5,6 +5,7 @@ using UnityEngine.UI; //TEMPORAL
 
 public class Player : MonoBehaviour
 {
+    float canClimbCounter = 0.5f;
     public bool slow = false;
     [SerializeField] UserInterface ui;
     Items item;
@@ -100,6 +101,7 @@ public class Player : MonoBehaviour
             //climbJump = true;
             climb = false;
             verticalVelocity = jumpForce;
+            canClimbCounter = 0.5f;
         }
 
         else
@@ -312,6 +314,16 @@ public class Player : MonoBehaviour
         {
             climb = true;
         }
+        canClimbCounter -= Time.deltaTime;
+        //Debug.Log(canClimbCounter);
+        if (other.gameObject.tag == "Climb")
+        {
+            if (canClimbCounter <= 0)
+            {
+                climb = true;
+                canClimbCounter = 0.5f;
+            }
+        }
 
         if (other.gameObject.tag == "Food")
         {
@@ -430,6 +442,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        
 
         if (GameManager.pause) //Activar la pausa
         {
