@@ -65,8 +65,8 @@ public class Player : MonoBehaviour
         //and the jump force
         initialSpeed = speed;
         initialJumpForce = jumpForce;
-        speedPenalization = speed * .1666666f;
-        jumpForcePenalization = jumpForce * .1666666f;
+        speedPenalization = speed * .075f;
+        jumpForcePenalization = jumpForce * .075f;
 
         posInicial = transform.position;
         controller = GetComponent<CharacterController>();
