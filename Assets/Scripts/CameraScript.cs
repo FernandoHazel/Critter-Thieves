@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public GameObject character;
+    public GameObject tracker;
     public Vector2 minCamPos, maxCamPos;
     public float smoothTime;  //this is the time of delay of the camera movement
     private Vector2 velocity;
@@ -13,12 +13,12 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
 
-        //float posX = character.transform.position.x;
-        //float posY = character.transform.position.y;
-        //We save the position of the character in new variables
+        //float posX = tracker.transform.position.x;
+        //float posY = tracker.transform.position.y;
+        //We save the position of the tracker in new variables
         //The "smoothDamp" function creates a transition delay between to points and needs a reference of velocity and time
-        float posX = Mathf.SmoothDamp(transform.position.x, character.transform.position.x, ref velocity.x, smoothTime);
-        float posY = Mathf.SmoothDamp(transform.position.y, character.transform.position.y + 2.5f, ref velocity.y, smoothTime);
+        float posX = Mathf.SmoothDamp(transform.position.x, tracker.transform.position.x, ref velocity.x, smoothTime);
+        float posY = Mathf.SmoothDamp(transform.position.y, tracker.transform.position.y + 2.5f, ref velocity.y, smoothTime);
 
         //We move the camera to that position
         //We use the "Clampt" function to limit the camera movement between a minimum and a maximum position in X and Y axis
