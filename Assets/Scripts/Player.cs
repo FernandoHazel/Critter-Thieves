@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         }
 
         //this is the climb
-        if (climb == true && Input.GetKey(KeyCode.W))
+        if (climb == true && Input.GetKey(KeyCode.W) || climb == true && Input.GetKey(KeyCode.UpArrow))
         {
             //climbJump = false;  
             verticalVelocity = Input.GetAxis("Vertical");

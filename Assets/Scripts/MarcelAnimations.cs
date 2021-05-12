@@ -77,7 +77,7 @@ public class MarcelAnimations : MonoBehaviour
         }
         
         //this is the climb animation
-        if (player.climb && Input.GetKey(KeyCode.W))
+        if (player.climb && Input.GetKey(KeyCode.W) || player.climb && Input.GetKey(KeyCode.UpArrow))
         {
             marcelAnimator.SetBool("Climb", true);
             marcelAnimator.SetBool("Turn", false);
@@ -110,7 +110,7 @@ public class MarcelAnimations : MonoBehaviour
         {
             marcelAnimator.SetBool("Turn", true);
         }
-        else if(player.climb && Input.GetKey(KeyCode.W))
+        else if(player.climb && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             marcelAnimator.SetBool("Turn", false);
         }
