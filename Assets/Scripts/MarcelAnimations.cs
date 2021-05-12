@@ -56,12 +56,12 @@ public class MarcelAnimations : MonoBehaviour
         if (player.controller.isGrounded)
         {
             marcelAnimator.SetBool("Fall", false);
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 marcelAnimator.SetBool("Run", true);
                 charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                 marcelAnimator.SetBool("Run", true);
@@ -82,12 +82,12 @@ public class MarcelAnimations : MonoBehaviour
             marcelAnimator.SetBool("Climb", true);
             marcelAnimator.SetBool("Turn", false);
             marcelAnimator.SetBool("Fall", false);
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 marcelAnimator.SetBool("Turn", false);
                 charTranform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
             }
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 marcelAnimator.SetBool("Turn", false);
                 charTranform.localScale = new Vector3(-0.8f, 0.8f, 0.8f);
@@ -114,7 +114,7 @@ public class MarcelAnimations : MonoBehaviour
         {
             marcelAnimator.SetBool("Turn", false);
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             marcelAnimator.SetBool("Turn", false);
         }
@@ -122,7 +122,7 @@ public class MarcelAnimations : MonoBehaviour
         {
             marcelAnimator.SetBool("Turn", false);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             marcelAnimator.SetBool("Turn", false);
         }
