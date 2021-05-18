@@ -14,22 +14,17 @@ public class MovableObject : MonoBehaviour
         direccion = new Vector3 (Input.GetAxis("Horizontal"),0,0);
     }
 
-    void Push()
-    {
-        m_Box.AddForce(direccion, ForceMode.Impulse);
-    }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Player" )
+        if(other.gameObject.tag == "Player")
         {
-            //
+            m_Box.AddForce(Input.GetAxis("Horizontal")*.3f , 0, 0, ForceMode.Impulse);
             Debug.Log("me tocaste");
         }
     }
     // Update is called once per frame
     void Update()
-    {
-        Push();   
+    { 
     }
 }

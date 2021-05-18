@@ -15,7 +15,9 @@ public class ControllerColiderHit : MonoBehaviour
     {
         Rigidbody body = hit.collider.attachedRigidbody;
 
-            if (Input.GetKey(KeyCode.F))
+        Debug.Log("me tocaste");
+
+        if (Input.GetKey(KeyCode.F))
             {
 
                 body.AddForce(direccion, ForceMode.Impulse);
