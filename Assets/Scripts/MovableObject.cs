@@ -19,7 +19,7 @@ public class MovableObject : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            m_Box.AddForce(Input.GetAxis("Horizontal")*.3f , 0, 0, ForceMode.Impulse);
+            m_Box.AddForce(Input.GetAxis("Horizontal") , 0, 0, ForceMode.Impulse);
             Debug.Log("me tocaste");
         }
     }
