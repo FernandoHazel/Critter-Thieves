@@ -11,19 +11,25 @@ public class MovableObject : MonoBehaviour
     void Start()
     {
         m_Box = GetComponent<Rigidbody>();
-            direccion = new Vector3 (Input.GetAxis("Horizontal"),0,0);
+        direccion = new Vector3 (Input.GetAxis("Horizontal"),0,0);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Push()
     {
-        if(other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F))
+        m_Box.AddForce(direccion, ForceMode.Impulse);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Player" )
         {
-            m_Box.AddForce(direccion*-3);
+            //
+            Debug.Log("me tocaste");
         }
     }
     // Update is called once per frame
     void Update()
     {
-        
+        Push();   
     }
 }
