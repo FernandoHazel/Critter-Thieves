@@ -3166,6 +3166,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76da7753984e7e74486d40f2e11a7aa1, type: 3}
+--- !u!1 &241742805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5136609656860614785, guid: 76da7753984e7e74486d40f2e11a7aa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 241742804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259284051
 GameObject:
   m_ObjectHideFlags: 0
@@ -12481,6 +12487,7 @@ GameObject:
   - component: {fileID: 1529198143}
   - component: {fileID: 1529198142}
   - component: {fileID: 1529198141}
+  - component: {fileID: 1529198144}
   m_Layer: 0
   m_Name: Boss Camera
   m_TagString: Untagged
@@ -12514,7 +12521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 0}
+  volumeTrigger: {fileID: 1529198140}
   volumeLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -12613,6 +12620,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1529198144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529198139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b656a56f42528ea46b45bad1186e4883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracker: {fileID: 241742805}
+  minCamPos: {x: 0, y: 0}
+  maxCamPos: {x: 0, y: 0}
+  smoothTime: 0
+  waypoints: []
+  speed: 0
+  margenError: 0
+  modos: 0
 --- !u!4 &1534720149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6564422006009888512, guid: 6038264f863c6a04387f8816e66d0ab9,
