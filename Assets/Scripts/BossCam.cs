@@ -10,6 +10,23 @@ public class BossCam : MonoBehaviour
         
     }
 
+
+    void Rutas()
+    {
+        transform.position = Vector3.Lerp(transform.position, waypoints[estados].position, speed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, waypoints[estados].position) < margenError)
+        {
+            estados++;
+
+            if (estados >= waypoints.Length)
+            {
+                estados--;
+                modos = -1;
+                //Debug.Log("Detente");
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
