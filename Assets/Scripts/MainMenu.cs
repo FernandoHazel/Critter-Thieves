@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-      playerData.save();
       Application.Quit();
     }
 

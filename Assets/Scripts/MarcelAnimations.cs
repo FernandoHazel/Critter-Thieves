@@ -141,7 +141,7 @@ public class MarcelAnimations : MonoBehaviour
         }
         else
         {
-            runMultiplier = 1.2f - player.Score * 0.15f;
+            runMultiplier = 1.2f - playerData.Score * 0.15f;
         }
         marcelAnimator.SetFloat("RunMultiplier", runMultiplier);
     }

@@ -37,12 +37,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject cheeseSpawn;
     [SerializeField] GameObject lastCatch; //El ultimo objeto guardado en la lista food
 
-    List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
-
-    public int Score = 0;
-    public int queso = 0;
-    public int fresa = 0;
-    public int nuez = 0;
+    //List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
 
     int rqQueso = 0; //TEMPORAL
     int rqFresa = 0; //TEMPORAL
@@ -58,7 +53,7 @@ public class Player : MonoBehaviour
     private Vector3 Front;
     [SerializeField] SpriteRenderer[] sprites;
 
-    //public Transform BossCam;
+    public Transform BossCam;
 
     //public int rq
 
@@ -132,8 +127,6 @@ public class Player : MonoBehaviour
 
         ui.UpdateHearts(Hp);
 
-        transform.position = posInicial;
-
         invencibilityTime = 2;
 
         if (Hp <= 0)
@@ -144,33 +137,31 @@ public class Player : MonoBehaviour
 
     public void Die() //Reset Everything
     {
-        for (int i = 0; i < inventory.Count; i++)
+        for (int i = 0; i < playerData.inventory.Count; i++)
         {
-            inventory[i].SetActive(true);
+            playerData.inventory[i].SetActive(true);
         }
-        inventory.Clear();
+        playerData.inventory.Clear();
 
         speed = initialSpeed;
         jumpForce = initialJumpForce;
-
-        queso = 0;
-        fresa = 0;
-        nuez = 0;
-        Score = 0;
-
+        playerData.queso = 0;
+        playerData.fresa = 0;
+        playerData.nuez = 0;
+        playerData.Score = 0;
         controller.enabled = false;
         transform.position = posInicial;
         controller.enabled = true;
 
         Hp = MaxHp;
         ui.UpdateHearts(MaxHp);
-        Debug.Log("Player 1: " + Score);
+        Debug.Log("Player 1: " + playerData.Score);
 
-        ui.UpdateCheese(Score);
+        ui.UpdateCheese(playerData.Score);
 
     }
 
-    /*public void CamRun()
+    public void CamRun()
     {
         //Debug.Log(transform.position.x - BossCam.position.x);
 
@@ -179,7 +170,7 @@ public class Player : MonoBehaviour
             Die();
             Debug.Log("You died");
         }
-    }*/
+    }
 
     void Blink() //Invencibility
     {
@@ -209,41 +200,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("Es comida");
-            other.gameObject.SetActive(false);
-            Items comida = other.GetComponent<Items>();
-
-            if (comida.Tipo == "Fresa")
-            {
-                Debug.Log("Es Fresa");
-                fresa++;
-                Score++;
-                Debug.Log("Fresas: " + fresa);
-            }
-            if (comida.Tipo == "Nuez")
-            {
-                Debug.Log("Es Nuez");
-                nuez++;
-                Score++;
-                Debug.Log("Nueces: " + nuez);
-            }
-            if (comida.Tipo == "Queso")
-            {
-                Debug.Log("Es Queso");
-                queso++;
-                Score++;
-                Debug.Log("Queso: " + queso);
-            }
-
             jumpForce = (jumpForce - jumpForcePenalization);
             speed = (speed - speedPenalization);
 
-            Debug.Log("Food: " + Score);
-            inventory.Add(other);
+            Debug.Log("Food: " + playerData.Score);
+            playerData.inventory.Add(other);
 
-            cheeseSpawn = inventory[inventory.Count - 1];
+            cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
 
-            ui.UpdateCheese(Score);
+            ui.UpdateCheese(playerData.Score);
             Boton = false;
         }
     }
@@ -252,11 +217,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (Score > 0)
+            if (playerData.Score > 0)
             {
-                Score--;
-                ui.UpdateCheese(Score);
-                Debug.Log("Food: " + Score);
+                playerData.Score--;
+                ui.UpdateCheese(playerData.Score);
+                Debug.Log("Food: " + playerData.Score);
 
                 jumpForce = (jumpForce + jumpForcePenalization);
                 speed = (speed + speedPenalization);
@@ -267,22 +232,26 @@ public class Player : MonoBehaviour
                 Items tipo = newDrop.GetComponent<Items>();
                 if (tipo.Tipo == "Fresa")
                 {
-                    fresa--;
-                    Debug.Log("Fresa: " + fresa);
+                    playerData.fresa--;
+                    Debug.Log("Fresa: " + playerData.fresa);
                 }
                 else if (tipo.Tipo == "Nuez")
                 {
-                    nuez--;
-                    Debug.Log("Nuez: " + nuez);
+                    playerData.nuez--;
+                    Debug.Log("Nuez: " + playerData.nuez);
                 }
                 else if (tipo.Tipo == "Queso")
                 {
-                    queso--;
-                    Debug.Log("Queso: " + queso);
+                    playerData.queso--;
+                    Debug.Log("Queso: " + playerData.queso);
                 }
 
-                inventory.Remove(cheeseSpawn);
-                lastCatch = inventory[inventory.Count - 1];
+                playerData.inventory.Remove(cheeseSpawn);
+                if (playerData.inventory.Count != 0)
+                {
+                    lastCatch = playerData.inventory[playerData.inventory.Count - 1];
+                }
+                
                 cheeseSpawn = lastCatch;
             }
             else
@@ -296,27 +265,27 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (Score > 0)
+            if (playerData.Score > 0)
             {
-                Hp = Hp + Score;
+                Hp = Hp + playerData.Score;
 
-                rqQueso = rqQueso + queso; //TEMPORAL
-                rqNuez = rqNuez + nuez; //TEMPORAL
-                rqFresa = rqFresa + fresa; //TEMPORAL
+                rqQueso = rqQueso + playerData.queso; //TEMPORAL
+                rqNuez = rqNuez + playerData.nuez; //TEMPORAL
+                rqFresa = rqFresa + playerData.fresa; //TEMPORAL
 
-                queso = 0;
-                nuez = 0;
-                fresa = 0;
-                Score = 0;
+                playerData.queso = 0;
+                playerData.nuez = 0;
+                playerData.fresa = 0;
+                playerData.Score = 0;
 
                 jumpForce = initialJumpForce;
                 speed = initialSpeed;
 
-                ui.UpdateCheese(Score);
+                ui.UpdateCheese(playerData.Score);
                 ui.UpdateHearts(Hp);
-                Debug.Log("Food: " + Score);
+                Debug.Log("Food: " + playerData.Score);
 
-                inventory.Clear();
+                playerData.inventory.Clear();
 
                 Request1(); //TEMPORAL
             }
@@ -470,9 +439,9 @@ public class Player : MonoBehaviour
         dropFood();
         regulator();
 
-        contNuez.text = "" + nuez;
-        contQueso.text = "" + queso;
-        contFresa.text = "" + fresa;
+        contNuez.text = "" + playerData.nuez;
+        contQueso.text = "" + playerData.queso;
+        contFresa.text = "" + playerData.fresa;
 
     }
 }
