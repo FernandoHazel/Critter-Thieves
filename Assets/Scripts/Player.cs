@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
     private Vector3 Front;
     [SerializeField] SpriteRenderer[] sprites;
 
+    public Transform BossCam;
+
     //public int rq
 
     void Start()
@@ -164,6 +166,11 @@ public class Player : MonoBehaviour
 
         ui.UpdateCheese(Score);
 
+    }
+
+    public void CamRun()
+    {
+        Debug.Log(transform.position.x - BossCam.position.x);
     }
 
     void Blink() //Invencibility
@@ -442,7 +449,8 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        
+
+        CamRun();
 
         if (GameManager.pause) //Activar la pausa
         {

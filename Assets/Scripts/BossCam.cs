@@ -25,21 +25,23 @@ public class BossCam : MonoBehaviour
     {
         float posY = Mathf.SmoothDamp(transform.position.y, tracker.transform.position.y + 2.5f, ref velocity.y, smoothTime);
 
-        if (transform.position.x == End.position.x)
-        {
-            transform.position = new Vector3(transform.position.x, Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
-        }
-        else
-        {
-           
-            transform.position = new Vector3(transform.position.x + (Time.deltaTime * 50), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
-        }
 
+           
+            transform.position = new Vector3(transform.position.x + (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
     }
     // Update is called once per frame
     void Update()
     {
-        Rutas();
+        if (transform.position.x != End.position.x)
+        {
+            Rutas();
+        }
+        else
+        {
+            transform.position = new Vector3(398, transform.position.y, transform.position.z);
+            Debug.Log("GAnaste");
+        }
+
 
     }
 }
