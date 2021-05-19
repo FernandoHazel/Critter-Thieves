@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+   [SerializeField] PlayerData playerData;
    public GameObject howToPlayMenu;
    //public GameObject Holder;
 
@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-      Debug.Log("Pico el boton");
+      playerData.save();
       Application.Quit();
     }
 

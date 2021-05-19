@@ -5,6 +5,7 @@ using UnityEngine.UI; //TEMPORAL
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] PlayerData playerData;
     float canClimbCounter = 0.5f;
     public bool slow = false;
     [SerializeField] UserInterface ui;
@@ -57,12 +58,13 @@ public class Player : MonoBehaviour
     private Vector3 Front;
     [SerializeField] SpriteRenderer[] sprites;
 
-    public Transform BossCam;
+    //public Transform BossCam;
 
     //public int rq
 
     void Start()
     {
+        transform.position = playerData.posSaved;
         //these variables make the slow down work the same without
         //having to go back to the code every time we modify the speed
         //and the jump force
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
         speedPenalization = speed * .075f;
         jumpForcePenalization = jumpForce * .075f;
 
-        posInicial = transform.position;
+        
         controller = GetComponent<CharacterController>();
         Front = new Vector3(0, 0, -.3f);
         ui.UpdateHearts(Hp);
@@ -168,7 +170,7 @@ public class Player : MonoBehaviour
 
     }
 
-    public void CamRun()
+    /*public void CamRun()
     {
         //Debug.Log(transform.position.x - BossCam.position.x);
 
@@ -177,7 +179,7 @@ public class Player : MonoBehaviour
             Die();
             Debug.Log("You died");
         }
-    }
+    }*/
 
     void Blink() //Invencibility
     {
@@ -455,8 +457,8 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-
-        CamRun();
+        playerData.posSaved = transform.position;
+        //CamRun();
 
         if (GameManager.pause) //Activar la pausa
         {

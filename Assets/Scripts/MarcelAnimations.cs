@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MarcelAnimations : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] PlayerData playerData;
     [SerializeField] public Animator marcelAnimator;
     [SerializeField] public Transform charTranform;
     [SerializeField] Player player;
