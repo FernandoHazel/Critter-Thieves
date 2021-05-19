@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class MovableObject : MonoBehaviour
 {
-    Rigidbody m_Box;
+    [SerializeField] int downSpeed = 5;
+    [SerializeField] float ligerez = 0.5f;
+    bool onPush;
+    Rigidbody mbox;
     Vector3 direccion;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_Box = GetComponent<Rigidbody>();
+        mbox = GetComponent<Rigidbody>();
         direccion = new Vector3 (Input.GetAxis("Horizontal"),0,0);
     }
 
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.CompareTag("Player"))
         {
-            m_Box.AddForce(Input.GetAxis("Horizontal") , 0, 0, ForceMode.Impulse);
-            Debug.Log("me tocaste");
+            onPush = true;
+            mbox.AddForce(Input.GetAxis("Horizontal") * ligerez, 0, 0, ForceMode.VelocityChange);
+            //Debug.Log("me tocaste");
         }
     }
-    // Update is called once per frame
-    void Update()
-    { 
+    private void OnTriggerExit(Collider other) {
+        if(other.CompareTag("Player"))
+        {
+            onPush = false;
+        }
+    }
+    private void FixedUpdate() {
+        if (!onPush)
+        {
+            mbox.AddForce(0, -downSpeed, 0);
+        }
     }
 }
