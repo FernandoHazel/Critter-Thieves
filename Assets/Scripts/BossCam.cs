@@ -11,13 +11,16 @@ public class BossCam : MonoBehaviour
     private Vector2 velocity;
 
     public Transform End;
+    public Transform Player;
+
+    Vector3 posInicial;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        posInicial = transform.position;
     }
 
 
@@ -26,21 +29,34 @@ public class BossCam : MonoBehaviour
         float posY = Mathf.SmoothDamp(transform.position.y, tracker.transform.position.y + 2.5f, ref velocity.y, smoothTime);
 
 
-           
+        if (transform.position.x - Player.position.x >= 15)
+        {
+
+            transform.position = posInicial;
+        }
+
+        else if (transform.position.x - End.position.x != 0)
+        {
             transform.position = new Vector3(transform.position.x + (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
+        }
+
+        else if (transform.position.x - End.position.x == 0)
+        {
+            transform.position = new Vector3(End.position.x, transform.position.y, transform.position.z);
+            Debug.Log("GAnaste");
+        }
+
+
+
+            
     }
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x != End.position.x)
-        {
+
             Rutas();
-        }
-        else
-        {
-            transform.position = new Vector3(398, transform.position.y, transform.position.z);
-            Debug.Log("GAnaste");
-        }
+
+        Debug.Log(transform.position.x - Player.position.x);
 
 
     }

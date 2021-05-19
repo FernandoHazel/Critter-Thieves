@@ -170,7 +170,13 @@ public class Player : MonoBehaviour
 
     public void CamRun()
     {
-        Debug.Log(transform.position.x - BossCam.position.x);
+        //Debug.Log(transform.position.x - BossCam.position.x);
+
+        if (transform.position.x - BossCam.position.x <= -15)
+        {
+            Die();
+            Debug.Log("You died");
+        }
     }
 
     void Blink() //Invencibility
