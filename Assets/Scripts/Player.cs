@@ -139,6 +139,7 @@ public class Player : MonoBehaviour
         for (int i = 0; i < playerData.inventory.Count; i++)
         {
             playerData.inventory[i].SetActive(true);
+            playerData.inventory[i].transform.position = transform.position;
         }
         playerData.inventory.Clear();
         playerData.mochila.Clear();
