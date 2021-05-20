@@ -11,7 +11,7 @@ public class PlayerData : ScriptableObject
     public int queso = 0;
     public int fresa = 0;
     public int nuez = 0;
-    public Vector3 posSaved = new Vector3(-113, 2, 0);
+    public Vector3 posSaved = new Vector3(-113, 2, 0); //position of the player
     float posX;
     float posY;
 
@@ -28,7 +28,7 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.SetInt("queso", queso);
         PlayerPrefs.SetInt("fresa", fresa);
         PlayerPrefs.SetInt("nuez", nuez);
-        Debug.Log("position saved");
+        Debug.Log("Game saved");
     }
     
     
@@ -42,6 +42,7 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.GetInt("nuez", nuez);
         posSaved.x = posX;
         posSaved.y = posY;
+        Debug.Log("Game loaded");
     }
     private void Reset() {
         

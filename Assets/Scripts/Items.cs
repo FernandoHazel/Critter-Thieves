@@ -21,10 +21,10 @@ public class Items : MonoBehaviour
             Vector3 savedPos = new Vector3 (posX, PlayerPrefs.GetFloat(ID + "y"), 0);
             transform.position = savedPos;
         }
-        if (Tipo == "Queso")
-        {
-            print (Tipo + " posX " + posX);
-        }
+        //if (Tipo == "Queso")
+        //{
+            //print (Tipo + " posX " + posX);
+        //}
         
     }
 
@@ -69,11 +69,6 @@ public class Items : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             grabbed = false;
-            //print("dropped " + ID);
-            //if (playerData.Score > 0)
-            //{
-                
-            //}
         }
     }
     public void saveItem(string id, Vector3 position) //esto va en el scriptable object
@@ -82,10 +77,10 @@ public class Items : MonoBehaviour
         float positionY = position.y;
         PlayerPrefs.SetFloat(id + "x", positionX);
         PlayerPrefs.SetFloat(id + "y", positionY);
-        if (Tipo == "Queso")
-        {
-            Debug.Log(Tipo + " positioX " + positionX);
-        }
+        //if (Tipo == "Queso")
+        //{
+            //Debug.Log(Tipo + " positioX " + positionX);
+        //}
         
     }
 

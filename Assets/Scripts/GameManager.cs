@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private void Start() {
+        playerData.load();
         //PlayerData.Reset();
         //Debug.Log("deleted all");
     }
