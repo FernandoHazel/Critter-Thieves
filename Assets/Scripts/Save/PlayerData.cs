@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
+    public Dictionary<string, GameObject> mochila = new Dictionary<string, GameObject>();
     public int Score = 0;
     public int queso = 0;
     public int fresa = 0;
@@ -29,6 +30,8 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.SetInt("nuez", nuez);
         Debug.Log("position saved");
     }
+    
+    
     public void load()
     {
         PlayerPrefs.GetFloat("posX", posX);
@@ -39,5 +42,8 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.GetInt("nuez", nuez);
         posSaved.x = posX;
         posSaved.y = posY;
+    }
+    private void Reset() {
+        
     }
 }

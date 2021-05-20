@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private void Start() {
-        //PlayerPrefs.DeleteAll();
+        //PlayerData.Reset();
         //Debug.Log("deleted all");
     }
     // Update is called once per frame

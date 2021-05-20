@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     Vector3 posInicial;
     [SerializeField] Transform posMarcel;
     [SerializeField] GameObject cheeseSpawn;
-    [SerializeField] GameObject lastCatch; //El ultimo objeto guardado en la lista food
 
     //List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
 
@@ -142,6 +141,7 @@ public class Player : MonoBehaviour
             playerData.inventory[i].SetActive(true);
         }
         playerData.inventory.Clear();
+        playerData.mochila.Clear();
 
         speed = initialSpeed;
         jumpForce = initialJumpForce;
@@ -203,10 +203,14 @@ public class Player : MonoBehaviour
             jumpForce = (jumpForce - jumpForcePenalization);
             speed = (speed - speedPenalization);
 
-            Debug.Log("Food: " + playerData.Score);
-            playerData.inventory.Add(other);
-
-            cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
+            //Debug.Log("Food: " + playerData.Score);
+            if(other != null)
+            {
+                playerData.inventory.Add(other);
+                playerData.mochila.Add(other.GetComponent<Items>().ID, other);
+            }
+            
+            cheeseSpawn = other;
 
             ui.UpdateCheese(playerData.Score);
             Boton = false;
@@ -221,38 +225,42 @@ public class Player : MonoBehaviour
             {
                 playerData.Score--;
                 ui.UpdateCheese(playerData.Score);
-                Debug.Log("Food: " + playerData.Score);
+                //Debug.Log("Food: " + playerData.Score);
 
                 jumpForce = (jumpForce + jumpForcePenalization);
                 speed = (speed + speedPenalization);
 
-                var newDrop = Instantiate(cheeseSpawn, posMarcel.position, posMarcel.rotation);
-                newDrop.SetActive(true);
+                cheeseSpawn.SetActive(true);
+                cheeseSpawn.transform.position = transform.position;
 
-                Items tipo = newDrop.GetComponent<Items>();
+                Items tipo = cheeseSpawn.GetComponent<Items>();
                 if (tipo.Tipo == "Fresa")
                 {
+                    cheeseSpawn.GetComponent<Items>().saveItem(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                     playerData.fresa--;
-                    Debug.Log("Fresa: " + playerData.fresa);
+                    //Debug.Log("Fresa: " + playerData.fresa);
                 }
                 else if (tipo.Tipo == "Nuez")
                 {
+                    cheeseSpawn.GetComponent<Items>().saveItem(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                     playerData.nuez--;
-                    Debug.Log("Nuez: " + playerData.nuez);
+                    //Debug.Log("Nuez: " + playerData.nuez);
                 }
                 else if (tipo.Tipo == "Queso")
                 {
+                    cheeseSpawn.GetComponent<Items>().saveItem(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                     playerData.queso--;
-                    Debug.Log("Queso: " + playerData.queso);
+                    //Debug.Log("Queso: " + playerData.queso);
                 }
 
                 playerData.inventory.Remove(cheeseSpawn);
+                playerData.mochila.Remove(cheeseSpawn.GetComponent<Items>().ID);
                 if (playerData.inventory.Count != 0)
                 {
-                    lastCatch = playerData.inventory[playerData.inventory.Count - 1];
+                    cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
+                    cheeseSpawn = playerData.mochila[cheeseSpawn.GetComponent<Items>().ID];
                 }
-                
-                cheeseSpawn = lastCatch;
+    
             }
             else
             {
