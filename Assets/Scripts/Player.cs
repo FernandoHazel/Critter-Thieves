@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
     {
         //Debug.Log(transform.position.x - BossCam.position.x);
 
-        if (transform.position.x - BossCam.position.x <= -15)
+        if (transform.position.x - BossCam.position.x == -14)
         {
             Die();
             Debug.Log("You died");
