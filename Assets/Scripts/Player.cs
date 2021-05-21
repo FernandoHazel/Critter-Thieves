@@ -455,5 +455,6 @@ public class Player : MonoBehaviour
         contQueso.text = "" + playerData.queso;
         contFresa.text = "" + playerData.fresa;
 
+        Debug.Log(transform.position.x - BossCam.position.x);
     }
 }
