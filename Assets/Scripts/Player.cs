@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
         }
         playerData.inventory.Clear();
         playerData.mochila.Clear();
-
+        Debug.Log("died");
         speed = initialSpeed;
         jumpForce = initialJumpForce;
         playerData.queso = 0;
