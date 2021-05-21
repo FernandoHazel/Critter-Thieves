@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
     {
         //Debug.Log(transform.position.x - BossCam.position.x);
 
-        if (transform.position.x - BossCam.position.x == -14)
+        if (transform.position.x - BossCam.position.x <= -14)
         {
             Die();
             Debug.Log("You died");
@@ -439,7 +439,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        CamRun();
+       
 
         if (GameManager.pause) //Activar la pausa
         {
@@ -450,6 +450,7 @@ public class Player : MonoBehaviour
         Movement();
         dropFood();
         regulator();
+        CamRun();
 
         contNuez.text = "" + playerData.nuez;
         contQueso.text = "" + playerData.queso;
