@@ -439,7 +439,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        //CamRun();
+        CamRun();
 
         if (GameManager.pause) //Activar la pausa
         {
