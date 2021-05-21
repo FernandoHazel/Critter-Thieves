@@ -50,7 +50,7 @@ public class BossCam : MonoBehaviour
 
             Rutas();
 
-        Debug.Log(transform.position.x - Player.position.x);
+        //Debug.Log(transform.position.x - Player.position.x);
 
 
     }
