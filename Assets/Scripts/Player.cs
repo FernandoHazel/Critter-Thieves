@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     public GameObject final;
 
-    bool Boton = false;
+    bool Boton;
     private Vector3 Front;
     [SerializeField] SpriteRenderer[] sprites;
 
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        transform.position = playerData.posSaved;
+        //transform.position = playerData.posSaved;
         //these variables make the slow down work the same without
         //having to go back to the code every time we modify the speed
         //and the jump force
@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
                 playerData.inventory.Add(other);
                 playerData.mochila.Add(other.GetComponent<Items>().ID, other);
             }
-            
+            //other.GetComponent<Items>().saveItemID(cheeseSpawn.GetComponent<Items>().ID); //This saves the ID
             cheeseSpawn = other;
 
             ui.UpdateCheese(playerData.Score);
@@ -237,19 +237,22 @@ public class Player : MonoBehaviour
                 Items tipo = cheeseSpawn.GetComponent<Items>();
                 if (tipo.Tipo == "Fresa")
                 {
-                    cheeseSpawn.GetComponent<Items>().saveItem(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                    cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                    //cheeseSpawn.GetComponent<Items>().eraseItemID(cheeseSpawn.GetComponent<Items>().ID);
                     playerData.fresa--;
                     //Debug.Log("Fresa: " + playerData.fresa);
                 }
                 else if (tipo.Tipo == "Nuez")
                 {
-                    cheeseSpawn.GetComponent<Items>().saveItem(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                    cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                    //cheeseSpawn.GetComponent<Items>().eraseItemID(cheeseSpawn.GetComponent<Items>().ID);
                     playerData.nuez--;
                     //Debug.Log("Nuez: " + playerData.nuez);
                 }
                 else if (tipo.Tipo == "Queso")
                 {
-                    cheeseSpawn.GetComponent<Items>().saveItem(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                    cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                    //cheeseSpawn.GetComponent<Items>().eraseItemID(cheeseSpawn.GetComponent<Items>().ID);
                     playerData.queso--;
                     //Debug.Log("Queso: " + playerData.queso);
                 }

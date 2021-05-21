@@ -12,9 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa4fc53b2170384db82a12b17f14cce, type: 3}
   m_Name: SaveAndLoad
   m_EditorClassIdentifier: 
-  inventory: []
+  grabbableObjs:
+  - food: {fileID: 0}
+    grabbed: 0
+  - food: {fileID: 0}
+    grabbed: 0
+  - food: {fileID: 0}
+    grabbed: 0
+  - food: {fileID: 0}
+    grabbed: 0
+  - food: {fileID: 0}
+    grabbed: 0
+  - food: {fileID: 0}
+    grabbed: 0
+  inventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Score: 0
   queso: 0
   fresa: 0
   nuez: 0
-  posSaved: {x: -62.94013, y: 19.410002, z: 0}
+  posSaved: {x: -111.06138, y: 2.08, z: 0}

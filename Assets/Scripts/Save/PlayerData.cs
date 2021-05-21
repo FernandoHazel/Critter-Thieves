@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Playerdata/saveAndLoad", order = 0)]
 public class PlayerData : ScriptableObject
 {
-    public List<GameObject> inventory = new List<GameObject>(); //Lista para agarrar y soltar
-    public Dictionary<string, GameObject> mochila = new Dictionary<string, GameObject>();
+    public grabbableObjects[] grabbableObjs;
+    public List<GameObject> inventory = new List<GameObject>(); //This is the inventary of the food
+    public Dictionary<string, GameObject> mochila = new Dictionary<string, GameObject>();//This saves the positions of the food, do not appears in the inspector
+    
     public int Score = 0;
     public int queso = 0;
     public int fresa = 0;
@@ -44,7 +47,10 @@ public class PlayerData : ScriptableObject
         posSaved.y = posY;
         Debug.Log("Game loaded");
     }
-    private void Reset() {
-        
+    [Serializable]
+    public class grabbableObjects
+    {
+        public GameObject food;
+        public bool grabbed;
     }
 }

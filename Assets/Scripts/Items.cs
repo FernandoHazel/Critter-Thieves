@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +6,8 @@ public class Items : MonoBehaviour
 {
     [SerializeField] PlayerData playerData;
     public string Tipo;
-
+    
     public string ID;
-    bool grabbed;
     float rotar = 30;
 
 
@@ -38,7 +37,6 @@ public class Items : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             //Debug.Log("Food grabbed");
-            grabbed = true;
             gameObject.SetActive(false);
             if (Tipo == "Fresa")
             {
@@ -68,10 +66,10 @@ public class Items : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            grabbed = false;
+            //
         }
     }
-    public void saveItem(string id, Vector3 position) //esto va en el scriptable object
+    public void saveItemPos(string id, Vector3 position)// saves the position of a dropped object to spawn it in the next game
     {
         float positionX = position.x;
         float positionY = position.y;
@@ -81,7 +79,14 @@ public class Items : MonoBehaviour
         //{
             //Debug.Log(Tipo + " positioX " + positionX);
         //}
-        
+    }
+    public void saveItemID(string id)//this saves the ID of a grabbed object
+    {
+        PlayerPrefs.SetString(id, id);
+    }
+    public void eraseItemID(string id)//this erases the ID of a dropped object
+    {
+        PlayerPrefs.DeleteKey(id);
     }
 
     private void OnTriggerStay(Collider other)
