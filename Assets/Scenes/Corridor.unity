@@ -2994,8 +2994,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerData
       value: 
-      objectReference: {fileID: 11400000, guid: 743e2955aff81d44abd6b11d3d5ebd93,
-        type: 2}
+      objectReference: {fileID: 332670475}
     - target: {fileID: 3544302847772010425, guid: 76da7753984e7e74486d40f2e11a7aa1,
         type: 3}
       propertyPath: m_Name
@@ -3035,8 +3034,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerData
       value: 
-      objectReference: {fileID: 11400000, guid: 743e2955aff81d44abd6b11d3d5ebd93,
-        type: 2}
+      objectReference: {fileID: 332670475}
     - target: {fileID: 3544302847772010427, guid: 76da7753984e7e74486d40f2e11a7aa1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3590,6 +3588,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1505982608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &332670474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332670476}
+  - component: {fileID: 332670475}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332670475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332670474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa4fc53b2170384db82a12b17f14cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbableObjs: []
+  inventory: []
+  Score: 0
+  queso: 0
+  fresa: 0
+  nuez: 0
+  posSaved: {x: -113, y: 2, z: 0}
+--- !u!4 &332670476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332670474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -76.852264, y: 4.09132, z: -0.00000166893}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337492184
 GameObject:
   m_ObjectHideFlags: 0
@@ -14758,6 +14806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1888064509}
   - component: {fileID: 1888064508}
+  - component: {fileID: 1888064510}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14777,7 +14826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e354b860a874a2f4ea28eaffc411985d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 743e2955aff81d44abd6b11d3d5ebd93, type: 2}
+  playerData: {fileID: 1888064510}
   inGame: {fileID: 477657462}
   inPause: {fileID: 698872520}
 --- !u!4 &1888064509
@@ -14794,6 +14843,25 @@ Transform:
   m_Father: {fileID: 1231404572}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1888064510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888064507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa4fc53b2170384db82a12b17f14cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbableObjs: []
+  inventory: []
+  Score: 0
+  queso: 0
+  fresa: 0
+  nuez: 0
+  posSaved: {x: -113, y: 2, z: 0}
 --- !u!1 &1888154320
 GameObject:
   m_ObjectHideFlags: 0

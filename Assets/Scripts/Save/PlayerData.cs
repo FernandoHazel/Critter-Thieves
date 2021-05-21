@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerData", menuName = "Playerdata/saveAndLoad", order = 0)]
-public class PlayerData : ScriptableObject
+public class PlayerData : MonoBehaviour
 {
     public grabbableObjects[] grabbableObjs;
     public List<GameObject> inventory = new List<GameObject>(); //This is the inventary of the food

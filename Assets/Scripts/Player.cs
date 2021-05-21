@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        posInicial = transform.position;
         //transform.position = playerData.posSaved;
         //these variables make the slow down work the same without
         //having to go back to the code every time we modify the speed
@@ -438,7 +439,6 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        playerData.posSaved = transform.position;
         //CamRun();
 
         if (GameManager.pause) //Activar la pausa
