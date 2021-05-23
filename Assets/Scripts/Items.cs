@@ -13,7 +13,7 @@ public class Items : MonoBehaviour
     public bool grabbed;
 
     private void Awake() {
-        ID = transform.localPosition.ToString();
+        //ID = transform.localPosition.ToString();
         playerData.grabbableObjs.Add(ID, gameObject);
     }
     void Start()
@@ -27,7 +27,7 @@ public class Items : MonoBehaviour
         }
         //load the item bool grabbed
         grabbed = PlayerPrefs.GetInt(ID + " grabbed") > 0 ? true : false;
-        Debug.Log("loaded "+ Tipo + grabbed);
+        //Debug.Log("loaded "+ Tipo + grabbed);
     }
 
     void Rotacion()
@@ -44,7 +44,7 @@ public class Items : MonoBehaviour
         PlayerPrefs.SetFloat(ID + "y", positionY);
         //Debug.Log("saved "+ Tipo + ID);
         PlayerPrefs.SetInt(ID + " grabbed" , grabbed? 1 : 0);
-        Debug.Log("saved "+ Tipo + grabbed);
+        //Debug.Log("saved "+ Tipo + grabbed);
     }
     void Update()
     {

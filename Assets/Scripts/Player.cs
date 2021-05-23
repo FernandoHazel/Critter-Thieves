@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
 
     public Vector3 posInicial;
     [SerializeField] Transform posMarcel;
-    [SerializeField] GameObject cheeseSpawn;
+    GameObject cheeseSpawn;
+    [SerializeField] GameObject foodDropper;
 
     int rqQueso = 0; //TEMPORAL
     int rqFresa = 0; //TEMPORAL
@@ -127,6 +128,14 @@ public class Player : MonoBehaviour
         //This is the lateral movement
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         controller.Move(moveVector * speed * Time.deltaTime);
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            foodDropper.transform.localPosition = new Vector3(1, 0, 0);
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            foodDropper.transform.localPosition = new Vector3(-1, 0, 0);
+        }
     }
 
     void GetHurt() //Loose a Life
@@ -275,7 +284,7 @@ public class Player : MonoBehaviour
                 jumpForce = (jumpForce + jumpForcePenalization);
                 speed = (speed + speedPenalization);
 
-                cheeseSpawn.transform.position = transform.position;
+                cheeseSpawn.transform.position = foodDropper.transform.position;
 
                 Items tipo = cheeseSpawn.GetComponent<Items>();
                 if (tipo.Tipo == "Fresa")
