@@ -3098,6 +3098,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 241742804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &241742806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3544302847772010426, guid: 76da7753984e7e74486d40f2e11a7aa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 241742804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e49cab6a8d8b4b43ae68fc3cb0cb440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259284051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,10 +3631,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabbableObjs: []
   inventory: []
+  playerScript: {fileID: 241742806}
   Score: 0
   queso: 0
   fresa: 0
   nuez: 0
+  Hp: 3
   posSaved: {x: -113, y: 2, z: 0}
 --- !u!4 &332670476
 Transform:
@@ -14857,10 +14871,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabbableObjs: []
   inventory: []
+  playerScript: {fileID: 0}
   Score: 0
   queso: 0
   fresa: 0
   nuez: 0
+  Hp: 3
   posSaved: {x: -113, y: 2, z: 0}
 --- !u!1 &1888154320
 GameObject:

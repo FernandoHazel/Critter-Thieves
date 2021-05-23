@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     //this variables holds the different canvas objects of the pause and the running game
     public GameObject inGame;
     public GameObject inPause;
-    //public GameObject howToPlay;
-    //public PauseManager pauseM;
 
     //This void activates and desactivates the menu if in pause or in game
     void ManageMenu(){
@@ -29,11 +27,8 @@ public class GameManager : MonoBehaviour
         }
     }
     private void Start() {
-        playerData.load();
-        //PlayerData.Reset();
-        //Debug.Log("deleted all");
+        //
     }
-    // Update is called once per frame
     void Update()
     {
         //every time we press the "P" the boolean "pause" will change

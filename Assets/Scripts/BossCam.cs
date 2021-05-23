@@ -35,7 +35,7 @@ public class BossCam : MonoBehaviour
             transform.position = posInicial;
         }
 
-        else if (transform.position.x - End.position.x != 0)
+        if (transform.position.x - End.position.x != 0)
         {
             transform.position = new Vector3(transform.position.x + (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
         }
