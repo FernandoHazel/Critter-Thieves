@@ -51,7 +51,6 @@ public class Items : MonoBehaviour
         if (playerScript.saveItemPos)
         {
             saveItemPos();
-            //playerScript.saveItemPos = !playerScript.saveItemPos;
         }
         Rotacion(); // Rotation on y axis
         if (grabbed)

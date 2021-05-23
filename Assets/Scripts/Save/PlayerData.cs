@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public Dictionary<string, GameObject> grabbableObjs = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> grabbableObjs = new Dictionary<string, GameObject>(); 
     public List<GameObject> inventory = new List<GameObject>(); //This is the inventary of the food
-    public Dictionary<string, GameObject> mochila = new Dictionary<string, GameObject>();//This saves the positions of the food, do not appears in the inspector
-    
     [SerializeField] Player playerScript;
     public int Score = 0;
     public int queso = 0;
