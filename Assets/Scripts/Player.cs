@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     [SerializeField] SpriteRenderer[] sprites;
 
     public Transform BossCam;
+    int invCount = 0; //este guarda el índice máximo de objetos recolectadoos en lka
 
     //public int rq
 
@@ -62,6 +63,21 @@ public class Player : MonoBehaviour
         if (playerData.posSaved != null)
         {
             transform.position = playerData.posSaved;
+        }
+        invCount = PlayerPrefs.GetInt("invCount");
+        if (invCount != 0)
+        {
+            Debug.Log("intento cargar lista");
+            Debug.Log("invCount: " + invCount);
+            string idABuscar;
+            GameObject objeto;
+            for (int i = 0; i < invCount; i++)
+            {
+                idABuscar = PlayerPrefs.GetString(i.ToString()); //este id tiene que coincidir con el nombre del objeto en la jerarquía
+                objeto = GameObject.Find(idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
+                playerData.inventory.Add(objeto); //añadimos el objeto a la lista
+                Debug.Log("cargado objeto: " + objeto.name);
+            }
         }
     }
     void Start()
@@ -223,7 +239,7 @@ public class Player : MonoBehaviour
     {
         if (!other.GetComponent<Items>().grabbed)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && playerData.Score <= 4) // no puedes llevar más de 4 objetos
             {
                 jumpForce = (jumpForce - jumpForcePenalization);
                 speed = (speed - speedPenalization);
@@ -262,7 +278,7 @@ public class Player : MonoBehaviour
                     playerData.Score++;
                     other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                     other.GetComponent<Items>().grabbed = true;
-                    Debug.Log("Queso: " + other.GetComponent<Items>().grabbed);
+                    //Debug.Log("Queso: " + other.GetComponent<Items>().grabbed);
                 }
                 ui.UpdateCheese(playerData.Score);
                 Boton = false;
@@ -424,6 +440,14 @@ public class Player : MonoBehaviour
             saveItemPos = true;
             posInicial = other.transform.position;
             playerData.save();
+            //guardamos los objetos de la lista
+            for (int i = 0; i < playerData.inventory.Count; i++) //con esto recorremosla lista y guardamos índices y ID de los objetos
+            {
+                PlayerPrefs.SetString(i.ToString(), playerData.inventory[i].GetComponent<Items>().ID);
+            }
+            invCount = playerData.inventory.Count;
+            PlayerPrefs.SetInt("invCount", invCount);
+            
             //Debug.Log("initial position updated");
         }
     }
@@ -496,10 +520,7 @@ public class Player : MonoBehaviour
         {
             ui.UpdateCheese(playerData.Score);
         }
-        count += 1;
-        if (count <= 0){
-            saveItemPos = false;
-        }
+        
     }
 
     void Request1() //TEMPORAL
