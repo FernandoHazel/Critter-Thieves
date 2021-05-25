@@ -13,7 +13,7 @@ public class PlayerData : MonoBehaviour
     public int fresa = 0;
     public int nuez = 0;
     public int Hp = 3; //Health
-    public Vector3 posSaved; //position of the player
+    public Vector3 posSaved = Vector3.zero; //position of the player
     float playerPosX; //
     float playerPosY;
 

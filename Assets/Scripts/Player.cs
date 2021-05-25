@@ -60,15 +60,16 @@ public class Player : MonoBehaviour
 
     //We load the position saved only if any
     private void Awake() {
-        if (playerData.posSaved != null)
+        if (playerData.posSaved != Vector3.zero) 
         {
             transform.position = playerData.posSaved;
+            Debug.Log("cargando pos salvada: " + playerData.posSaved);
         }
         invCount = PlayerPrefs.GetInt("invCount");
         if (invCount != 0)
         {
-            Debug.Log("intento cargar lista");
-            Debug.Log("invCount: " + invCount);
+            //Debug.Log("intento cargar lista");
+            //Debug.Log("invCount: " + invCount);
             string idABuscar;
             GameObject objeto;
             for (int i = 0; i < invCount; i++)
@@ -76,7 +77,7 @@ public class Player : MonoBehaviour
                 idABuscar = PlayerPrefs.GetString(i.ToString()); //este id tiene que coincidir con el nombre del objeto en la jerarquía
                 objeto = GameObject.Find(idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
                 playerData.inventory.Add(objeto); //añadimos el objeto a la lista
-                Debug.Log("cargado objeto: " + objeto.name);
+                //Debug.Log("cargado objeto: " + objeto.name);
             }
             cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
         }
