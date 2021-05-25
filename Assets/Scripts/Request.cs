@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Request : MonoBehaviour
 {
     Player player;
+    public bool misiones; //este bool nos señala si las quest fueron completadas o no
     public int rqFresa;
     public int rqNuez;
     public int rqQueso;
@@ -30,10 +32,20 @@ public class Request : MonoBehaviour
             }
         */
     }
+
+    void NextLevel()
+    {
+        if(misiones == true)
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
+
     
     void Update()
     {
-        
+        NextLevel();
 
         //Request1(player.gameObject);
     }
