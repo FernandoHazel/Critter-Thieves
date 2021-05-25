@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
                 playerData.inventory.Add(objeto); //añadimos el objeto a la lista
                 Debug.Log("cargado objeto: " + objeto.name);
             }
+            cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
         }
     }
     void Start()
@@ -239,7 +240,7 @@ public class Player : MonoBehaviour
     {
         if (!other.GetComponent<Items>().grabbed)
         {
-            if (Input.GetKeyDown(KeyCode.F) && playerData.Score <= 4) // no puedes llevar más de 4 objetos
+            if (Input.GetKeyDown(KeyCode.F) && playerData.Score < 4) // no puedes llevar más de 4 objetos
             {
                 jumpForce = (jumpForce - jumpForcePenalization);
                 speed = (speed - speedPenalization);
