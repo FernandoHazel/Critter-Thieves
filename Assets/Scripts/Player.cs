@@ -60,11 +60,11 @@ public class Player : MonoBehaviour
 
     //We load the position saved only if any
     private void Awake() {
-        if (playerData.posSaved != Vector3.zero) 
+        /*if (playerData.posSaved != Vector3.zero) 
         {
-            transform.position = playerData.posSaved;
+            //transform.position = playerData.posSaved;
             Debug.Log("cargando pos salvada: " + playerData.posSaved);
-        }
+        }*/
         invCount = PlayerPrefs.GetInt("invCount");
         if (invCount != 0)
         {
