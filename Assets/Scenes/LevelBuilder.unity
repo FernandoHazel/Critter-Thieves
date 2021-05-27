@@ -21425,8 +21425,6 @@ GameObject:
   - component: {fileID: 847294244}
   - component: {fileID: 847294243}
   - component: {fileID: 847294242}
-  - component: {fileID: 847294246}
-  - component: {fileID: 847294245}
   m_Layer: 0
   m_Name: CT_Climb_ClotheRack2
   m_TagString: Climb
@@ -21445,8 +21443,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3941374, y: 6.2762384, z: 5.7991037}
-  m_Center: {x: -2.9306889, y: -0.38949484, z: -2.8909526}
+  m_Size: {x: 10.078037, y: 6.8030577, z: 5.7991037}
+  m_Center: {x: -0.04970011, y: -0.06023878, z: -2.8909526}
 --- !u!212 &847294243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21511,32 +21509,6 @@ Transform:
   m_Father: {fileID: 2047442232}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &847294245
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847294241}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.181513, y: 7.0083346, z: 0.2}
-  m_Center: {x: 0.6938465, y: -0.60779387, z: -0.00000011652586}
---- !u!65 &847294246
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847294241}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.27, y: 5.928977, z: 0.2}
-  m_Center: {x: -0.000004015661, y: 0.2948569, z: -0.00000011652586}
 --- !u!1 &849503350
 GameObject:
   m_ObjectHideFlags: 0
