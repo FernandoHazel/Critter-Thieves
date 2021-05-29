@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1802685572067698310}
   m_LocalRotation: {x: 0.034894176, y: 0.017441817, z: -0.0006090816, w: 0.9992386}
   m_LocalPosition: {x: -109, y: 6, z: -20}
-  m_LocalScale: {x: 9.975745, y: 8.252397, z: 5.3189793}
+  m_LocalScale: {x: 9.975745, y: 8.252396, z: 5.3189793}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,7 +44,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.258989, g: 0.37839684, b: 0.5660378, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -59,8 +59,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 25
+  orthographic: 0
   orthographic size: 6
   m_Depth: -1
   m_CullingMask:
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracker: {fileID: 0}
-  minCamPos: {x: -109, y: 5.6}
-  maxCamPos: {x: 109, y: 28.39}
-  smoothTime: 0.2
+  minCamPos: {x: -500, y: -400}
+  maxCamPos: {x: 500, y: 400}
+  smoothTime: 0.5
 --- !u!114 &1802685572067698315
 MonoBehaviour:
   m_ObjectHideFlags: 0
