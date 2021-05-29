@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
       howToPlayMenu.SetActive(true);
    }
 
-    public void LoadScene(string sceneToLoad){
+   public void LoadScene(string sceneToLoad){
       SceneManager.LoadScene(sceneToLoad);
       PlayerPrefs.DeleteAll();
    }

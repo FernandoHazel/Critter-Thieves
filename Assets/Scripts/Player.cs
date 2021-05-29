@@ -60,11 +60,6 @@ public class Player : MonoBehaviour
 
     //We load the position saved only if any
     private void Awake() {
-        /*if (playerData.posSaved != Vector3.zero) 
-        {
-            //transform.position = playerData.posSaved;
-            Debug.Log("cargando pos salvada: " + playerData.posSaved);
-        }*/
         invCount = PlayerPrefs.GetInt("invCount");
         if (invCount != 0)
         {
@@ -75,7 +70,7 @@ public class Player : MonoBehaviour
             for (int i = 0; i < invCount; i++)
             {
                 idABuscar = PlayerPrefs.GetString(i.ToString()); //este id tiene que coincidir con el nombre del objeto en la jerarquía
-                objeto = GameObject.Find(idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
+                objeto = GameObject.Find("Comida/" + idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
                 playerData.inventory.Add(objeto); //añadimos el objeto a la lista
                 //Debug.Log("cargado objeto: " + objeto.name);
             }
