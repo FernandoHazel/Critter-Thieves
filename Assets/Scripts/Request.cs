@@ -10,27 +10,47 @@ public class Request : MonoBehaviour
     public int rqFresa;
     public int rqNuez;
     public int rqQueso;
+    public int comida = 3;
+    int request = 0;
 
     void Start()
     {
 
     }
 
-    
-    void Request1(GameObject player)
+
+    void Request1()
     {
         //Player variable = player.GetComponent<Player>();
-        //rqFresa = variable.fresa;
-        /*
-            rqFresa = 1;
-            rqNuez = 2;
-            rqQueso = 1;
+        switch (request)
+        {
+            case 0:
+                if (rqFresa == comida)
+                {
+                    request++;
 
-            if (player.queso == rqQueso) 
-            {
-                Debug.Log("Request 1 COMPLETADO");
-            }
-        */
+                }
+
+                break;
+
+            case 1:
+                if (rqNuez == comida)
+                {
+                    request++;
+
+                }
+
+                break;
+
+            case 2:
+                if (rqQueso == comida)
+                {
+                    misiones = true;
+
+                }
+                break;
+        }
+
     }
 
     void NextLevel()
