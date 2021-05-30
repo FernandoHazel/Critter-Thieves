@@ -55,10 +55,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 601f0fabbaa7a3a408cd639ca52841e4, type: 2}
+  - {fileID: 2100000, guid: 164dbd3cafbd35c4ead9e876b0d1e9cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,6 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3362078453391960364
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,4 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4690f3dda8056f04bbd429b938cb94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
+  playerScript: {fileID: 0}
   Tipo: Nuez
+  ID: 
+  grabbed: 0
