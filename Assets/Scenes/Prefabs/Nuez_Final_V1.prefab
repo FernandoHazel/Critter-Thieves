@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 164dbd3cafbd35c4ead9e876b0d1e9cd, type: 2}
+  - {fileID: 2100000, guid: 56fb6ce10ce575243b46b431dca2703f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,7 +106,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3362078453391960364}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0.28}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -125,8 +125,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.75
-  m_Center: {x: 0, y: 1.12, z: 0}
+  m_Radius: 6
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &6740038835182465057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,5 +142,5 @@ MonoBehaviour:
   playerData: {fileID: 0}
   playerScript: {fileID: 0}
   Tipo: Nuez
-  ID: 
+  ID: nuez2
   grabbed: 0
