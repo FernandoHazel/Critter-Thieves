@@ -175,8 +175,42 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < playerData.inventory.Count; i++)
         {
-            playerData.inventory[i].SetActive(true);
-            playerData.inventory[i].transform.position = transform.position;
+            cheeseSpawn.transform.position = foodDropper.transform.position;
+
+            Items tipo = cheeseSpawn.GetComponent<Items>();
+            if (tipo.Tipo == "Fresa")
+            {
+                cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                cheeseSpawn.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
+                cheeseSpawn.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = true;
+                //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                playerData.fresa--;
+                cheeseSpawn.GetComponent<Items>().grabbed = false;
+                //Debug.Log("Fresa: " + cheeseSpawn.GetComponent<Items>().grabbed);
+            }
+            else if (tipo.Tipo == "Nuez")
+            {
+                cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                playerData.nuez--;
+                cheeseSpawn.GetComponent<Items>().grabbed = false;
+                //Debug.Log("Nuez: " + playerData.nuez);
+            }
+            else if (tipo.Tipo == "Queso")
+            {
+                cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
+                playerData.queso--;
+                cheeseSpawn.GetComponent<Items>().grabbed = false;
+                //Debug.Log("Queso: " + cheeseSpawn.GetComponent<Items>().grabbed);
+            }
+
+            playerData.inventory.Remove(cheeseSpawn);
+            if (playerData.inventory.Count != 0)
+            {
+                cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
+                //cheeseSpawn = playerData.mochila[cheeseSpawn.GetComponent<Items>().ID];
+            }
         }
         playerData.inventory.Clear();
         //Debug.Log("died");
@@ -195,7 +229,6 @@ public class Player : MonoBehaviour
         //Debug.Log("Player 1: " + playerData.Score);
 
         ui.UpdateCheese(playerData.Score);
-
     }
 
     public void CamRun()
