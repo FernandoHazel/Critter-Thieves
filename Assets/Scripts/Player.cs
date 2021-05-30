@@ -267,52 +267,50 @@ public class Player : MonoBehaviour
 
     public void GrabFood(GameObject other) //Mecanismo para el queso
     {
-        if (!other.GetComponent<Items>().grabbed)
+        if (!other.GetComponent<Items>().grabbed && Input.GetKeyDown(KeyCode.F) && playerData.Score < 4)
         {
-            if (Input.GetKeyDown(KeyCode.F) && playerData.Score < 4) // no puedes llevar más de 4 objetos
-            {
-                jumpForce = (jumpForce - jumpForcePenalization);
-                speed = (speed - speedPenalization);
 
-                //Debug.Log("Food: " + playerData.Score);
-                playerData.inventory.Add(other);
-                cheeseSpawn = other;
+            jumpForce = (jumpForce - jumpForcePenalization);
+            speed = (speed - speedPenalization);
+
+            //Debug.Log("Food: " + playerData.Score);
+            playerData.inventory.Add(other);
+            cheeseSpawn = other;
             
 
-                //Debug.Log("Food grabbed");
-                Items tipo = other.GetComponent<Items>();
-                if (tipo.Tipo == "Fresa")
-                {
-                    //Debug.Log("Es Fresa");
-                    playerData.fresa++;
-                    playerData.Score++;
-                    other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-                    other.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
-                    other.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
-                    other.GetComponent<Items>().grabbed = true;
-                    //Debug.Log("Fresas: " + playerData.fresa);
-                }
-                if (tipo.Tipo == "Nuez")
-                {
-                    //Debug.Log("Es Nuez");
-                    other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-                    playerData.nuez++;
-                    playerData.Score++;
-                    other.GetComponent<Items>().grabbed = true;
-                    //Debug.Log("Nueces: " + playerData.nuez);
-                }
-                if (tipo.Tipo == "Queso")
-                {
-                    //Debug.Log("Es Queso");
-                    playerData.queso++;
-                    playerData.Score++;
-                    other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-                    other.GetComponent<Items>().grabbed = true;
-                    //Debug.Log("Queso: " + other.GetComponent<Items>().grabbed);
-                }
-                ui.UpdateCheese(playerData.Score);
-                Boton = false;
+            //Debug.Log("Food grabbed");
+            Items tipo = other.GetComponent<Items>();
+            if (tipo.Tipo == "Fresa")
+            {
+                //Debug.Log("Es Fresa");
+                playerData.fresa++;
+                playerData.Score++;
+                other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                other.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
+                other.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
+                other.GetComponent<Items>().grabbed = true;
+                //Debug.Log("Fresas: " + playerData.fresa);
             }
+            if (tipo.Tipo == "Nuez")
+            {
+                //Debug.Log("Es Nuez");
+                other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                playerData.nuez++;
+                playerData.Score++;
+                other.GetComponent<Items>().grabbed = true;
+                //Debug.Log("Nueces: " + playerData.nuez);
+            }
+            if (tipo.Tipo == "Queso")
+            {
+                //Debug.Log("Es Queso");
+                playerData.queso++;
+                playerData.Score++;
+                other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                other.GetComponent<Items>().grabbed = true;
+                //Debug.Log("Queso: " + other.GetComponent<Items>().grabbed);
+            }
+            ui.UpdateCheese(playerData.Score);
+            Boton = false;
         }
     }
 
