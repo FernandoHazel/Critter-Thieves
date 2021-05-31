@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
 
     public Transform BossCam;
     int invCount = 0; //este guarda el índice máximo de objetos recolectadoos en lka
-
     //public int rq
 
     //We load the position saved only if any
@@ -267,7 +266,7 @@ public class Player : MonoBehaviour
 
     public void GrabFood(GameObject other) //Mecanismo para el queso
     {
-        if (!other.GetComponent<Items>().grabbed && Input.GetKeyDown(KeyCode.F) && playerData.Score < 4)
+        if (!other.GetComponent<Items>().grabbed && Input.GetKey(KeyCode.F) && playerData.Score < 4)
         {
 
             jumpForce = (jumpForce - jumpForcePenalization);
@@ -461,6 +460,8 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.tag == "Food")
         {
+            //object = other.gameObject;
+            //canGrab = true;
             //F.SetActive(true);
         } 
         if (other.gameObject.tag == "Checkpoint")
@@ -495,6 +496,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "Food")
         {
+            //canGrab = false;
             Boton = false;
             //F.SetActive(false);
         }
@@ -566,7 +568,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-
+        //GrabFood();
         Blink();
         Movement();
         dropFood();
