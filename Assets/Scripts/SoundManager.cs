@@ -28,7 +28,7 @@ public class SoundManager : MonoBehaviour
         AudioListener.pause = mute;
     }
 
-    void onButtonPress()
+    public void onButtonPress()
     {
         if(mute == false)
         {
