@@ -16,8 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
     float savedSpeed, initialSpeed, initialJumpForce, speedPenalization, jumpForcePenalization, canClimbCounter = 0.5f, invencibilityTime = 0;
 
-    private float verticalVelocity;
-    private float gravity = 9.81f;
+    private float gravity = 9.81f, verticalVelocity;
 
     public bool climb, vent, slow, saveItemPos, catPath;
     public Vector3 posInicial;
@@ -249,9 +248,7 @@ public class Player : MonoBehaviour
         if (!other.GetComponent<Items>().grabbed && Input.GetKey(KeyCode.F) && playerData.Score < 4)
         {
             playerData.inventory.Add(other);
-            //cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
-            //cheeseSpawn = other;
-
+            
             Items tipo = other.GetComponent<Items>();
             if (tipo.Tipo == "Fresa")
             {

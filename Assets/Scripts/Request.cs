@@ -7,7 +7,7 @@ public class Request : MonoBehaviour
 {
     [SerializeField] Player playerScript;
     [SerializeField] PlayerData playerData;
-    [SerializeField] GameObject catPath;
+    [SerializeField] GameObject catPath, requestObject;
     public bool misiones; //este bool nos señala si las quest fueron completadas o no
     public int rqFresa;
     public int rqNuez;
@@ -32,7 +32,7 @@ public class Request : MonoBehaviour
         switch (request)
         {
             case 0:
-                Debug.Log("Entrega 4 fresas");
+                //Debug.Log("Entrega 4 fresas");
                 if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
                 {
                     //Debug.Log("intento entregar");
@@ -41,7 +41,7 @@ public class Request : MonoBehaviour
                         //Debug.Log("itero");
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Fresa")
                         {
-                            Debug.Log("encontré una fresa");
+                            //Debug.Log("encontré una fresa");
                             playerData.inventory.Remove(playerData.inventory[i]);
                             playerData.Hp++;
                             rqFresa++;
@@ -53,7 +53,7 @@ public class Request : MonoBehaviour
                 break;
 
             case 1:
-                Debug.Log("Entrega 4 nueces");
+                //Debug.Log("Entrega 4 nueces");
                 if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
                 {
                     for (int i = 0; i<playerData.inventory.Count; i++)
@@ -71,7 +71,7 @@ public class Request : MonoBehaviour
                 break;
 
             case 2:
-                Debug.Log("Entrega 4 quesos");
+                //Debug.Log("Entrega 4 quesos");
                 if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
                 {
                     for (int i = 0; i<playerData.inventory.Count; i++)
@@ -92,15 +92,27 @@ public class Request : MonoBehaviour
     }
     void NextMision()
     {
+        if (rqFresa < 4)
+        {
+            requestObject.transform.GetChild(0).gameObject.SetActive(true);
+            requestObject.transform.GetChild(1).gameObject.SetActive(false);
+            requestObject.transform.GetChild(2).gameObject.SetActive(false);
+        }
         if (rqFresa >= 4)
         {
             request = 1;
             PlayerPrefs.SetInt("mision", request);
+            requestObject.transform.GetChild(0).gameObject.SetActive(false);
+            requestObject.transform.GetChild(1).gameObject.SetActive(true);
+            requestObject.transform.GetChild(2).gameObject.SetActive(false);
         }
         if (rqNuez >= 4)
         {
             request = 2;
             PlayerPrefs.SetInt("mision", request);
+            requestObject.transform.GetChild(0).gameObject.SetActive(false);
+            requestObject.transform.GetChild(1).gameObject.SetActive(false);
+            requestObject.transform.GetChild(2).gameObject.SetActive(true);
         }
         if (rqQueso == 4)
         {
