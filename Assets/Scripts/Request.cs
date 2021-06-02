@@ -27,8 +27,23 @@ public class Request : MonoBehaviour
             case 0:
                 if (rqFresa == comida)
                 {
-                    request++;
-
+                    int contFresas;
+                    //si estás en el collider de los sobrinos (booleano del player == true)
+                    //Si presionas F
+                    //for que itere según la longitud del inventario
+                    /*for (int i = 0; i<PlayerData.inventory.Count; i++)
+                    {
+                        if (PlayerData.inventory[i].GetComponent<Items>.Tipo == "fresa")
+                        {
+                            PlayerData.inventory[i].Remove();
+                            Player.Hp++;
+                            contFresas++;
+                        }
+                    }
+                    if (contFresas>=4)
+                    {
+                        request++;
+                    }*/
                 }
 
                 break;
@@ -53,20 +68,10 @@ public class Request : MonoBehaviour
 
     }
 
-    void NextLevel()
-    {
-        if(misiones == true)
-        {
-            SceneManager.LoadScene(2);
-        }
-    }
-
 
     
     void Update()
     {
-        NextLevel();
-
-        //Request1(player.gameObject);
+        //Request1();
     }
 }
