@@ -7,11 +7,11 @@ public class Request : MonoBehaviour
 {
     [SerializeField] Player playerScript;
     [SerializeField] PlayerData playerData;
-    [SerializeField] GameObject catPath, requestObject;
+    [SerializeField] GameObject catPath, requestObject, PalomitasObject;
     public bool misiones; //este bool nos señala si las quest fueron completadas o no
     public int rqFresa;
     public int rqNuez;
-    public int rqQueso;
+    public int rqQueso, numPalomita = 0;
     int request = 0;
 
     void Start()
@@ -46,8 +46,17 @@ public class Request : MonoBehaviour
                             playerData.Hp++;
                             rqFresa++;
                             PlayerPrefs.SetInt("FresasEnt", rqFresa);
-                            //falta activar la palomita en el globo de misiones
+                            PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
+                            numPalomita++;
                         }
+                    }
+                    if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
+                    {
+                        for (int i = 0; i<PalomitasObject.transform.childCount; i++)
+                        {
+                            PalomitasObject.transform.GetChild(i).gameObject.SetActive(false);
+                        }
+                        numPalomita = 0;
                     }
                 }
                 break;
@@ -64,8 +73,17 @@ public class Request : MonoBehaviour
                             playerData.Hp++;
                             rqNuez++;
                             PlayerPrefs.SetInt("NuecesEnt", rqNuez);
-                            //falta activar la palomita en el globo de misiones
+                            PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
+                            numPalomita++;
                         }
+                    }
+                    if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
+                    {
+                        for (int i = 0; i<PalomitasObject.transform.childCount; i++)
+                        {
+                            PalomitasObject.transform.GetChild(i).gameObject.SetActive(false);
+                        }
+                        numPalomita = 0;
                     }
                 }
                 break;
@@ -82,7 +100,8 @@ public class Request : MonoBehaviour
                             playerData.Hp++;
                             rqQueso++;
                             PlayerPrefs.SetInt("QuesosEnt", rqQueso);
-                            //falta activar la palomita en el globo de misiones
+                            PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
+                            numPalomita++;
                         }
                     }
                 }
@@ -116,13 +135,13 @@ public class Request : MonoBehaviour
         }
         if (rqQueso == 4)
         {
-            request = 3;
+            request = 3; // esto no está haciendo nada de momento
             PlayerPrefs.SetInt("mision", request);
             misiones = true;
             Debug.Log("NIVEL COMPLETADO");
             playerScript.final.SetActive(true);
             Time.timeScale = 0;
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.Space))
             {
                 playerScript.final.SetActive(false);
                 Time.timeScale = 1;
@@ -149,6 +168,10 @@ public class Request : MonoBehaviour
         if (playerScript.catPath && misiones)
         {
             GoToCatLevel();
+        }
+        else if (playerScript.catPath && !misiones)
+        {
+            //Sale mensaje de que aún falta recoger comida
         }
     }
 }
