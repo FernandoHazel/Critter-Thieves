@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossCam : MonoBehaviour
 {
-
+     [SerializeField] Player playerScript;
     public GameObject tracker;
     public Vector2 minCamPos, maxCamPos;
     public float smoothTime;  //this is the time of delay of the camera movement
@@ -29,7 +29,7 @@ public class BossCam : MonoBehaviour
         float posY = Mathf.SmoothDamp(transform.position.y, tracker.transform.position.y + 2.5f, ref velocity.y, smoothTime);
 
 
-        if (transform.position.x - Player.position.x >= 15)
+        if (Player.position.x - transform.position.x  >= 15)
         {
 
             transform.position = posInicial;
@@ -37,7 +37,7 @@ public class BossCam : MonoBehaviour
 
         if (transform.position.x - End.position.x != 0)
         {
-            transform.position = new Vector3(transform.position.x + (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
+            transform.position = new Vector3(transform.position.x - (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
         }
 
 
@@ -48,8 +48,14 @@ public class BossCam : MonoBehaviour
     void Update()
     {
 
-            Rutas();
-
+        Rutas();
+        /*if (!playerScript.controller.isGrounded && !playerScript.climb)
+        {
+            smoothTime = .1f;
+        }
+        else{
+            smoothTime = 0.5f;
+        }*/
         //Debug.Log(transform.position.x - Player.position.x);
 
 

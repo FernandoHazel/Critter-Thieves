@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public Dictionary<string, GameObject> grabbableObjs = new Dictionary<string, GameObject>(); 
+    //public Dictionary<string, GameObject> grabbableObjs = new Dictionary<string, GameObject>(); 
     public List<GameObject> inventory = new List<GameObject>(); //This is the inventary of the food
     [SerializeField] Player playerScript;
     public int Score = 0;
@@ -29,6 +29,7 @@ public class PlayerData : MonoBehaviour
     }
 
     private void Update() {
+        Score = inventory.Count;
         if (Input.GetKeyDown(KeyCode.G))
         {
             save();

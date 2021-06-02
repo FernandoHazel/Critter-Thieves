@@ -5,73 +5,138 @@ using UnityEngine.SceneManagement;
 
 public class Request : MonoBehaviour
 {
-    Player player;
+    [SerializeField] Player playerScript;
+    [SerializeField] PlayerData playerData;
+    [SerializeField] GameObject catPath;
     public bool misiones; //este bool nos señala si las quest fueron completadas o no
     public int rqFresa;
     public int rqNuez;
     public int rqQueso;
-    public int comida = 3;
     int request = 0;
 
     void Start()
     {
-
+        if(PlayerPrefs.GetInt("mision") != 0)
+        {
+            request = PlayerPrefs.GetInt("mision");
+            
+        }
+        rqFresa = PlayerPrefs.GetInt("FresasEnt");
+        rqNuez = PlayerPrefs.GetInt("NuecesEnt");
+        rqQueso = PlayerPrefs.GetInt("QuesosEnt");
     }
 
 
-    void Request1()
+    void RequestGame()
     {
-        //Player variable = player.GetComponent<Player>();
         switch (request)
         {
             case 0:
-                if (rqFresa == comida)
+                Debug.Log("Entrega 4 fresas");
+                if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
                 {
-                    int contFresas;
-                    //si estás en el collider de los sobrinos (booleano del player == true)
-                    //Si presionas F
-                    //for que itere según la longitud del inventario
-                    /*for (int i = 0; i<PlayerData.inventory.Count; i++)
+                    //Debug.Log("intento entregar");
+                    for (int i = 0; i<playerData.inventory.Count; i++)
                     {
-                        if (PlayerData.inventory[i].GetComponent<Items>.Tipo == "fresa")
+                        //Debug.Log("itero");
+                        if (playerData.inventory[i].GetComponent<Items>().Tipo == "Fresa")
                         {
-                            PlayerData.inventory[i].Remove();
-                            Player.Hp++;
-                            contFresas++;
+                            Debug.Log("encontré una fresa");
+                            playerData.inventory.Remove(playerData.inventory[i]);
+                            playerData.Hp++;
+                            rqFresa++;
+                            PlayerPrefs.SetInt("FresasEnt", rqFresa);
+                            //falta activar la palomita en el globo de misiones
                         }
                     }
-                    if (contFresas>=4)
-                    {
-                        request++;
-                    }*/
                 }
-
                 break;
 
             case 1:
-                if (rqNuez == comida)
+                Debug.Log("Entrega 4 nueces");
+                if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
                 {
-                    request++;
-
+                    for (int i = 0; i<playerData.inventory.Count; i++)
+                    {
+                        if (playerData.inventory[i].GetComponent<Items>().Tipo == "Nuez")
+                        {
+                            playerData.inventory.Remove(playerData.inventory[i]);
+                            playerData.Hp++;
+                            rqNuez++;
+                            PlayerPrefs.SetInt("NuecesEnt", rqNuez);
+                            //falta activar la palomita en el globo de misiones
+                        }
+                    }
                 }
-
                 break;
 
             case 2:
-                if (rqQueso == comida)
+                Debug.Log("Entrega 4 quesos");
+                if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
                 {
-                    misiones = true;
-
+                    for (int i = 0; i<playerData.inventory.Count; i++)
+                    {
+                        if (playerData.inventory[i].GetComponent<Items>().Tipo == "Queso")
+                        {
+                            playerData.inventory.Remove(playerData.inventory[i]);
+                            playerData.Hp++;
+                            rqQueso++;
+                            PlayerPrefs.SetInt("QuesosEnt", rqQueso);
+                            //falta activar la palomita en el globo de misiones
+                        }
+                    }
                 }
                 break;
         }
 
     }
-
-
+    void NextMision()
+    {
+        if (rqFresa >= 4)
+        {
+            request = 1;
+            PlayerPrefs.SetInt("mision", request);
+        }
+        if (rqNuez >= 4)
+        {
+            request = 2;
+            PlayerPrefs.SetInt("mision", request);
+        }
+        if (rqQueso == 4)
+        {
+            request = 3;
+            PlayerPrefs.SetInt("mision", request);
+            misiones = true;
+            Debug.Log("NIVEL COMPLETADO");
+            playerScript.final.SetActive(true);
+            Time.timeScale = 0;
+            if (Input.GetKey(KeyCode.F))
+            {
+                playerScript.final.SetActive(false);
+                Time.timeScale = 1;
+                rqQueso++;
+            }
+            
+        }
+        /*Debug.Log("Fresas entregadas: " + rqFresa);
+        Debug.Log("Nueces entregadas: " + rqNuez);
+        Debug.Log("Quesos entregadas: " + rqQueso);
+        Debug.Log("misiones " + misiones);*/
+    }
+    void GoToCatLevel()
+    {
+        Debug.Log("al nivel del gato");
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Corridor");
+    }
     
     void Update()
     {
-        //Request1();
+        NextMision();
+        RequestGame();
+        if (playerScript.catPath && misiones)
+        {
+            GoToCatLevel();
+        }
     }
 }

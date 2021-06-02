@@ -6,56 +6,36 @@ using UnityEngine.UI; //TEMPORAL
 public class Player : MonoBehaviour
 {
     [SerializeField] PlayerData playerData;
-    float canClimbCounter = 0.5f;
-    public bool slow = false;
     [SerializeField] UserInterface ui;
     Items item;
     Request request;
-
-    int MaxHp = 3; //Max Health
-    float invencibilityTime = 0;
 
     public CharacterController controller;
 
     [SerializeField] float jumpForce;
     [SerializeField] float speed;
-    float savedSpeed;
-    float initialSpeed;
-    float initialJumpForce;
-    float speedPenalization;
-    float jumpForcePenalization;
+    float savedSpeed, initialSpeed, initialJumpForce, speedPenalization, jumpForcePenalization, canClimbCounter = 0.5f, invencibilityTime = 0;
 
     private float verticalVelocity;
     private float gravity = 9.81f;
 
-    public bool climb = false;
-    //bool climbJump = false;
-
+    public bool climb, vent, slow, saveItemPos, catPath;
     public Vector3 posInicial;
     [SerializeField] Transform posMarcel;
     GameObject cheeseSpawn;
     [SerializeField] GameObject foodDropper;
 
-    int rqQueso = 0; //TEMPORAL
-    int rqFresa = 0; //TEMPORAL
-    int rqNuez = 0; //TEMPORAL
-
-    public Text contQueso; //TEMPORAL
-    public Text contFresa; //TEMPORAL
-    public Text contNuez; //TEMPORAL
+    public Text contQueso, contFresa, contNuez;
 
     public GameObject final;
 
-    bool Boton;
-    public bool saveItemPos;
+    bool Boton, glueTraped;
     private Vector3 Front;
-    int count;
+    int count, invCount = 0, MaxHp = 3;
 
     [SerializeField] SpriteRenderer[] sprites;
 
     public Transform BossCam;
-    int invCount = 0; //este guarda el índice máximo de objetos recolectadoos en lka
-    //public int rq
 
     //We load the position saved only if any
     private void Awake() {
@@ -268,47 +248,31 @@ public class Player : MonoBehaviour
     {
         if (!other.GetComponent<Items>().grabbed && Input.GetKey(KeyCode.F) && playerData.Score < 4)
         {
-
-            jumpForce = (jumpForce - jumpForcePenalization);
-            speed = (speed - speedPenalization);
-
-            //Debug.Log("Food: " + playerData.Score);
             playerData.inventory.Add(other);
-            cheeseSpawn = other;
-            
+            //cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
+            //cheeseSpawn = other;
 
-            //Debug.Log("Food grabbed");
             Items tipo = other.GetComponent<Items>();
             if (tipo.Tipo == "Fresa")
             {
-                //Debug.Log("Es Fresa");
                 playerData.fresa++;
-                playerData.Score++;
                 other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                 other.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
                 other.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
                 other.GetComponent<Items>().grabbed = true;
-                //Debug.Log("Fresas: " + playerData.fresa);
             }
             if (tipo.Tipo == "Nuez")
             {
-                //Debug.Log("Es Nuez");
                 other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                 playerData.nuez++;
-                playerData.Score++;
                 other.GetComponent<Items>().grabbed = true;
-                //Debug.Log("Nueces: " + playerData.nuez);
             }
             if (tipo.Tipo == "Queso")
             {
-                //Debug.Log("Es Queso");
                 playerData.queso++;
-                playerData.Score++;
                 other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                 other.GetComponent<Items>().grabbed = true;
-                //Debug.Log("Queso: " + other.GetComponent<Items>().grabbed);
             }
-            ui.UpdateCheese(playerData.Score);
             Boton = false;
         }
     }
@@ -317,16 +281,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            //if(cheeseSpawn != null)
             if (playerData.Score > 0)
             {
-                playerData.Score--;
-                ui.UpdateCheese(playerData.Score);
-                //Debug.Log("Food: " + playerData.Score);
-
-                jumpForce = (jumpForce + jumpForcePenalization);
-                speed = (speed + speedPenalization);
-
                 cheeseSpawn.transform.position = foodDropper.transform.position;
 
                 Items tipo = cheeseSpawn.GetComponent<Items>();
@@ -335,70 +291,32 @@ public class Player : MonoBehaviour
                     cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
                     cheeseSpawn.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
                     cheeseSpawn.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = true;
-                    //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                     playerData.fresa--;
                     cheeseSpawn.GetComponent<Items>().grabbed = false;
-                    //Debug.Log("Fresa: " + cheeseSpawn.GetComponent<Items>().grabbed);
                 }
                 else if (tipo.Tipo == "Nuez")
                 {
                     cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-                    //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                     playerData.nuez--;
                     cheeseSpawn.GetComponent<Items>().grabbed = false;
-                    //Debug.Log("Nuez: " + playerData.nuez);
                 }
                 else if (tipo.Tipo == "Queso")
                 {
                     cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-                    //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                     playerData.queso--;
                     cheeseSpawn.GetComponent<Items>().grabbed = false;
-                    //Debug.Log("Queso: " + cheeseSpawn.GetComponent<Items>().grabbed);
                 }
 
                 playerData.inventory.Remove(cheeseSpawn);
                 if (playerData.inventory.Count != 0)
                 {
                     cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
-                    //cheeseSpawn = playerData.mochila[cheeseSpawn.GetComponent<Items>().ID];
                 }
     
             }
             else
             {
                 Debug.Log("No puedes soltar nada porque nada tienes");
-            }
-        }
-    }
-
-    void Nephew()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (playerData.Score > 0)
-            {
-                playerData.Hp = playerData.Hp + playerData.Score;
-
-                rqQueso = rqQueso + playerData.queso; //TEMPORAL
-                rqNuez = rqNuez + playerData.nuez; //TEMPORAL
-                rqFresa = rqFresa + playerData.fresa; //TEMPORAL
-
-                playerData.queso = 0;
-                playerData.nuez = 0;
-                playerData.fresa = 0;
-                playerData.Score = 0;
-
-                jumpForce = initialJumpForce;
-                speed = initialSpeed;
-
-                ui.UpdateCheese(playerData.Score);
-                ui.UpdateHearts(playerData.Hp);
-                Debug.Log("Food: " + playerData.Score);
-
-                playerData.inventory.Clear();
-
-                Request1(); //TEMPORAL
             }
         }
     }
@@ -426,11 +344,11 @@ public class Player : MonoBehaviour
             Boton = true;
         }
 
-        if (other.gameObject.tag == "Nephew")
+        /*if (other.gameObject.tag == "Nephew")
         {
             Nephew();
             Boton = true;
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -452,6 +370,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "GlueTrap")
         {
+            glueTraped = true;
             savedSpeed = speed;
             speed = 0.5f;
             //Debug.Log("In" + speed);
@@ -479,6 +398,16 @@ public class Player : MonoBehaviour
             
             //Debug.Log("initial position updated");
         }
+        if (other.gameObject.tag == "Nephew")
+        {
+            vent = true;
+            Boton = true;
+        }
+        if (other.gameObject.tag == "CatPath")
+        {
+            Debug.Log("entrando gato");
+            catPath = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -503,6 +432,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "GlueTrap")
         {
+            glueTraped = false;
             speed = savedSpeed;
             //Debug.Log("Out" + speed);
             slow = false;
@@ -512,11 +442,20 @@ public class Player : MonoBehaviour
         {
             Boton = false;
             posInicial = transform.position;
-            //F.SetActive(false);
+            vent = false;
         }
         if (other.gameObject.tag == "Checkpoint")
         {
             saveItemPos = false;
+        }
+        if (other.gameObject.tag == "CatPath")
+        {
+            catPath = false;
+        }
+        if (other.gameObject.tag == "Finish")
+        {
+            final.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -546,20 +485,17 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
-        if (playerData.Score != 0)
+        // aquí nos evitamos llamar estas lineas en los métodos de arriba y es más legible el código
+        if (!glueTraped)
         {
-            ui.UpdateCheese(playerData.Score);
+            speed = (initialSpeed - speedPenalization * playerData.Score);
         }
-        
-    }
-
-    void Request1() //TEMPORAL
-    {
-        if (rqFresa >= 1 && rqNuez >= 2 && rqQueso >= 1)
+        jumpForce = (initialJumpForce - jumpForcePenalization * playerData.Score);
+        ui.UpdateHearts(playerData.Hp);
+        ui.UpdateCheese(playerData.Score);
+        if (playerData.inventory.Count != 0)
         {
-            Debug.Log("NIVEL COMPLETADO");
-            Input.GetKey(KeyCode.P);
-            final.SetActive(true);
+            cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
         }
     }
     private void Update()

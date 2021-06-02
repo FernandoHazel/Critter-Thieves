@@ -14,7 +14,7 @@ public class Items : MonoBehaviour
 
     private void Awake() {
         //ID = transform.localPosition.ToString();
-        playerData.grabbableObjs.Add(ID, gameObject); //todos los objetos se registran en el diccionario con su ID y gameObject
+        //playerData.grabbableObjs.Add(ID, gameObject); //todos los objetos se registran en el diccionario con su ID y gameObject
     }
     void Start()
     {

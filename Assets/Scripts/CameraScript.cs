@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    [SerializeField] Player playerScript;
     public GameObject tracker;
     public Vector2 minCamPos, maxCamPos;
     public float smoothTime;  //this is the time of delay of the camera movement
@@ -12,7 +13,13 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*if (!playerScript.controller.isGrounded && !playerScript.climb)
+        {
+            smoothTime = .1f;
+        }
+        else{
+            smoothTime = 0.5f;
+        }*/
         //float posX = tracker.transform.position.x;
         //float posY = tracker.transform.position.y;
         //We save the position of the tracker in new variables
