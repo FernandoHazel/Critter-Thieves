@@ -22,6 +22,16 @@ public class Request : MonoBehaviour
         rqFresa = PlayerPrefs.GetInt("FresasEnt");
         rqNuez = PlayerPrefs.GetInt("NuecesEnt");
         rqQueso = PlayerPrefs.GetInt("QuesosEnt");
+        numPalomita = PlayerPrefs.GetInt("numPalomita");
+        if (numPalomita != 0)
+        {
+            for (int a = 0; a<numPalomita; a++)
+            {
+                PalomitasObject.transform.GetChild(a).gameObject.SetActive(true);
+                palomitasPause.transform.GetChild(a).gameObject.SetActive(true);
+            }
+        }
+        
     }
 
 
@@ -46,8 +56,9 @@ public class Request : MonoBehaviour
                             rqFresa++;
                             PlayerPrefs.SetInt("FresasEnt", rqFresa);
                             PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
-                            palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);//
+                            palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             numPalomita++;
+                            PlayerPrefs.SetInt("numPalomita", numPalomita);
                         }
                     }
                     if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
@@ -58,6 +69,7 @@ public class Request : MonoBehaviour
                             palomitasPause.transform.GetChild(i).gameObject.SetActive(false);//
                         }
                         numPalomita = 0;
+                        PlayerPrefs.SetInt("numPalomita", numPalomita);
                     }
                 }
                 break;
@@ -78,6 +90,7 @@ public class Request : MonoBehaviour
                             PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             numPalomita++;
+                            PlayerPrefs.SetInt("numPalomita", numPalomita);
                         }
                     }
                     if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
@@ -88,6 +101,7 @@ public class Request : MonoBehaviour
                             palomitasPause.transform.GetChild(i).gameObject.SetActive(false);
                         }
                         numPalomita = 0;
+                        PlayerPrefs.SetInt("numPalomita", numPalomita);
                     }
                 }
                 break;
@@ -108,6 +122,7 @@ public class Request : MonoBehaviour
                             PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             numPalomita++;
+                            PlayerPrefs.SetInt("numPalomita", numPalomita);
                         }
                     }
                 }

@@ -52,14 +52,14 @@ public class CameraTracker : MonoBehaviour
         {
             transform.localPosition = new Vector3(-8, 0, 0);
         }
-        else if (Input.GetAxis("Vertical") == 1)
+        /*else if (Input.GetAxis("Vertical") == 1)
         {
             transform.localPosition = new Vector3(0, 4, 0);
         }
         else if (Input.GetAxis("Vertical") == -1)
         {
             transform.localPosition = new Vector3(0, -5, 0);
-        }
+        }*/
         else
         {
             transform.localPosition = Vector3.zero;
