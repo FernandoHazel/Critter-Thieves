@@ -10,10 +10,14 @@ public class Player : MonoBehaviour
     Items item;
     Request request;
 
+    //[SerializeField] private CharacterController controller = null;  //siempre dejar el private para optimizar, null para evitar advertencias
     public CharacterController controller;
+    //public CharacterController Controller => controller; //read only, no se puede modificar el controller original
 
     [SerializeField] float jumpForce;
     [SerializeField] float speed;
+
+    //declarar variables en vertical
     float savedSpeed, initialSpeed, initialJumpForce, speedPenalization, jumpForcePenalization, canClimbCounter = 0.5f, invencibilityTime = 0;
 
     private float gravity = 9.81f, verticalVelocity;
