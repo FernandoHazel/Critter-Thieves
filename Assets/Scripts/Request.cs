@@ -7,11 +7,9 @@ public class Request : MonoBehaviour
 {
     [SerializeField] Player playerScript;
     [SerializeField] PlayerData playerData;
-    [SerializeField] GameObject catPath, requestObject, PalomitasObject;
+    [SerializeField] GameObject catPath, requestObject, PalomitasObject, palomitasPause, RequestsPause;
     public bool misiones; //este bool nos señala si las quest fueron completadas o no
-    public int rqFresa;
-    public int rqNuez;
-    public int rqQueso, numPalomita = 0;
+    public int rqFresa, rqNuez, rqQueso, numPalomita = 0;
     int request = 0;
 
     void Start()
@@ -33,7 +31,7 @@ public class Request : MonoBehaviour
         {
             case 0:
                 //Debug.Log("Entrega 4 fresas");
-                if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
+                if (playerScript.vent)
                 {
                     //Debug.Log("intento entregar");
                     for (int i = 0; i<playerData.inventory.Count; i++)
@@ -42,11 +40,13 @@ public class Request : MonoBehaviour
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Fresa")
                         {
                             //Debug.Log("encontré una fresa");
+                            playerData.fresa--;
                             playerData.inventory.Remove(playerData.inventory[i]);
                             playerData.Hp++;
                             rqFresa++;
                             PlayerPrefs.SetInt("FresasEnt", rqFresa);
                             PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
+                            palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);//
                             numPalomita++;
                         }
                     }
@@ -55,6 +55,7 @@ public class Request : MonoBehaviour
                         for (int i = 0; i<PalomitasObject.transform.childCount; i++)
                         {
                             PalomitasObject.transform.GetChild(i).gameObject.SetActive(false);
+                            palomitasPause.transform.GetChild(i).gameObject.SetActive(false);//
                         }
                         numPalomita = 0;
                     }
@@ -63,17 +64,19 @@ public class Request : MonoBehaviour
 
             case 1:
                 //Debug.Log("Entrega 4 nueces");
-                if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
+                if (playerScript.vent)
                 {
                     for (int i = 0; i<playerData.inventory.Count; i++)
                     {
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Nuez")
                         {
+                            playerData.nuez--;
                             playerData.inventory.Remove(playerData.inventory[i]);
                             playerData.Hp++;
                             rqNuez++;
                             PlayerPrefs.SetInt("NuecesEnt", rqNuez);
                             PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
+                            palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             numPalomita++;
                         }
                     }
@@ -82,6 +85,7 @@ public class Request : MonoBehaviour
                         for (int i = 0; i<PalomitasObject.transform.childCount; i++)
                         {
                             PalomitasObject.transform.GetChild(i).gameObject.SetActive(false);
+                            palomitasPause.transform.GetChild(i).gameObject.SetActive(false);
                         }
                         numPalomita = 0;
                     }
@@ -90,17 +94,19 @@ public class Request : MonoBehaviour
 
             case 2:
                 //Debug.Log("Entrega 4 quesos");
-                if (playerScript.vent && Input.GetKeyDown(KeyCode.F))
+                if (playerScript.vent)
                 {
                     for (int i = 0; i<playerData.inventory.Count; i++)
                     {
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Queso")
                         {
+                            playerData.queso--;
                             playerData.inventory.Remove(playerData.inventory[i]);
                             playerData.Hp++;
                             rqQueso++;
                             PlayerPrefs.SetInt("QuesosEnt", rqQueso);
                             PalomitasObject.transform.GetChild(numPalomita).gameObject.SetActive(true);
+                            palomitasPause.transform.GetChild(numPalomita).gameObject.SetActive(true);
                             numPalomita++;
                         }
                     }
@@ -113,6 +119,12 @@ public class Request : MonoBehaviour
     {
         if (rqFresa < 4)
         {
+            //los request en la pausa
+            RequestsPause.transform.GetChild(0).gameObject.SetActive(true);
+            RequestsPause.transform.GetChild(1).gameObject.SetActive(false);
+            RequestsPause.transform.GetChild(2).gameObject.SetActive(false);
+
+            //los request en el juego
             requestObject.transform.GetChild(0).gameObject.SetActive(true);
             requestObject.transform.GetChild(1).gameObject.SetActive(false);
             requestObject.transform.GetChild(2).gameObject.SetActive(false);
@@ -121,6 +133,11 @@ public class Request : MonoBehaviour
         {
             request = 1;
             PlayerPrefs.SetInt("mision", request);
+
+            RequestsPause.transform.GetChild(0).gameObject.SetActive(false);
+            RequestsPause.transform.GetChild(1).gameObject.SetActive(true);
+            RequestsPause.transform.GetChild(2).gameObject.SetActive(false);
+
             requestObject.transform.GetChild(0).gameObject.SetActive(false);
             requestObject.transform.GetChild(1).gameObject.SetActive(true);
             requestObject.transform.GetChild(2).gameObject.SetActive(false);
@@ -129,6 +146,11 @@ public class Request : MonoBehaviour
         {
             request = 2;
             PlayerPrefs.SetInt("mision", request);
+
+            RequestsPause.transform.GetChild(0).gameObject.SetActive(false);
+            RequestsPause.transform.GetChild(1).gameObject.SetActive(false);
+            RequestsPause.transform.GetChild(2).gameObject.SetActive(true);
+
             requestObject.transform.GetChild(0).gameObject.SetActive(false);
             requestObject.transform.GetChild(1).gameObject.SetActive(false);
             requestObject.transform.GetChild(2).gameObject.SetActive(true);
