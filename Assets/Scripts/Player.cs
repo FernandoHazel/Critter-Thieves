@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     Vector3 moveVector;
 
-    private float gravity = 7.0f, verticalVelocity;
+    private float gravity = 9.81f, verticalVelocity;
 
     public bool climb, vent, slow, saveItemPos, catPath;
     public Vector3 posInicial;
