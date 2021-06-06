@@ -36,7 +36,7 @@ public class MarcelAnimations : MonoBehaviour
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow) && !player.climb && Input.GetKeyDown(KeyCode.Space))
         {
             marcelAnimator.SetBool("Jump", false);
-            marcelAnimator.SetBool("Fall", true); //**
+            marcelAnimator.SetBool("Fall", true);
         }
         //Jump animation
         else if (Input.GetKeyDown(KeyCode.Space))
@@ -99,7 +99,8 @@ public class MarcelAnimations : MonoBehaviour
         }
         if (!player.controller.isGrounded && !onJump && !player.climb && !player.slow)
         {
-            marcelAnimator.SetBool("Fall", true);//**
+            //StartCoroutine("FallAnimation");
+            marcelAnimator.SetBool("Fall", true);
         }
     }
     void Turn()
@@ -145,4 +146,10 @@ public class MarcelAnimations : MonoBehaviour
         }
         marcelAnimator.SetFloat("RunMultiplier", runMultiplier);
     }
+
+    /*IEnumerator FallAnimation()
+    {
+        yield return new WaitForSeconds(0.1f);
+        marcelAnimator.SetBool("Fall", true);
+    }*/
 }
