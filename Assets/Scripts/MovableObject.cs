@@ -24,7 +24,6 @@ public class MovableObject : MonoBehaviour
         {
             onPush = true;
             mbox.AddForce(Input.GetAxis("Horizontal") * ligerez, 0, 0, ForceMode.VelocityChange);
-            //Debug.Log("me tocaste");
         }
     }
     private void OnTriggerExit(Collider other) {

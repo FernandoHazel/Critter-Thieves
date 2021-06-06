@@ -230,7 +230,6 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-        //Debug.Log(transform.position.x - BossCam.position.x);
     }
 
     void Blink() //Invencibility

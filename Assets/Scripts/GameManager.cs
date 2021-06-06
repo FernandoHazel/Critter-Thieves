@@ -18,16 +18,13 @@ public class GameManager : MonoBehaviour
         if (pause){
             inGame.SetActive(false);
             inPause.SetActive(true);
-            //pauseM.Holder.SetActive(true);
         }
         if (!pause){
             inGame.SetActive(true);
             inPause.SetActive(false);
-            //howToPlay.SetActive(false);
         }
     }
     private void Start() {
-        //
     }
     void Update()
     {
@@ -35,7 +32,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             pause = !pause;
-            //Debug.Log("pause is " + pause);
         }
         ManageMenu();
     }
