@@ -40,6 +40,8 @@ public class BossCam : MonoBehaviour
             transform.position = new Vector3(transform.position.x - (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
         }
 
+        Debug.Log(Player.position.x - transform.position.x);
+
 
 
             
@@ -47,17 +49,6 @@ public class BossCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Rutas();
-        /*if (!playerScript.controller.isGrounded && !playerScript.climb)
-        {
-            smoothTime = .1f;
-        }
-        else{
-            smoothTime = 0.5f;
-        }*/
-        //Debug.Log(transform.position.x - Player.position.x);
-
-
     }
 }

@@ -9447,6 +9447,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995451321}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1007249171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007249172}
+  - component: {fileID: 1007249175}
+  - component: {fileID: 1007249173}
+  m_Layer: 0
+  m_Name: Barrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007249172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007249171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.64, y: -0.184, z: 4.11}
+  m_LocalScale: {x: 0.76335, y: 3.8958387, z: 7.4788}
+  m_Children: []
+  m_Father: {fileID: 1529198140}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1007249173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007249171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1007249175
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007249171}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1011818783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8149821039361591234, guid: 43ec4276d25b69f40afccb06cd00c240,
@@ -13385,7 +13438,8 @@ Transform:
   m_LocalRotation: {x: -0.013106996, y: 0, z: 0, w: 0.9999141}
   m_LocalPosition: {x: 408, y: -0.11, z: -41.75}
   m_LocalScale: {x: 9.975745, y: 8.252396, z: 5.3189793}
-  m_Children: []
+  m_Children:
+  - {fileID: 1007249172}
   m_Father: {fileID: 1231404572}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -1.5020001, y: 0, z: 0}

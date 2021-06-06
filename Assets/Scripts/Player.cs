@@ -134,8 +134,6 @@ public class Player : MonoBehaviour
 
         controller.Move(moveVector * speed * Time.deltaTime );
 
-        Debug.Log(controller);
-
 
 
 
@@ -232,6 +230,7 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        //Debug.Log(transform.position.x - BossCam.position.x);
     }
 
     void Blink() //Invencibility
