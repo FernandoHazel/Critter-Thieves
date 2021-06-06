@@ -11359,8 +11359,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 766135278}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &704304368
-MeshCollider:
+--- !u!65 &704304368
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11369,24 +11369,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4679868142942338690, guid: 716b61652e0ec344b918db07a8fd116f, type: 3}
---- !u!64 &704304369
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704304367}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2885473362140996644, guid: 716b61652e0ec344b918db07a8fd116f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 29.142365, y: 2.2747002, z: 1}
+  m_Center: {x: 0.43345642, y: 8.952604, z: 0}
 --- !u!1001 &707243486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20732,20 +20717,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.0000362, y: 73.84366, z: 70.3169}
   m_Center: {x: 14.883881, y: -2.197104, z: -3.7586052}
---- !u!64 &1303879032
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303879030}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -685806571109375086, guid: 20636743a6413d346a9e81b5b9dc5fb0, type: 3}
 --- !u!1 &1305330339
 GameObject:
   m_ObjectHideFlags: 0
@@ -22188,8 +22159,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14.862976, y: 17.329891, z: 5.0534725}
-  m_Center: {x: 0.10739136, y: 8.164946, z: -0.08781099}
+  m_Size: {x: 14.862976, y: 1.7799759, z: 9.464355}
+  m_Center: {x: 0.10739136, y: 15.939903, z: 2.11763}
 --- !u!4 &1354824773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 50b573fe56095ea45af019826bca84a3,
