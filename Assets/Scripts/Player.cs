@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     //public CharacterController Controller => controller; //read only, no se puede modificar el controller original
 
     [SerializeField] float jumpForce;
-    [SerializeField] float speed;
+    [SerializeField] float speed = 1;
 
     //declarar variables en vertical
     float savedSpeed;
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
     public GameObject final;
 
-    bool glueTraped;
+    bool glueTraped = false;
     private Vector3 Front;
     int invCount = 0, MaxHp = 3;
 
@@ -120,16 +120,21 @@ public class Player : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
 
-        
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         }
+
         else
         {
-            moveVector = new Vector3(0, verticalVelocity, 0);
-        }
-        controller.Move(moveVector * speed * Time.deltaTime);
+            moveVector = new Vector3(0, verticalVelocity, 0);   
+        } 
+
+
+        controller.Move(moveVector * speed * Time.deltaTime );
+
+        Debug.Log(controller);
 
 
 
@@ -226,7 +231,6 @@ public class Player : MonoBehaviour
         if (transform.position.x - BossCam.position.x <= -14)
         {
             Die();
-            Debug.Log("You died");
         }
     }
 
@@ -373,7 +377,8 @@ public class Player : MonoBehaviour
         {
             glueTraped = true;
             savedSpeed = speed;
-            speed = 0.5f;
+            speed = .5f;
+            //moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
             slow = true;
         }
         if (other.gameObject.tag == "Checkpoint")
