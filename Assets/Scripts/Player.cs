@@ -18,7 +18,15 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
 
     //declarar variables en vertical
-    float savedSpeed, initialSpeed, initialJumpForce, speedPenalization, jumpForcePenalization, canClimbCounter = 0.5f, invencibilityTime = 0;
+    float savedSpeed;
+    float initialSpeed;
+    float initialJumpForce;
+    float speedPenalization;
+    float jumpForcePenalization;
+    float canClimbCounter = 0.5f; 
+    float invencibilityTime = 0;
+
+    Vector3 moveVector;
 
     private float gravity = 9.81f, verticalVelocity;
 
@@ -32,9 +40,9 @@ public class Player : MonoBehaviour
 
     public GameObject final;
 
-    bool Boton, glueTraped;
+    bool glueTraped;
     private Vector3 Front;
-    int count, invCount = 0, MaxHp = 3;
+    int invCount = 0, MaxHp = 3;
 
     [SerializeField] SpriteRenderer[] sprites;
 
@@ -45,8 +53,6 @@ public class Player : MonoBehaviour
         invCount = PlayerPrefs.GetInt("invCount");
         if (invCount != 0)
         {
-            //Debug.Log("intento cargar lista");
-            //Debug.Log("invCount: " + invCount);
             string idABuscar;
             GameObject objeto;
             for (int i = 0; i < invCount; i++)
@@ -54,7 +60,6 @@ public class Player : MonoBehaviour
                 idABuscar = PlayerPrefs.GetString(i.ToString()); //este id tiene que coincidir con el nombre del objeto en la jerarquía
                 objeto = GameObject.Find(idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
                 playerData.inventory.Add(objeto); //añadimos el objeto a la lista
-                //Debug.Log("cargado objeto: " + objeto.name);
             }
             cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
         }
@@ -69,7 +74,6 @@ public class Player : MonoBehaviour
         {
             posInicial = transform.position;
         }
-        //transform.position = playerData.posSaved;
         //these variables make the slow down work the same without
         //having to go back to the code every time we modify the speed
         //and the jump force
@@ -89,7 +93,6 @@ public class Player : MonoBehaviour
         //this is the jump
         if (controller.isGrounded)
         {
-            //climbJump = false;
             verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -100,14 +103,12 @@ public class Player : MonoBehaviour
         //this is the climb
         if (climb == true && Input.GetKey(KeyCode.W) || climb == true && Input.GetKey(KeyCode.UpArrow))
         {
-            //climbJump = false;  
             verticalVelocity = Input.GetAxis("Vertical");
         }
 
         //This is the jump while climbing
         if (climb == true && Input.GetKeyDown(KeyCode.Space))
         {
-            //climbJump = true;
             climb = false;
             verticalVelocity = jumpForce;
             canClimbCounter = 0.5f;
@@ -115,14 +116,26 @@ public class Player : MonoBehaviour
 
         else
         {
-            //climbJump = false;
             jumpForce = 3;
             verticalVelocity -= gravity * Time.deltaTime;
         }
 
-        //This is the lateral movement
-        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
+        
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
+        }
+        else
+        {
+            moveVector = new Vector3(0, verticalVelocity, 0);
+        }
         controller.Move(moveVector * speed * Time.deltaTime);
+
+
+
+
+        //This is the lateral movement
+
         if (Input.GetAxis("Horizontal") > 0)
         {
             foodDropper.transform.localPosition = new Vector3(1, 0, 0);
@@ -130,6 +143,11 @@ public class Player : MonoBehaviour
         else if (Input.GetAxis("Horizontal") < 0)
         {
             foodDropper.transform.localPosition = new Vector3(-1, 0, 0);
+        }
+        else
+        {
+            foodDropper.transform.localPosition = new Vector3(0, 0, 0);
+
         }
     }
 
@@ -165,37 +183,29 @@ public class Player : MonoBehaviour
                 cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
                 cheeseSpawn.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
                 cheeseSpawn.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = true;
-                //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                 playerData.fresa--;
                 cheeseSpawn.GetComponent<Items>().grabbed = false;
-                //Debug.Log("Fresa: " + cheeseSpawn.GetComponent<Items>().grabbed);
             }
             else if (tipo.Tipo == "Nuez")
             {
                 cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-                //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                 playerData.nuez--;
                 cheeseSpawn.GetComponent<Items>().grabbed = false;
-                //Debug.Log("Nuez: " + playerData.nuez);
             }
             else if (tipo.Tipo == "Queso")
             {
                 cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-                //cheeseSpawn.GetComponent<Items>().saveItemPos(cheeseSpawn.GetComponent<Items>().ID, transform.localPosition);
                 playerData.queso--;
                 cheeseSpawn.GetComponent<Items>().grabbed = false;
-                //Debug.Log("Queso: " + cheeseSpawn.GetComponent<Items>().grabbed);
             }
 
             playerData.inventory.Remove(cheeseSpawn);
             if (playerData.inventory.Count != 0)
             {
-                cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
-                //cheeseSpawn = playerData.mochila[cheeseSpawn.GetComponent<Items>().ID];
+                cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];;
             }
         }
         playerData.inventory.Clear();
-        //Debug.Log("died");
         speed = initialSpeed;
         jumpForce = initialJumpForce;
         playerData.queso = 0;
@@ -208,15 +218,11 @@ public class Player : MonoBehaviour
 
         playerData.Hp = MaxHp;
         ui.UpdateHearts(MaxHp);
-        //Debug.Log("Player 1: " + playerData.Score);
-
         ui.UpdateCheese(playerData.Score);
     }
 
     public void CamRun()
     {
-        //Debug.Log(transform.position.x - BossCam.position.x);
-
         if (transform.position.x - BossCam.position.x <= -14)
         {
             Die();
@@ -274,7 +280,7 @@ public class Player : MonoBehaviour
                 other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                 other.GetComponent<Items>().grabbed = true;
             }
-            Boton = false;
+
         }
     }
 
@@ -329,7 +335,7 @@ public class Player : MonoBehaviour
             climb = true;
         }
         canClimbCounter -= Time.deltaTime;
-        //Debug.Log(canClimbCounter);
+
         if (other.gameObject.tag == "Climb")
         {
             if (canClimbCounter <= 0)
@@ -342,14 +348,8 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Food")
         {
             GrabFood(other.gameObject);
-            Boton = true;
         }
 
-        /*if (other.gameObject.tag == "Nephew")
-        {
-            Nephew();
-            Boton = true;
-        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -374,16 +374,8 @@ public class Player : MonoBehaviour
             glueTraped = true;
             savedSpeed = speed;
             speed = 0.5f;
-            //Debug.Log("In" + speed);
             slow = true;
         }
-        
-        if (other.gameObject.tag == "Food")
-        {
-            //object = other.gameObject;
-            //canGrab = true;
-            //F.SetActive(true);
-        } 
         if (other.gameObject.tag == "Checkpoint")
         {
             saveItemPos = true;
@@ -397,12 +389,10 @@ public class Player : MonoBehaviour
             invCount = playerData.inventory.Count;
             PlayerPrefs.SetInt("invCount", invCount);
             
-            //Debug.Log("initial position updated");
         }
         if (other.gameObject.tag == "Nephew")
         {
             vent = true;
-            Boton = true;
         }
         if (other.gameObject.tag == "CatPath")
         {
@@ -421,27 +411,18 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Climb")
         {
             climb = false;
-            //Debug.Log("no trepo");
         }
 
-        if (other.gameObject.tag == "Food")
-        {
-            //canGrab = false;
-            Boton = false;
-            //F.SetActive(false);
-        }
 
         if (other.gameObject.tag == "GlueTrap")
         {
             glueTraped = false;
             speed = savedSpeed;
-            //Debug.Log("Out" + speed);
             slow = false;
         }
 
         if (other.gameObject.tag == "Nephew")
         {
-            Boton = false;
             posInicial = transform.position;
             vent = false;
         }
@@ -505,7 +486,6 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        //GrabFood();
         Blink();
         Movement();
         dropFood();
@@ -515,7 +495,5 @@ public class Player : MonoBehaviour
         contNuez.text = "" + playerData.nuez;
         contQueso.text = "" + playerData.queso;
         contFresa.text = "" + playerData.fresa;
-
-        //Debug.Log(transform.position.x - BossCam.position.x);
     }
 }
