@@ -93,9 +93,12 @@ public class Player : MonoBehaviour
         //this is the jump
         if (controller.isGrounded)
         {
+            //SoundManager.PlaySound("landing");
+
             verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SoundManager.PlaySound("jump");
                 verticalVelocity = jumpForce;
             }
         }
@@ -109,6 +112,7 @@ public class Player : MonoBehaviour
         //This is the jump while climbing
         if (climb == true && Input.GetKeyDown(KeyCode.Space))
         {
+            SoundManager.PlaySound("jump");
             climb = false;
             verticalVelocity = jumpForce;
             canClimbCounter = 0.5f;
@@ -356,6 +360,7 @@ public class Player : MonoBehaviour
             GrabFood(other.gameObject);
         }
 
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -381,7 +386,6 @@ public class Player : MonoBehaviour
             glueTraped = true;
             savedSpeed = speed;
             speed = .5f;
-            //moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
             slow = true;
         }
         if (other.gameObject.tag == "Checkpoint")
@@ -400,6 +404,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Nephew")
         {
+            SoundManager.PlaySound("deliverFood");
             vent = true;
         }
         if (other.gameObject.tag == "CatPath")

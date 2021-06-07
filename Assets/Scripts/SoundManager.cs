@@ -17,6 +17,10 @@ public class SoundManager : MonoBehaviour
     public static AudioClip questCompletedSound;
     public static AudioClip angryCatSound;
     public static AudioClip sadCatSound;
+    public static AudioClip jumpSound;
+    public static AudioClip landingSound;
+    public static AudioClip levelCompletedSound;
+
 
     static AudioSource audioSource;
 
@@ -31,6 +35,10 @@ public class SoundManager : MonoBehaviour
         questCompletedSound = Resources.Load<AudioClip>("questCompleted");
         angryCatSound = Resources.Load<AudioClip>("angryCat");
         sadCatSound = Resources.Load<AudioClip>("sadCat");
+        jumpSound = Resources.Load<AudioClip>("jump");
+        landingSound = Resources.Load<AudioClip>("landing");
+        levelCompletedSound = Resources.Load<AudioClip>("levelCompleted");
+
 
         audioSource = GetComponent<AudioSource>();
 
@@ -84,6 +92,18 @@ public class SoundManager : MonoBehaviour
 
             case "sadCat":
                 audioSource.PlayOneShot(sadCatSound);
+                break;
+
+            case "jump":
+                audioSource.PlayOneShot(jumpSound);
+                break;
+
+            case "landing":
+                audioSource.PlayOneShot(landingSound);
+                break;
+
+            case "levelCompleted":
+                audioSource.PlayOneShot(levelCompletedSound);
                 break;
         }
     }    
