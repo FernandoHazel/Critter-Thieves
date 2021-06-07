@@ -20,6 +20,8 @@ public class SoundManager : MonoBehaviour
     public static AudioClip jumpSound;
     public static AudioClip landingSound;
     public static AudioClip levelCompletedSound;
+    public static AudioClip stepSound;
+    public static AudioClip dieSound;
 
 
     static AudioSource audioSource;
@@ -38,6 +40,9 @@ public class SoundManager : MonoBehaviour
         jumpSound = Resources.Load<AudioClip>("jump");
         landingSound = Resources.Load<AudioClip>("landing");
         levelCompletedSound = Resources.Load<AudioClip>("levelCompleted");
+        stepSound = Resources.Load<AudioClip>("step");
+        dieSound = Resources.Load<AudioClip>("die");
+
 
 
         audioSource = GetComponent<AudioSource>();
@@ -104,6 +109,14 @@ public class SoundManager : MonoBehaviour
 
             case "levelCompleted":
                 audioSource.PlayOneShot(levelCompletedSound);
+                break;
+
+            case "step":
+                audioSource.PlayOneShot(stepSound);
+                break;
+
+            case "die":
+                audioSource.PlayOneShot(dieSound);
                 break;
         }
     }    

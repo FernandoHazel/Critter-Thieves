@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     Items item;
     Request request;
 
+
+
     //[SerializeField] private CharacterController controller = null;  //siempre dejar el private para optimizar, null para evitar advertencias
     public CharacterController controller;
     //public CharacterController Controller => controller; //read only, no se puede modificar el controller original
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
+
         if (posInicial.x != 0)
         {
             transform.position = posInicial;
@@ -87,13 +90,13 @@ public class Player : MonoBehaviour
         Front = new Vector3(0, 0, -.3f);
         ui.UpdateHearts(playerData.Hp);
     }
-    private void Movement() //Movement
+
+    private void Movement()
     {
 
         //this is the jump
         if (controller.isGrounded)
         {
-            //SoundManager.PlaySound("landing");
 
             verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space))
@@ -127,6 +130,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
+            //SoundManager.PlaySound("step");
             moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         }
 
@@ -181,6 +185,7 @@ public class Player : MonoBehaviour
 
     public void Die() //Reset Everything
     {
+        SoundManager.PlaySound("die");
         for (int i = 0; i < playerData.inventory.Count; i++)
         {
             cheeseSpawn.transform.position = foodDropper.transform.position;
