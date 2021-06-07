@@ -63,6 +63,7 @@ public class Request : MonoBehaviour
                     }
                     if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
                     {
+                        SoundManager.PlaySound("questCompleted");
                         for (int i = 0; i<PalomitasObject.transform.childCount; i++)
                         {
                             PalomitasObject.transform.GetChild(i).gameObject.SetActive(false);

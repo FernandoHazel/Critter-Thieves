@@ -156,6 +156,7 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Loose a Life
     {
+        SoundManager.PlaySound("damage");
         if (GameManager.pause) {
             return;
         }
@@ -259,6 +260,7 @@ public class Player : MonoBehaviour
     {
         if (!other.GetComponent<Items>().grabbed && Input.GetKey(KeyCode.F) && playerData.Score < 4)
         {
+            SoundManager.PlaySound("grabFood");
             playerData.inventory.Add(other);
             
             Items tipo = other.GetComponent<Items>();
@@ -292,6 +294,8 @@ public class Player : MonoBehaviour
         {
             if (playerData.Score > 0)
             {
+                SoundManager.PlaySound("dropFood");
+
                 cheeseSpawn.transform.position = foodDropper.transform.position;
 
                 Items tipo = cheeseSpawn.GetComponent<Items>();
@@ -373,6 +377,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "GlueTrap")
         {
+            SoundManager.PlaySound("glueTrap");
             glueTraped = true;
             savedSpeed = speed;
             speed = .5f;
