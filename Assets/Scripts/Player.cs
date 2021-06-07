@@ -404,7 +404,6 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Nephew")
         {
-            SoundManager.PlaySound("deliverFood");
             vent = true;
         }
         if (other.gameObject.tag == "CatPath")

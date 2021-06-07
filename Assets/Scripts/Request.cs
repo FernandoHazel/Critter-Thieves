@@ -49,6 +49,7 @@ public class Request : MonoBehaviour
                         //Debug.Log("itero");
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Fresa")
                         {
+                            SoundManager.PlaySound("deliverFood");
                             //Debug.Log("encontré una fresa");
                             playerData.fresa--;
                             playerData.inventory.Remove(playerData.inventory[i]);
@@ -83,6 +84,7 @@ public class Request : MonoBehaviour
                     {
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Nuez")
                         {
+                            SoundManager.PlaySound("deliverFood");
                             playerData.nuez--;
                             playerData.inventory.Remove(playerData.inventory[i]);
                             playerData.Hp++;
@@ -116,6 +118,7 @@ public class Request : MonoBehaviour
                     {
                         if (playerData.inventory[i].GetComponent<Items>().Tipo == "Queso")
                         {
+                            SoundManager.PlaySound("deliverFood");
                             playerData.queso--;
                             playerData.inventory.Remove(playerData.inventory[i]);
                             playerData.Hp++;
