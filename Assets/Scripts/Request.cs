@@ -212,11 +212,11 @@ public class Request : MonoBehaviour
     
     void Update()
     {
-        //este if era un truco nomás para testear el final del nivel
-        /*if (Input.GetKeyDown(KeyCode.L))
+        //este if era un truco nomás para testear el final del nivel sin tener que pasarme todo el nivel
+        if (Input.GetKeyDown(KeyCode.L))
         {
             rqQueso = 4;
-        }*/
+        }
         NextMision();
         RequestGame();
         if(playerScript.angryCat && misiones)
