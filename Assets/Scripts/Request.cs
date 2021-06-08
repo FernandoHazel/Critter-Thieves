@@ -130,10 +130,10 @@ public class Request : MonoBehaviour
                             PlayerPrefs.SetInt("numPalomita", numPalomita);
                         }
                     }
-                    if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
+                    /*if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
                     {
                         SoundManager.PlaySound("questCompleted");
-                    }
+                    }*/
 
                     }
                 break;
