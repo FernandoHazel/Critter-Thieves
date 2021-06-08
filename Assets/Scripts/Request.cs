@@ -7,7 +7,7 @@ public class Request : MonoBehaviour
 {
     [SerializeField] Player playerScript;
     [SerializeField] PlayerData playerData;
-    [SerializeField] GameObject catPath, requestObject, PalomitasObject, palomitasPause, RequestsPause;
+    [SerializeField] GameObject catPath, requestObject, PalomitasObject, palomitasPause, RequestsPause, SDLeave, levelCompleted, backgroundMusic;
     public bool misiones; //este bool nos señala si las quest fueron completadas o no
     public int rqFresa, rqNuez, rqQueso, numPalomita = 0;
     int request = 0;
@@ -186,11 +186,12 @@ public class Request : MonoBehaviour
             PlayerPrefs.SetInt("mision", request);
             misiones = true;
             Debug.Log("NIVEL COMPLETADO");
-            playerScript.final.SetActive(true);
+            GameObject.Destroy(backgroundMusic);
+            levelCompleted.SetActive(true);
             Time.timeScale = 0;
             if (Input.GetKey(KeyCode.Space))
             {
-                playerScript.final.SetActive(false);
+                levelCompleted.SetActive(false);
                 Time.timeScale = 1;
                 rqQueso++;
             }
@@ -206,20 +207,32 @@ public class Request : MonoBehaviour
         Debug.Log("al nivel del gato");
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Corridor");
+        SoundManager.PlaySound("sadCat");
     }
     
     void Update()
     {
+        //este if era un truco nomás para testear el final del nivel
+        /*if (Input.GetKeyDown(KeyCode.L))
+        {
+            rqQueso = 4;
+        }*/
         NextMision();
         RequestGame();
-        if (playerScript.catPath && misiones)
+        if(playerScript.angryCat && misiones)
         {
             SoundManager.PlaySound("angryCat");
+        }
+        if (playerScript.catPath && misiones)
+        {
             GoToCatLevel();
         }
         else if (playerScript.catPath && !misiones)
         {
-            //Sale mensaje de que aún falta recoger comida
+            SDLeave.SetActive(true);
+        }
+        else{
+            SDLeave.SetActive(false);
         }
     }
 }

@@ -11,10 +11,6 @@ public class Player : MonoBehaviour
     Items item;
     Request request;
 
-    public GameObject backgroundMusic;
-
-
-
     //[SerializeField] private CharacterController controller = null;  //siempre dejar el private para optimizar, null para evitar advertencias
     public CharacterController controller;
     //public CharacterController Controller => controller; //read only, no se puede modificar el controller original
@@ -35,15 +31,13 @@ public class Player : MonoBehaviour
 
     private float gravity = 9.81f, verticalVelocity;
 
-    public bool climb, vent, slow, saveItemPos, catPath;
+    public bool climb, vent, slow, saveItemPos, catPath, angryCat;
     public Vector3 posInicial;
     [SerializeField] Transform posMarcel;
     GameObject cheeseSpawn;
     [SerializeField] GameObject foodDropper;
 
     public Text contQueso, contFresa, contNuez;
-
-    public GameObject final;
 
     bool glueTraped = false;
     private Vector3 Front;
@@ -414,6 +408,10 @@ public class Player : MonoBehaviour
         {
             vent = true;
         }
+        if (other.gameObject.tag == "AngryCat")
+        {
+            angryCat = true;
+        }
         if (other.gameObject.tag == "CatPath")
         {
             Debug.Log("entrando gato");
@@ -456,16 +454,14 @@ public class Player : MonoBehaviour
         {
             catPath = false;
         }
-        if (other.gameObject.tag == "Finish")
+        /*if (other.gameObject.tag == "Finish")
         {
             GameObject.Destroy(backgroundMusic);
             SoundManager.PlaySound("sadCat");
             Time.timeScale = 0;
             final.SetActive(true);
-            SceneManager.LoadScene("MainMenu");
-
-            
-        }
+            SceneManager.LoadScene("MainMenu"); 
+        }*/
     }
 
     void regulator()

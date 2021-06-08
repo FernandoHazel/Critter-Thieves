@@ -26,7 +26,7 @@ public class BossCam : MonoBehaviour
 
     void Rutas()
     {
-        float posY = Mathf.SmoothDamp(transform.position.y, tracker.transform.position.y + 2.5f, ref velocity.y, smoothTime);
+        float posY = Mathf.SmoothDamp(transform.position.y, tracker.transform.position.y + 2.5f, ref velocity.y, .1f);
 
 
         if (Player.position.x - transform.position.x  >= 15)
