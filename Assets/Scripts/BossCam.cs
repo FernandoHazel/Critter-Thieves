@@ -40,7 +40,7 @@ public class BossCam : MonoBehaviour
             transform.position = new Vector3(transform.position.x - (Time.deltaTime * 6.3f), Mathf.Clamp(posY, minCamPos.y, maxCamPos.y), transform.position.z);
         }
 
-        Debug.Log(Player.position.x - transform.position.x);
+        //Debug.Log(Player.position.x - transform.position.x);
 
 
 

@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     Items item;
     Request request;
 
+    public GameObject backgroundMusic;
+
 
 
     //[SerializeField] private CharacterController controller = null;  //siempre dejar el private para optimizar, null para evitar advertencias
@@ -390,7 +392,7 @@ public class Player : MonoBehaviour
             SoundManager.PlaySound("glueTrap");
             glueTraped = true;
             savedSpeed = speed;
-            speed = .5f;
+            speed = .8f;
             slow = true;
         }
         if (other.gameObject.tag == "Checkpoint")
@@ -413,7 +415,10 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "CatPath")
         {
+
+            SoundManager.PlaySound("angryCat");
             Debug.Log("entrando gato");
+
             catPath = true;
         }
     }
@@ -453,6 +458,8 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
+            GameObject.Destroy(backgroundMusic);
+            SoundManager.PlaySound("sadCat");
             final.SetActive(true);
             Time.timeScale = 0;
         }
