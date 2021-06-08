@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; //TEMPORAL
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -415,12 +416,11 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "CatPath")
         {
-
-            SoundManager.PlaySound("angryCat");
             Debug.Log("entrando gato");
 
             catPath = true;
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -460,8 +460,11 @@ public class Player : MonoBehaviour
         {
             GameObject.Destroy(backgroundMusic);
             SoundManager.PlaySound("sadCat");
-            final.SetActive(true);
             Time.timeScale = 0;
+            final.SetActive(true);
+            SceneManager.LoadScene("MainMenu");
+
+            
         }
     }
 

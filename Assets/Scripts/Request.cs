@@ -214,6 +214,7 @@ public class Request : MonoBehaviour
         RequestGame();
         if (playerScript.catPath && misiones)
         {
+            SoundManager.PlaySound("angryCat");
             GoToCatLevel();
         }
         else if (playerScript.catPath && !misiones)
