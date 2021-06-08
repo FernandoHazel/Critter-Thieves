@@ -132,7 +132,7 @@ public class Request : MonoBehaviour
                     }
                     if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
                     {
-                        SoundManager.PlaySound("levelCompleted");
+                        SoundManager.PlaySound("questCompleted");
                     }
 
                     }
