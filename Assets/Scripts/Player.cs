@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Loose a Life
     {
-        SoundManager.PlaySound("damage");
+        
         if (GameManager.pause) {
             return;
         }
@@ -171,6 +171,7 @@ public class Player : MonoBehaviour
         playerData.Hp--;
 
         ui.UpdateHearts(playerData.Hp);
+        SoundManager.PlaySound("damage");
 
         invencibilityTime = 2;
 
