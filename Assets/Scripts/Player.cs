@@ -454,14 +454,14 @@ public class Player : MonoBehaviour
         {
             catPath = false;
         }
-        /*if (other.gameObject.tag == "Finish")
+        if (other.gameObject.tag == "Finish")
         {
-            GameObject.Destroy(backgroundMusic);
+            //GameObject.Destroy(backgroundMusic);
             SoundManager.PlaySound("sadCat");
             Time.timeScale = 0;
-            final.SetActive(true);
-            SceneManager.LoadScene("MainMenu"); 
-        }*/
+            //final.SetActive(true);
+            //SceneManager.LoadScene("MainMenu"); 
+        }
     }
 
     void regulator()
