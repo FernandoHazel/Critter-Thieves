@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     public Vector3 posInicial;
     [SerializeField] Transform posMarcel;
     GameObject cheeseSpawn;
-    [SerializeField] GameObject foodDropper;
+    [SerializeField] GameObject foodDropper, final;
 
     public Text contQueso, contFresa, contNuez;
 
@@ -367,6 +367,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Finish")
+        {
+            //GameObject.Destroy(backgroundMusic);
+            SoundManager.PlaySound("sadCat");
+            Time.timeScale = 0;
+            final.SetActive(true);
+            //SceneManager.LoadScene("MainMenu"); 
+        }
         if (other.gameObject.tag == "Climb")
         {
             climb = true;
@@ -454,14 +462,7 @@ public class Player : MonoBehaviour
         {
             catPath = false;
         }
-        if (other.gameObject.tag == "Finish")
-        {
-            //GameObject.Destroy(backgroundMusic);
-            SoundManager.PlaySound("sadCat");
-            Time.timeScale = 0;
-            //final.SetActive(true);
-            //SceneManager.LoadScene("MainMenu"); 
-        }
+        
     }
 
     void regulator()
