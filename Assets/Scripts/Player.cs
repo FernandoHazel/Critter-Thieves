@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerData playerData;
     [SerializeField] UserInterface ui;
     Items item;
+
+    public AudioSource backgroundMusic;
+
     Request request;
 
     //[SerializeField] private CharacterController controller = null;  //siempre dejar el private para optimizar, null para evitar advertencias
