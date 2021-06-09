@@ -127,7 +127,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            //SoundManager.PlaySound("step");
             moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         }
 
@@ -370,7 +369,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Finish")
         {
-            //GameObject.Destroy(backgroundMusic);
+            GameObject.Destroy(backgroundMusic);
             SoundManager.PlaySound("sadCat");
             Time.timeScale = 0;
             final.SetActive(true);
