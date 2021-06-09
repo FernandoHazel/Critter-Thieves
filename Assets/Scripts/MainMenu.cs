@@ -7,14 +7,20 @@ public class MainMenu : MonoBehaviour
 {
    [SerializeField] PlayerData playerData;
    public GameObject howToPlayMenu;
-   //public GameObject Holder;
+   public GameObject credits;
+    //public GameObject Holder;
 
     //This void displays the "how to play" interface
-   public void HowToPlay(){
+    public void HowToPlay(){
       howToPlayMenu.SetActive(true);
    }
 
-   public void LoadScene(string sceneToLoad){
+    public void Credits()
+    {
+        credits.SetActive(true);
+    }
+
+    public void LoadScene(string sceneToLoad){
       SceneManager.LoadScene(sceneToLoad);
       PlayerPrefs.DeleteAll();
    }
@@ -27,5 +33,10 @@ public class MainMenu : MonoBehaviour
     public void CloseHowToPlay(){
       howToPlayMenu.SetActive(false);
    }
+
+    public void CloseCredits()
+    {
+        credits.SetActive(false);
+    }
 
 }
