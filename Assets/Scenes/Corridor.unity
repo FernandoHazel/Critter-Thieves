@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18377465, g: 0.22912882, b: 0.30438018, a: 1}
+  m_IndirectSpecularColor: {r: 0.45125753, g: 0.5009513, b: 0.5734381, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18253,8 +18253,8 @@ Transform:
   - {fileID: 518617855}
   - {fileID: 101211780}
   - {fileID: 758050311}
-  - {fileID: 372016225}
   - {fileID: 1436300692}
+  - {fileID: 372016225}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18348,7 +18348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468014178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -374.33, y: 3.2, z: 0}
+  m_LocalPosition: {x: -373.64, y: 3.2, z: 0}
   m_LocalScale: {x: 4.296523, y: 4.296523, z: 4.296523}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19077,19 +19077,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 101211779}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1535427440
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535427439}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1500.0005, y: 61.073338, z: 600}
-  m_Center: {x: 0, y: 1979.4635, z: 0.00073950976}
 --- !u!65 &1535427441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19129,6 +19116,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1500.0005, y: 609.4346, z: 600}
   m_Center: {x: 0, y: 304.7173, z: 0.00073950976}
+--- !u!65 &1535427444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535427439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1500.0005, y: 61.073338, z: 600}
+  m_Center: {x: 0, y: 1979.4635, z: 0.00073950976}
 --- !u!1 &1536822719
 GameObject:
   m_ObjectHideFlags: 0
