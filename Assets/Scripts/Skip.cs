@@ -8,7 +8,7 @@ public class Skip : MonoBehaviour
 {
     [SerializeField] private float delayBeforeLoad = 34f;
 
-    [SerializeField] private float delayBeforeText = 7f;
+    [SerializeField] private float delayBeforeText = 10f;
 
     public Text instruction;
 
