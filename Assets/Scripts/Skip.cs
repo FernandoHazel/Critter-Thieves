@@ -13,7 +13,7 @@ public class Skip : MonoBehaviour
 
     public void SkipScene()
     {
-        SceneManager.LoadScene("LevelBuild");
+        SceneManager.LoadScene("LevelBuilder");
     }
 
     // Update is called once per frame
