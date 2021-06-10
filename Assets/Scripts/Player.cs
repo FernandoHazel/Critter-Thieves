@@ -183,6 +183,29 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Fire() //Loose a Life
+    {
+
+        if (GameManager.pause)
+        {
+            return;
+        }
+
+        if (invencibilityTime > 0)
+            return;
+        playerData.Hp--;
+
+        ui.UpdateHearts(playerData.Hp);
+        SoundManager.PlaySound("fire");
+
+        invencibilityTime = 2;
+
+        if (playerData.Hp <= 0)
+        {
+            Die();
+        }
+    }
+
     public void Die() //Reset Everything
     {
         SoundManager.PlaySound("die");
@@ -385,6 +408,11 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Trap")
         {
             GetHurt();
+        }
+
+        if (other.gameObject.tag == "Fire")
+        {
+            Fire();
         }
 
         if (other.gameObject.tag == "GlueTrap")

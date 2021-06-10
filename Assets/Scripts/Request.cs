@@ -130,10 +130,6 @@ public class Request : MonoBehaviour
                             PlayerPrefs.SetInt("numPalomita", numPalomita);
                         }
                     }
-                    /*if (numPalomita >= 4) //Desactivamos las palomitas al terminar el request
-                    {
-                        SoundManager.PlaySound("questCompleted");
-                    }*/
 
                     }
                 break;
@@ -187,6 +183,7 @@ public class Request : MonoBehaviour
             misiones = true;
             Debug.Log("NIVEL COMPLETADO");
             GameObject.Destroy(backgroundMusic);
+            SoundManager.PlaySound("angryCat");
             levelCompleted.SetActive(true);
             Time.timeScale = 0;
             if (Input.GetKey(KeyCode.Space))
@@ -207,7 +204,6 @@ public class Request : MonoBehaviour
         Debug.Log("al nivel del gato");
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Corridor");
-        SoundManager.PlaySound("sadCat");
     }
     
     void Update()

@@ -22,6 +22,7 @@ public class SoundManager : MonoBehaviour
     public static AudioClip levelCompletedSound;
     public static AudioClip stepSound;
     public static AudioClip dieSound;
+    public static AudioClip fireSound;
 
 
     static AudioSource audioSource;
@@ -42,6 +43,7 @@ public class SoundManager : MonoBehaviour
         levelCompletedSound = Resources.Load<AudioClip>("levelCompleted");
         stepSound = Resources.Load<AudioClip>("step");
         dieSound = Resources.Load<AudioClip>("die");
+        dieSound = Resources.Load<AudioClip>("fire");
 
 
 
@@ -117,6 +119,10 @@ public class SoundManager : MonoBehaviour
 
             case "die":
                 audioSource.PlayOneShot(dieSound);
+                break;
+
+            case "fire":
+                audioSource.PlayOneShot(fireSound);
                 break;
         }
     }    
