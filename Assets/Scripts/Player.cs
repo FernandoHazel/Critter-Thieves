@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             for (int i = 0; i < invCount; i++)
             {
                 idABuscar = PlayerPrefs.GetString(i.ToString()); //este id tiene que coincidir con el nombre del objeto en la jerarquía
-                objeto = GameObject.Find("/Comida/"+idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
+                objeto = GameObject.Find("/Nivel/Comida/"+idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
                 playerData.inventory.Add(objeto); //añadimos el objeto a la lista
             }
             cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
