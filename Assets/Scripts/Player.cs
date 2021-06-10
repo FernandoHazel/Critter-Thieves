@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D))
         {
             moveVector = new Vector3(Input.GetAxis("Horizontal"), verticalVelocity, 0);
         }

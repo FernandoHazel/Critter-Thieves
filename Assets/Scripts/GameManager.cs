@@ -16,10 +16,12 @@ public class GameManager : MonoBehaviour
     //This void activates and desactivates the menu if in pause or in game
     void ManageMenu(){
         if (pause){
+            Time.timeScale = 0;
             inGame.SetActive(false);
             inPause.SetActive(true);
         }
         if (!pause){
+            Time.timeScale = 1;
             inGame.SetActive(true);
             inPause.SetActive(false);
         }
