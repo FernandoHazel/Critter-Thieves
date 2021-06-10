@@ -188,34 +188,29 @@ public class Player : MonoBehaviour
         SoundManager.PlaySound("die");
         for (int i = 0; i < playerData.inventory.Count; i++)
         {
-            cheeseSpawn.transform.position = foodDropper.transform.position;
+            playerData.inventory[i].transform.position = transform.position;
+            //cheeseSpawn.transform.position = foodDropper.transform.position;
 
-            Items tipo = cheeseSpawn.GetComponent<Items>();
+            Items tipo = playerData.inventory[i].GetComponent<Items>();
             if (tipo.Tipo == "Fresa")
             {
-                cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-                cheeseSpawn.gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
-                cheeseSpawn.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = true;
+                playerData.inventory[i].gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                playerData.inventory[i].gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
+                playerData.inventory[i].gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = true;
                 playerData.fresa--;
-                cheeseSpawn.GetComponent<Items>().grabbed = false;
+                playerData.inventory[i].GetComponent<Items>().grabbed = false;
             }
             else if (tipo.Tipo == "Nuez")
             {
-                cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                playerData.inventory[i].gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
                 playerData.nuez--;
-                cheeseSpawn.GetComponent<Items>().grabbed = false;
+                playerData.inventory[i].GetComponent<Items>().grabbed = false;
             }
             else if (tipo.Tipo == "Queso")
             {
-                cheeseSpawn.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+                playerData.inventory[i].gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
                 playerData.queso--;
-                cheeseSpawn.GetComponent<Items>().grabbed = false;
-            }
-
-            playerData.inventory.Remove(cheeseSpawn);
-            if (playerData.inventory.Count != 0)
-            {
-                cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];;
+                playerData.inventory[i].GetComponent<Items>().grabbed = false;
             }
         }
         playerData.inventory.Clear();
