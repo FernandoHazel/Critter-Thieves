@@ -189,7 +189,6 @@ public class Player : MonoBehaviour
         for (int i = 0; i < playerData.inventory.Count; i++)
         {
             playerData.inventory[i].transform.position = transform.position;
-            //cheeseSpawn.transform.position = foodDropper.transform.position;
 
             Items tipo = playerData.inventory[i].GetComponent<Items>();
             if (tipo.Tipo == "Fresa")
