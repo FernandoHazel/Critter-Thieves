@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 1078958281}
   - component: {fileID: 1078958283}
   - component: {fileID: 1078958282}
+  - component: {fileID: 1078958284}
   m_Layer: 5
   m_Name: Instruction
   m_TagString: Untagged
@@ -631,7 +632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click to Skip
+  m_Text: 
 --- !u!222 &1078958283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -640,6 +641,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078958280}
   m_CullTransparentMesh: 1
+--- !u!114 &1078958284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078958280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e4b3f1d5f545b498eac8bbdd7de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.3
+  fullText: Click to Skip....
 --- !u!1 &1148617064
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +798,7 @@ GameObject:
   - component: {fileID: 1332652675}
   - component: {fileID: 1332652677}
   - component: {fileID: 1332652676}
+  - component: {fileID: 1332652678}
   m_Layer: 5
   m_Name: Instruction (1)
   m_TagString: Untagged
@@ -842,7 +858,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click to Skip
+  m_Text: 
 --- !u!222 &1332652677
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -851,6 +867,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332652674}
   m_CullTransparentMesh: 1
+--- !u!114 &1332652678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332652674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e4b3f1d5f545b498eac8bbdd7de7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.3
+  fullText: Click to Skip....
 --- !u!1 &1385028866
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,8 +1013,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeLoad: 36
-  delayBeforeText: 7
-  instruction: {fileID: 1078958282}
 --- !u!4 &2039261764
 Transform:
   m_ObjectHideFlags: 0
