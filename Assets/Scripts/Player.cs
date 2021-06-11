@@ -372,7 +372,6 @@ public class Player : MonoBehaviour
 
     void finishGame()
     {
-        timeCounter += Time.deltaTime;
 
         if (timeCounter > delayBeforeLoad)
         {
@@ -412,6 +411,7 @@ public class Player : MonoBehaviour
             sadCat.Play();
             Time.timeScale = 0;
             final.SetActive(true);
+            timeCounter += Time.deltaTime;
             finishGame();
         }
         if (other.gameObject.tag == "Climb")
