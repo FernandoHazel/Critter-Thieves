@@ -175,6 +175,7 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(playerData.Hp);
 
         invencibilityTime = 2;
+        TrapSoundManager.PlaySound("trap");
         SoundManager.PlaySound("damage");
 
 
@@ -200,6 +201,7 @@ public class Player : MonoBehaviour
         ui.UpdateHearts(playerData.Hp);
 
         invencibilityTime = 2;
+        TrapSoundManager.PlaySound("fire");
         SoundManager.PlaySound("damage");
 
 

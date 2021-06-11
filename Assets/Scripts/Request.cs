@@ -12,6 +12,9 @@ public class Request : MonoBehaviour
     public int rqFresa, rqNuez, rqQueso, numPalomita = 0;
     int request = 0;
 
+    public AudioSource sadCat;
+    public AudioSource angryCat;
+
     void Start()
     {
         if(PlayerPrefs.GetInt("mision") != 0)
@@ -183,7 +186,7 @@ public class Request : MonoBehaviour
             misiones = true;
             Debug.Log("NIVEL COMPLETADO");
             GameObject.Destroy(backgroundMusic);
-            SoundManager.PlaySound("sadCat");
+            sadCat.Play();
             levelCompleted.SetActive(true);
             Time.timeScale = 0;
             if (Input.GetKey(KeyCode.Space))
@@ -217,7 +220,7 @@ public class Request : MonoBehaviour
         RequestGame();
         if(playerScript.angryCat && misiones)
         {
-            SoundManager.PlaySound("angryCat");
+            angryCat.Play();
         }
         if (playerScript.catPath && misiones)
         {
