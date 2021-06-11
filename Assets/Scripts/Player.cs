@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     Items item;
 
     public AudioSource backgroundMusic;
+    public AudioSource sadCat;
+
+    [SerializeField] private float delayBeforeLoad = 2f;
+    private float timeCounter = 0f;
 
     Request request;
 
@@ -273,7 +277,6 @@ public class Player : MonoBehaviour
             for (int i = 0; i < sprites.Length; i++)
             {
                 sprites[i].enabled = !sprites[i].enabled;
-                //SoundManager.PlaySound("damage");
             }
         }
         else
@@ -366,6 +369,16 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    void finishGame()
+    {
+        timeCounter += Time.deltaTime;
+
+        if (timeCounter > delayBeforeLoad)
+        {
+            SceneManager.LoadScene("Outro");
+        }
+    }
     private void OnTriggerStay(Collider other)  //Tags
     {
         if (other.gameObject.tag == "Climb" && controller.isGrounded)
@@ -396,10 +409,10 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
             GameObject.Destroy(backgroundMusic);
-            SoundManager.PlaySound("sadCat");
+            sadCat.Play();
             Time.timeScale = 0;
             final.SetActive(true);
-            //SceneManager.LoadScene("MainMenu"); 
+            finishGame();
         }
         if (other.gameObject.tag == "Climb")
         {

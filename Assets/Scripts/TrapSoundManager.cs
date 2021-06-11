@@ -22,9 +22,6 @@ public class TrapSoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        angryCatSound = Resources.Load<AudioClip>("angryCat");
-        sadCatSound = Resources.Load<AudioClip>("sadCat");
         fireSound = Resources.Load<AudioClip>("fire");
         trapSound = Resources.Load<AudioClip>("trap");
 
@@ -55,13 +52,6 @@ public class TrapSoundManager : MonoBehaviour
         switch (clip)
         {
             
-            case "angryCat":
-                audioSource.PlayOneShot(angryCatSound);
-                break;
-
-            case "sadCat":
-                audioSource.PlayOneShot(sadCatSound);
-                break;
 
             case "fire":
                 audioSource.PlayOneShot(fireSound);
