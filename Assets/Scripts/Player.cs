@@ -13,8 +13,6 @@ public class Player : MonoBehaviour
     public AudioSource backgroundMusic;
     public AudioSource sadCat;
 
-    [SerializeField] private float delayBeforeLoad = 2f;
-    private float timeCounter = 0f;
 
     Request request;
 
@@ -371,14 +369,13 @@ public class Player : MonoBehaviour
     }
 
 
-    void finishGame()
+    public IEnumerator finishGame()
     {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Outro");
 
-        if (timeCounter > delayBeforeLoad)
-        {
-            SceneManager.LoadScene("Outro");
-        }
     }
+
     private void OnTriggerStay(Collider other)  //Tags
     {
         if (other.gameObject.tag == "Climb" && controller.isGrounded)
@@ -412,9 +409,8 @@ public class Player : MonoBehaviour
             sadCat.Play();
             Time.timeScale = 0;
             final.SetActive(true);
-            timeCounter += Time.deltaTime;
-            finishGame();
-            SceneManager.LoadScene("Outro");
+            StartCoroutine (finishGame());
+
         }
         if (other.gameObject.tag == "Climb")
         {

@@ -202,13 +202,16 @@ public class Request : MonoBehaviour
         Debug.Log("Quesos entregadas: " + rqQueso);
         Debug.Log("misiones " + misiones);*/
     }
-    void GoToCatLevel()
+
+    public IEnumerator GoToCatLevel()
     {
+        yield return new WaitForSeconds(3f);
         Debug.Log("al nivel del gato");
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Corridor");
+
     }
-    
+
     void Update()
     {
         //este if era un truco nomás para testear el final del nivel sin tener que pasarme todo el nivel
@@ -224,7 +227,8 @@ public class Request : MonoBehaviour
         }
         if (playerScript.catPath && misiones)
         {
-            GoToCatLevel();
+            angryCat.Play();
+            StartCoroutine(GoToCatLevel());
         }
         else if (playerScript.catPath && !misiones)
         {
