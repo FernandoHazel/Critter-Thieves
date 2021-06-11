@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] SpriteRenderer[] sprites;
 
-    public Transform BossCam;
+    public BossCam BossCam;
 
     //We load the position saved only if any
     private void Awake() {
@@ -260,7 +260,7 @@ public class Player : MonoBehaviour
 
     public void CamRun()
     {
-        if (transform.position.x - BossCam.position.x <= -14)
+        if (transform.position.x - BossCam.transform.position.x <= -14)
         {
             SoundManager.PlaySound("die");
             Die();
@@ -453,6 +453,11 @@ public class Player : MonoBehaviour
             invCount = playerData.inventory.Count;
             PlayerPrefs.SetInt("invCount", invCount);
             
+        }
+        if (other.gameObject.tag == "CheckpointCL")
+        {
+            posInicial = other.transform.position;
+            BossCam.posInicialCam.x = other.transform.position.x;
         }
         if (other.gameObject.tag == "Nephew")
         {

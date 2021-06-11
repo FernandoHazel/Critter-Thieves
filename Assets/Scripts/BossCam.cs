@@ -13,14 +13,14 @@ public class BossCam : MonoBehaviour
     public Transform End;
     public Transform Player;
 
-    Vector3 posInicial;
+    public Vector3 posInicialCam;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        posInicial = transform.position;
+        posInicialCam = transform.position;
     }
 
 
@@ -32,7 +32,7 @@ public class BossCam : MonoBehaviour
         if (Player.position.x - transform.position.x  >= 15)
         {
 
-            transform.position = posInicial;
+            transform.position = posInicialCam;
         }
 
         if (transform.position.x - End.position.x != 0)
