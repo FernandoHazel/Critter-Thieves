@@ -983,6 +983,7 @@ GameObject:
   - component: {fileID: 77185357}
   - component: {fileID: 77185356}
   - component: {fileID: 77185355}
+  - component: {fileID: 77185359}
   m_Layer: 0
   m_Name: Plane (31)
   m_TagString: Climb
@@ -1080,6 +1081,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77185353}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &77185359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77185353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &105851586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1630,6 +1644,7 @@ GameObject:
   - component: {fileID: 169146094}
   - component: {fileID: 169146093}
   - component: {fileID: 169146092}
+  - component: {fileID: 169146096}
   m_Layer: 0
   m_Name: Cortina (9)
   m_TagString: Climb
@@ -1649,7 +1664,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 37
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &169146092
 BoxCollider:
@@ -1727,6 +1742,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169146090}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &169146096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169146090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &211935002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1766,7 @@ GameObject:
   - component: {fileID: 211935003}
   - component: {fileID: 211935005}
   - component: {fileID: 211935004}
+  - component: {fileID: 211935006}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (4)
   m_TagString: Climb
@@ -1757,7 +1786,7 @@ Transform:
   m_LocalScale: {x: 1.5601, y: 1.4386551, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 32
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &211935004
 BoxCollider:
@@ -1823,6 +1852,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &211935006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211935002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &218437583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2184,6 +2226,7 @@ GameObject:
   - component: {fileID: 252635113}
   - component: {fileID: 252635112}
   - component: {fileID: 252635111}
+  - component: {fileID: 252635115}
   m_Layer: 0
   m_Name: Cortina (6)
   m_TagString: Climb
@@ -2203,7 +2246,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 22
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &252635111
 BoxCollider:
@@ -2281,6 +2324,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252635109}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &252635115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252635109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &254124697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2484,6 +2540,7 @@ GameObject:
   - component: {fileID: 307571708}
   - component: {fileID: 307571707}
   - component: {fileID: 307571706}
+  - component: {fileID: 307571710}
   m_Layer: 0
   m_Name: Cortina (8)
   m_TagString: Climb
@@ -2503,7 +2560,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 36
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &307571706
 BoxCollider:
@@ -2581,6 +2638,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307571704}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &307571710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307571704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &318284785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2901,6 +2971,7 @@ GameObject:
   - component: {fileID: 332998849}
   - component: {fileID: 332998848}
   - component: {fileID: 332998847}
+  - component: {fileID: 332998850}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (1)
   m_TagString: Climb
@@ -2984,8 +3055,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1.2769877, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 25
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332998850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332998846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!114 &360913919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4155592581275964120, guid: e605c2b99411e994e982c4571c891d6c,
@@ -3246,6 +3330,7 @@ GameObject:
   - component: {fileID: 396048844}
   - component: {fileID: 396048843}
   - component: {fileID: 396048842}
+  - component: {fileID: 396048846}
   m_Layer: 0
   m_Name: Plane (41)
   m_TagString: Climb
@@ -3265,7 +3350,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 40
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
 --- !u!65 &396048842
 BoxCollider:
@@ -3343,6 +3428,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396048840}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &396048846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396048840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &398368320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,6 +3452,7 @@ GameObject:
   - component: {fileID: 398368321}
   - component: {fileID: 398368323}
   - component: {fileID: 398368322}
+  - component: {fileID: 398368324}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (6)
   m_TagString: Climb
@@ -3373,7 +3472,7 @@ Transform:
   m_LocalScale: {x: 1.5601, y: 1.4386551, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 34
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &398368322
 BoxCollider:
@@ -3439,6 +3538,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &398368324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398368320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &405273457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4057,6 +4169,7 @@ GameObject:
   - component: {fileID: 472044643}
   - component: {fileID: 472044642}
   - component: {fileID: 472044641}
+  - component: {fileID: 472044645}
   m_Layer: 0
   m_Name: Cortina (1)
   m_TagString: Climb
@@ -4076,7 +4189,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &472044641
 BoxCollider:
@@ -4154,6 +4267,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472044639}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &472044645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472044639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &487467264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4264,6 +4390,7 @@ GameObject:
   - component: {fileID: 497318110}
   - component: {fileID: 497318109}
   - component: {fileID: 497318108}
+  - component: {fileID: 497318111}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (2)
   m_TagString: Climb
@@ -4347,8 +4474,21 @@ Transform:
   m_LocalScale: {x: 1.5601, y: 1.4386551, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 27
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &497318111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497318107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &504377095
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,6 +4502,7 @@ GameObject:
   - component: {fileID: 504377099}
   - component: {fileID: 504377098}
   - component: {fileID: 504377097}
+  - component: {fileID: 504377101}
   m_Layer: 0
   m_Name: Plane (15)
   m_TagString: Climb
@@ -4459,6 +4600,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504377095}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &504377101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504377095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &511541543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5108,6 +5262,7 @@ GameObject:
   - component: {fileID: 611801509}
   - component: {fileID: 611801508}
   - component: {fileID: 611801507}
+  - component: {fileID: 611801511}
   m_Layer: 0
   m_Name: Plane (24)
   m_TagString: Climb
@@ -5205,6 +5360,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611801505}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &611801511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611801505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &616387443
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,6 +5386,7 @@ GameObject:
   - component: {fileID: 616387447}
   - component: {fileID: 616387446}
   - component: {fileID: 616387445}
+  - component: {fileID: 616387449}
   m_Layer: 0
   m_Name: Plane (8)
   m_TagString: Climb
@@ -5315,6 +5484,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616387443}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &616387449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616387443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &616546465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5328,6 +5510,7 @@ GameObject:
   - component: {fileID: 616546469}
   - component: {fileID: 616546468}
   - component: {fileID: 616546467}
+  - component: {fileID: 616546471}
   m_Layer: 0
   m_Name: Plane (32)
   m_TagString: Climb
@@ -5425,6 +5608,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616546465}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &616546471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616546465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &636182818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5740,6 +5936,7 @@ GameObject:
   - component: {fileID: 674724766}
   - component: {fileID: 674724765}
   - component: {fileID: 674724764}
+  - component: {fileID: 674724768}
   m_Layer: 0
   m_Name: Plane (37)
   m_TagString: Climb
@@ -5837,6 +6034,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674724762}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &674724768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674724762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &688276262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6078,6 +6288,7 @@ GameObject:
   - component: {fileID: 704156210}
   - component: {fileID: 704156212}
   - component: {fileID: 704156211}
+  - component: {fileID: 704156213}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (2)
   m_TagString: Climb
@@ -6097,7 +6308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.6884, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 28
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &704156211
 BoxCollider:
@@ -6163,6 +6374,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &704156213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704156209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &723581068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7355,6 +7579,7 @@ GameObject:
   - component: {fileID: 808480867}
   - component: {fileID: 808480866}
   - component: {fileID: 808480865}
+  - component: {fileID: 808480869}
   m_Layer: 0
   m_Name: Plane (10)
   m_TagString: Climb
@@ -7374,7 +7599,7 @@ Transform:
   m_LocalScale: {x: 2.3754652, y: 1.5489, z: 1.4132904}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 42
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
 --- !u!65 &808480865
 BoxCollider:
@@ -7452,6 +7677,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808480863}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &808480869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808480863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &808666108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8729286931774371234, guid: e605c2b99411e994e982c4571c891d6c,
@@ -7673,6 +7911,7 @@ GameObject:
   - component: {fileID: 851186425}
   - component: {fileID: 851186427}
   - component: {fileID: 851186426}
+  - component: {fileID: 851186428}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (5)
   m_TagString: Climb
@@ -7692,7 +7931,7 @@ Transform:
   m_LocalScale: {x: 1.5601, y: 1.4386551, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 33
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &851186426
 BoxCollider:
@@ -7758,6 +7997,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &851186428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851186424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &860573247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8016,6 +8268,7 @@ GameObject:
   - component: {fileID: 916860104}
   - component: {fileID: 916860103}
   - component: {fileID: 916860102}
+  - component: {fileID: 916860106}
   m_Layer: 0
   m_Name: Cortina (3)
   m_TagString: Climb
@@ -8035,7 +8288,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &916860102
 BoxCollider:
@@ -8113,6 +8366,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916860100}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &916860106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916860100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &921033040
 GameObject:
   m_ObjectHideFlags: 0
@@ -8610,6 +8876,7 @@ GameObject:
   - component: {fileID: 995451325}
   - component: {fileID: 995451324}
   - component: {fileID: 995451323}
+  - component: {fileID: 995451327}
   m_Layer: 0
   m_Name: Plane (18)
   m_TagString: Climb
@@ -8707,6 +8974,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995451321}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &995451327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995451321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1007249171
 GameObject:
   m_ObjectHideFlags: 0
@@ -8771,6 +9051,7 @@ GameObject:
   - component: {fileID: 1013888133}
   - component: {fileID: 1013888132}
   - component: {fileID: 1013888131}
+  - component: {fileID: 1013888134}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope
   m_TagString: Climb
@@ -8854,8 +9135,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1.6884, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 23
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013888134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013888130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1087604709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9111,6 +9405,7 @@ GameObject:
   - component: {fileID: 1108873444}
   - component: {fileID: 1108873443}
   - component: {fileID: 1108873442}
+  - component: {fileID: 1108873446}
   m_Layer: 0
   m_Name: Plane (39)
   m_TagString: Climb
@@ -9208,6 +9503,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108873440}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1108873446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108873440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1111868900
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,6 +9967,7 @@ GameObject:
   - component: {fileID: 1224834325}
   - component: {fileID: 1224834324}
   - component: {fileID: 1224834323}
+  - component: {fileID: 1224834327}
   m_Layer: 0
   m_Name: Cortina (2)
   m_TagString: Climb
@@ -9678,7 +9987,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1224834323
 BoxCollider:
@@ -9756,6 +10065,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224834321}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1224834327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224834321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1229111133
 GameObject:
   m_ObjectHideFlags: 0
@@ -9769,6 +10091,7 @@ GameObject:
   - component: {fileID: 1229111137}
   - component: {fileID: 1229111136}
   - component: {fileID: 1229111135}
+  - component: {fileID: 1229111139}
   m_Layer: 0
   m_Name: Plane (9)
   m_TagString: Climb
@@ -9866,6 +10189,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229111133}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1229111139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229111133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1231404571
 GameObject:
   m_ObjectHideFlags: 0
@@ -9946,6 +10282,9 @@ Transform:
   - {fileID: 2072540868}
   - {fileID: 1108873441}
   - {fileID: 1814862035}
+  - {fileID: 396048841}
+  - {fileID: 2123508949}
+  - {fileID: 808480864}
   - {fileID: 1891524752}
   - {fileID: 472044640}
   - {fileID: 1224834322}
@@ -9965,15 +10304,12 @@ Transform:
   - {fileID: 211935003}
   - {fileID: 851186425}
   - {fileID: 398368321}
+  - {fileID: 1493739192}
   - {fileID: 1700336928}
   - {fileID: 307571705}
   - {fileID: 169146091}
   - {fileID: 1782925826}
   - {fileID: 1796147737}
-  - {fileID: 396048841}
-  - {fileID: 2123508949}
-  - {fileID: 808480864}
-  - {fileID: 1493739192}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10863,6 +11199,7 @@ GameObject:
   - component: {fileID: 1379870982}
   - component: {fileID: 1379870981}
   - component: {fileID: 1379870980}
+  - component: {fileID: 1379870984}
   m_Layer: 0
   m_Name: Cortina (5)
   m_TagString: Climb
@@ -10882,7 +11219,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 21
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1379870980
 BoxCollider:
@@ -10960,6 +11297,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379870978}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1379870984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379870978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1427124675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11433,6 +11783,7 @@ GameObject:
   - component: {fileID: 1438430892}
   - component: {fileID: 1438430891}
   - component: {fileID: 1438430890}
+  - component: {fileID: 1438430894}
   m_Layer: 0
   m_Name: Plane (16)
   m_TagString: Climb
@@ -11530,6 +11881,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438430888}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1438430894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438430888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1454634636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12025,6 +12389,7 @@ GameObject:
   - component: {fileID: 1493739192}
   - component: {fileID: 1493739194}
   - component: {fileID: 1493739193}
+  - component: {fileID: 1493739195}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (7)
   m_TagString: Climb
@@ -12044,7 +12409,7 @@ Transform:
   m_LocalScale: {x: 1.5601, y: 1.4386551, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 43
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1493739193
 BoxCollider:
@@ -12110,6 +12475,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1493739195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493739191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1525701652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12963,6 +13341,7 @@ GameObject:
   - component: {fileID: 1666621839}
   - component: {fileID: 1666621838}
   - component: {fileID: 1666621837}
+  - component: {fileID: 1666621841}
   m_Layer: 0
   m_Name: Plane (35)
   m_TagString: Climb
@@ -13060,6 +13439,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666621835}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1666621841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666621835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1679802162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13209,6 +13601,7 @@ GameObject:
   - component: {fileID: 1683278236}
   - component: {fileID: 1683278235}
   - component: {fileID: 1683278234}
+  - component: {fileID: 1683278237}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope
   m_TagString: Climb
@@ -13292,8 +13685,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1.1747, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 24
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1683278237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683278233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1685837005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13406,6 +13812,7 @@ GameObject:
   - component: {fileID: 1700336931}
   - component: {fileID: 1700336930}
   - component: {fileID: 1700336929}
+  - component: {fileID: 1700336933}
   m_Layer: 0
   m_Name: Cortina (7)
   m_TagString: Climb
@@ -13425,7 +13832,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 35
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1700336929
 BoxCollider:
@@ -13503,6 +13910,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700336927}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1700336933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700336927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1711733343
 GameObject:
   m_ObjectHideFlags: 0
@@ -13516,6 +13936,7 @@ GameObject:
   - component: {fileID: 1711733347}
   - component: {fileID: 1711733346}
   - component: {fileID: 1711733345}
+  - component: {fileID: 1711733349}
   m_Layer: 0
   m_Name: Cortina (4)
   m_TagString: Climb
@@ -13535,7 +13956,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1711733345
 BoxCollider:
@@ -13613,6 +14034,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711733343}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1711733349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711733343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1711810862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14383,6 +14817,7 @@ GameObject:
   - component: {fileID: 1782925829}
   - component: {fileID: 1782925828}
   - component: {fileID: 1782925827}
+  - component: {fileID: 1782925831}
   m_Layer: 0
   m_Name: Cortina (10)
   m_TagString: Climb
@@ -14402,7 +14837,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 38
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1782925827
 BoxCollider:
@@ -14480,6 +14915,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782925825}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1782925831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782925825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!114 &1783084544 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2564903216590302010, guid: e605c2b99411e994e982c4571c891d6c,
@@ -14505,6 +14953,7 @@ GameObject:
   - component: {fileID: 1795939763}
   - component: {fileID: 1795939762}
   - component: {fileID: 1795939761}
+  - component: {fileID: 1795939765}
   m_Layer: 0
   m_Name: Plane (33)
   m_TagString: Climb
@@ -14602,6 +15051,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795939759}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1795939765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795939759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1796147736
 GameObject:
   m_ObjectHideFlags: 0
@@ -14615,6 +15077,7 @@ GameObject:
   - component: {fileID: 1796147740}
   - component: {fileID: 1796147739}
   - component: {fileID: 1796147738}
+  - component: {fileID: 1796147742}
   m_Layer: 0
   m_Name: Cortina (11)
   m_TagString: Climb
@@ -14634,7 +15097,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 39
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1796147738
 BoxCollider:
@@ -14712,6 +15175,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796147736}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1796147742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796147736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1796557485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14827,6 +15303,7 @@ GameObject:
   - component: {fileID: 1814803069}
   - component: {fileID: 1814803071}
   - component: {fileID: 1814803070}
+  - component: {fileID: 1814803072}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (3)
   m_TagString: Climb
@@ -14846,7 +15323,7 @@ Transform:
   m_LocalScale: {x: 1.5601, y: 1.4386551, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 30
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1814803070
 BoxCollider:
@@ -14912,6 +15389,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1814803072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814803068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1814862034
 GameObject:
   m_ObjectHideFlags: 0
@@ -14925,6 +15415,7 @@ GameObject:
   - component: {fileID: 1814862038}
   - component: {fileID: 1814862037}
   - component: {fileID: 1814862036}
+  - component: {fileID: 1814862040}
   m_Layer: 0
   m_Name: Plane (40)
   m_TagString: Climb
@@ -15022,6 +15513,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814862034}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1814862040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814862034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1833124035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15963,6 +16467,7 @@ GameObject:
   - component: {fileID: 1891524755}
   - component: {fileID: 1891524754}
   - component: {fileID: 1891524753}
+  - component: {fileID: 1891524757}
   m_Layer: 0
   m_Name: Cortina
   m_TagString: Climb
@@ -15982,7 +16487,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 3.3}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1891524753
 BoxCollider:
@@ -16060,6 +16565,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891524751}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1891524757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891524751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1898252739
 GameObject:
   m_ObjectHideFlags: 0
@@ -16071,6 +16589,7 @@ GameObject:
   - component: {fileID: 1898252740}
   - component: {fileID: 1898252742}
   - component: {fileID: 1898252741}
+  - component: {fileID: 1898252743}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (3)
   m_TagString: Climb
@@ -16090,7 +16609,7 @@ Transform:
   m_LocalScale: {x: 1.3749, y: 2.2286882, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 29
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1898252741
 BoxCollider:
@@ -16156,6 +16675,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1898252743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898252739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!114 &1900164043 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4679401250408103578, guid: e37df7155a19e7a4897b61b987069795,
@@ -16179,6 +16711,7 @@ GameObject:
   - component: {fileID: 1910554759}
   - component: {fileID: 1910554761}
   - component: {fileID: 1910554760}
+  - component: {fileID: 1910554762}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (4)
   m_TagString: Climb
@@ -16198,7 +16731,7 @@ Transform:
   m_LocalScale: {x: 1.3749, y: 1.9654703, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 31
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1910554760
 BoxCollider:
@@ -16264,6 +16797,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1910554762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910554758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1920397564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16432,6 +16978,7 @@ GameObject:
   - component: {fileID: 2028503617}
   - component: {fileID: 2028503616}
   - component: {fileID: 2028503615}
+  - component: {fileID: 2028503619}
   m_Layer: 0
   m_Name: Plane (28)
   m_TagString: Climb
@@ -16529,6 +17076,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028503613}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2028503619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028503613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &2059779581
 GameObject:
   m_ObjectHideFlags: 0
@@ -16715,6 +17275,7 @@ GameObject:
   - component: {fileID: 2072540871}
   - component: {fileID: 2072540870}
   - component: {fileID: 2072540869}
+  - component: {fileID: 2072540873}
   m_Layer: 0
   m_Name: Plane (38)
   m_TagString: Climb
@@ -16812,6 +17373,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072540867}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2072540873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072540867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &2073342579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17361,6 +17935,7 @@ GameObject:
   - component: {fileID: 2123508952}
   - component: {fileID: 2123508951}
   - component: {fileID: 2123508950}
+  - component: {fileID: 2123508954}
   m_Layer: 0
   m_Name: Plane (42)
   m_TagString: Climb
@@ -17380,7 +17955,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 41
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
 --- !u!65 &2123508950
 BoxCollider:
@@ -17458,6 +18033,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123508948}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2123508954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123508948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &2137558040
 GameObject:
   m_ObjectHideFlags: 0
@@ -17467,10 +18055,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2137558041}
-  - component: {fileID: 2137558045}
   - component: {fileID: 2137558044}
   - component: {fileID: 2137558043}
   - component: {fileID: 2137558042}
+  - component: {fileID: 2137558045}
+  - component: {fileID: 2137558046}
   m_Layer: 0
   m_Name: Plane (14)
   m_TagString: Climb
@@ -17568,6 +18157,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137558040}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2137558046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137558040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1672308e19e8a1468f864cc8fd5d7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &2143351495
 GameObject:
   m_ObjectHideFlags: 0
@@ -17579,6 +18181,7 @@ GameObject:
   - component: {fileID: 2143351498}
   - component: {fileID: 2143351497}
   - component: {fileID: 2143351496}
+  - component: {fileID: 2143351499}
   m_Layer: 0
   m_Name: CT_Climb_Long_Rope (1)
   m_TagString: Climb
@@ -17662,5 +18265,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1.1747, z: 1}
   m_Children: []
   m_Father: {fileID: 1260934399}
-  m_RootOrder: 26
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2143351499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143351495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
