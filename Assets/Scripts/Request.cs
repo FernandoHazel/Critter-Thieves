@@ -183,7 +183,7 @@ public class Request : MonoBehaviour
             misiones = true;
             Debug.Log("NIVEL COMPLETADO");
             GameObject.Destroy(backgroundMusic);
-            SoundManager.PlaySound("angryCat");
+            SoundManager.PlaySound("sadCat");
             levelCompleted.SetActive(true);
             Time.timeScale = 0;
             if (Input.GetKey(KeyCode.Space))

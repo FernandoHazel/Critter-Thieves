@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     float initialJumpForce;
     float speedPenalization;
     float jumpForcePenalization;
-    float canClimbCounter = 0.5f; 
+    float canClimbCounter = 0.5f;
     float invencibilityTime = 0;
 
     Vector3 moveVector;
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             for (int i = 0; i < invCount; i++)
             {
                 idABuscar = PlayerPrefs.GetString(i.ToString()); //este id tiene que coincidir con el nombre del objeto en la jerarquía
-                objeto = GameObject.Find("/Nivel/Comida/"+idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
+                objeto = GameObject.Find("/Nivel/Comida/" + idABuscar); //encontramos el objeto cuyo nombre coincide con el ID
                 playerData.inventory.Add(objeto); //añadimos el objeto a la lista
             }
             cheeseSpawn = playerData.inventory[playerData.inventory.Count - 1];
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         speedPenalization = speed * .075f;
         jumpForcePenalization = jumpForce * .075f;
 
-        
+
         controller = GetComponent<CharacterController>();
         Front = new Vector3(0, 0, -.3f);
         ui.UpdateHearts(playerData.Hp);
@@ -135,11 +135,11 @@ public class Player : MonoBehaviour
 
         else
         {
-            moveVector = new Vector3(0, verticalVelocity, 0);   
-        } 
+            moveVector = new Vector3(0, verticalVelocity, 0);
+        }
 
 
-        controller.Move(moveVector * speed * Time.deltaTime );
+        controller.Move(moveVector * speed * Time.deltaTime);
 
 
 
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
 
     void GetHurt() //Loose a Life
     {
-        
+
         if (GameManager.pause) {
             return;
         }
@@ -173,13 +173,15 @@ public class Player : MonoBehaviour
         playerData.Hp--;
 
         ui.UpdateHearts(playerData.Hp);
-        SoundManager.PlaySound("damage");
 
         invencibilityTime = 2;
+        SoundManager.PlaySound("damage");
+
 
         if (playerData.Hp <= 0)
         {
             Die();
+            SoundManager.PlaySound("die");
         }
     }
 
@@ -196,19 +198,20 @@ public class Player : MonoBehaviour
         playerData.Hp--;
 
         ui.UpdateHearts(playerData.Hp);
-        SoundManager.PlaySound("fire");
 
         invencibilityTime = 2;
+        SoundManager.PlaySound("damage");
+
 
         if (playerData.Hp <= 0)
         {
             Die();
+            SoundManager.PlaySound("die");
         }
     }
 
     public void Die() //Reset Everything
     {
-        SoundManager.PlaySound("die");
         for (int i = 0; i < playerData.inventory.Count; i++)
         {
             playerData.inventory[i].transform.position = transform.position;
@@ -268,6 +271,7 @@ public class Player : MonoBehaviour
             for (int i = 0; i < sprites.Length; i++)
             {
                 sprites[i].enabled = !sprites[i].enabled;
+                //SoundManager.PlaySound("damage");
             }
         }
         else

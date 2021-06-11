@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
     public static AudioClip stepSound;
     public static AudioClip dieSound;
     public static AudioClip fireSound;
+    public static AudioClip trapSound;
 
 
     static AudioSource audioSource;
@@ -33,6 +34,8 @@ public class SoundManager : MonoBehaviour
         grabFoodSound = Resources.Load<AudioClip>("grabFood");
         dropFoodSound = Resources.Load<AudioClip>("dropFood");
         damageSound = Resources.Load<AudioClip>("damage");
+        dieSound = Resources.Load<AudioClip>("fire");
+        dieSound = Resources.Load<AudioClip>("trap");
         glueTrapSound = Resources.Load<AudioClip>("glueTrap");
         deliverFoodSound = Resources.Load<AudioClip>("deliverFood");
         questCompletedSound = Resources.Load<AudioClip>("questCompleted");
@@ -43,7 +46,7 @@ public class SoundManager : MonoBehaviour
         levelCompletedSound = Resources.Load<AudioClip>("levelCompleted");
         stepSound = Resources.Load<AudioClip>("step");
         dieSound = Resources.Load<AudioClip>("die");
-        dieSound = Resources.Load<AudioClip>("fire");
+
 
 
 
@@ -113,6 +116,13 @@ public class SoundManager : MonoBehaviour
                 audioSource.PlayOneShot(levelCompletedSound);
                 break;
 
+            case "fire":
+                audioSource.PlayOneShot(fireSound);
+                break;
+            case "trap":
+                audioSource.PlayOneShot(trapSound);
+                break;
+
             case "step":
                 audioSource.PlayOneShot(stepSound);
                 break;
@@ -121,9 +131,6 @@ public class SoundManager : MonoBehaviour
                 audioSource.PlayOneShot(dieSound);
                 break;
 
-            case "fire":
-                audioSource.PlayOneShot(fireSound);
-                break;
         }
     }    
 
