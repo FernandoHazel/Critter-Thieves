@@ -802,6 +802,7 @@ GameObject:
   - component: {fileID: 44846753}
   - component: {fileID: 44846755}
   - component: {fileID: 44846754}
+  - component: {fileID: 44846756}
   m_Layer: 0
   m_Name: CT_Climb_Pintura1_5x_1
   m_TagString: Climb
@@ -821,7 +822,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &44846754
 BoxCollider:
@@ -887,6 +888,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &44846756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44846752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &50259287
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +912,7 @@ GameObject:
   - component: {fileID: 50259290}
   - component: {fileID: 50259289}
   - component: {fileID: 50259288}
+  - component: {fileID: 50259291}
   m_Layer: 0
   m_Name: Tubo5x22_5 (11)
   m_TagString: Climb
@@ -983,6 +998,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &50259291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50259287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &66559771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2519,6 +2547,7 @@ GameObject:
   - component: {fileID: 125711423}
   - component: {fileID: 125711425}
   - component: {fileID: 125711424}
+  - component: {fileID: 125711426}
   m_Layer: 0
   m_Name: CT_Climb_Long_Cables (3)
   m_TagString: Climb
@@ -2572,7 +2601,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2604,6 +2633,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &125711426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125711422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &134941954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2719,6 +2761,7 @@ GameObject:
   - component: {fileID: 152108342}
   - component: {fileID: 152108341}
   - component: {fileID: 152108340}
+  - component: {fileID: 152108343}
   m_Layer: 0
   m_Name: Tubo5x22_5 (20)
   m_TagString: Climb
@@ -2804,6 +2847,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &152108343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152108339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &159679949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,6 +3451,7 @@ GameObject:
   - component: {fileID: 212790673}
   - component: {fileID: 212790672}
   - component: {fileID: 212790674}
+  - component: {fileID: 212790675}
   m_Layer: 0
   m_Name: CT_Climb_Books
   m_TagString: Climb
@@ -3465,7 +3522,7 @@ Transform:
   m_LocalScale: {x: 1.1999998, y: 1.6500003, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &212790674
 BoxCollider:
@@ -3480,6 +3537,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8627458, y: 7.909254, z: 8.3490715}
   m_Center: {x: 0.032558244, y: 0.0710363, z: -4.0745354}
+--- !u!114 &212790675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212790671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &223677505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4331,6 +4401,7 @@ GameObject:
   - component: {fileID: 243164837}
   - component: {fileID: 243164836}
   - component: {fileID: 243164835}
+  - component: {fileID: 243164838}
   m_Layer: 0
   m_Name: Tubo5x22_5 (6)
   m_TagString: Climb
@@ -4416,6 +4487,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &243164838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243164834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &250483525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4643,7 +4727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &260579402
 Transform:
   m_ObjectHideFlags: 0
@@ -5962,6 +6046,7 @@ GameObject:
   - component: {fileID: 326124538}
   - component: {fileID: 326124537}
   - component: {fileID: 326124536}
+  - component: {fileID: 326124539}
   m_Layer: 0
   m_Name: Tubo5x22_5 (17)
   m_TagString: Climb
@@ -6047,6 +6132,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &326124539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326124535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &326616239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6974,6 +7072,7 @@ GameObject:
   - component: {fileID: 359968027}
   - component: {fileID: 359968026}
   - component: {fileID: 359968025}
+  - component: {fileID: 359968028}
   m_Layer: 0
   m_Name: Tubo5x22_5 (8)
   m_TagString: Climb
@@ -7059,6 +7158,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &359968028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359968024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &360452968
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +7402,7 @@ GameObject:
   - component: {fileID: 362478766}
   - component: {fileID: 362478765}
   - component: {fileID: 362478764}
+  - component: {fileID: 362478767}
   m_Layer: 0
   m_Name: CT_Climb_Traste1
   m_TagString: Climb
@@ -7356,7 +7469,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7388,6 +7501,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &362478767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362478762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &369697802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1798019625665616703, guid: f646a63ef2175924fb01da9bb3c8238c,
@@ -7760,6 +7886,7 @@ GameObject:
   - component: {fileID: 430910344}
   - component: {fileID: 430910346}
   - component: {fileID: 430910345}
+  - component: {fileID: 430910347}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (2)
   m_TagString: Climb
@@ -7779,7 +7906,7 @@ Transform:
   m_LocalScale: {x: 1.375, y: 2.1638076, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &430910345
 BoxCollider:
@@ -7845,6 +7972,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &430910347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430910343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &433479030
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,6 +7996,7 @@ GameObject:
   - component: {fileID: 433479033}
   - component: {fileID: 433479032}
   - component: {fileID: 433479031}
+  - component: {fileID: 433479034}
   m_Layer: 0
   m_Name: Tubo5x20
   m_TagString: Climb
@@ -7941,6 +8082,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &433479034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433479030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &440365930
 GameObject:
   m_ObjectHideFlags: 0
@@ -8577,6 +8731,7 @@ GameObject:
   - component: {fileID: 467442333}
   - component: {fileID: 467442332}
   - component: {fileID: 467442331}
+  - component: {fileID: 467442334}
   m_Layer: 0
   m_Name: CT_Climb_Long_Cables
   m_TagString: Climb
@@ -8660,8 +8815,21 @@ Transform:
   m_LocalScale: {x: 1.475, y: 2.4179509, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467442334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467442330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &468390847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9081,10 +9249,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 473006781}
-  - component: {fileID: 473006785}
-  - component: {fileID: 473006784}
   - component: {fileID: 473006783}
   - component: {fileID: 473006782}
+  - component: {fileID: 473006784}
+  - component: {fileID: 473006785}
   m_Layer: 0
   m_Name: Plane (17)
   m_TagString: Climb
@@ -9099,13 +9267,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473006780}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 128.67542, y: -32.619247, z: -2.471943}
-  m_LocalScale: {x: 0.59999985, y: 1, z: 0.7499999}
+  m_LocalRotation: {x: 0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 126.6815, y: -32.1275, z: -4.675869}
+  m_LocalScale: {x: 0.99875975, y: 1.0797237, z: 0.7499999}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: -180}
 --- !u!65 &473006782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9117,8 +9285,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 17.03, z: 10.000002}
-  m_Center: {x: 0, y: 2.68, z: 0}
+  m_Size: {x: 10, y: 9.799237, z: 18.208874}
+  m_Center: {x: 0, y: -0.01718141, z: 4.104445}
 --- !u!64 &473006783
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9133,26 +9301,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &473006784
-MeshRenderer:
+--- !u!212 &473006784
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473006780}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 0
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5e1fc51a989fa9c468bab4b365a3a758, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9165,7 +9333,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -9173,15 +9341,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &473006785
-MeshFilter:
+  m_Sprite: {fileID: 21300000, guid: 72d5425e205844d45b588893e6913db7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10, y: 10}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &473006785
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473006780}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &490753020
 GameObject:
   m_ObjectHideFlags: 0
@@ -9815,6 +9998,7 @@ GameObject:
   - component: {fileID: 519107181}
   - component: {fileID: 519107183}
   - component: {fileID: 519107182}
+  - component: {fileID: 519107184}
   m_Layer: 0
   m_Name: CT_Climb_Curtain3
   m_TagString: Climb
@@ -9834,7 +10018,7 @@ Transform:
   m_LocalScale: {x: 1.5782814, y: 1.6593616, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &519107182
 BoxCollider:
@@ -9900,6 +10084,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &519107184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519107180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &522537991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aab9bc05105933c4e962434971a5f944,
@@ -10446,6 +10643,7 @@ GameObject:
   - component: {fileID: 554019529}
   - component: {fileID: 554019528}
   - component: {fileID: 554019527}
+  - component: {fileID: 554019530}
   m_Layer: 0
   m_Name: Tubo5x22_5 (16)
   m_TagString: Climb
@@ -10531,6 +10729,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &554019530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554019526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &554828167
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,6 +10977,7 @@ GameObject:
   - component: {fileID: 574318364}
   - component: {fileID: 574318363}
   - component: {fileID: 574318362}
+  - component: {fileID: 574318365}
   m_Layer: 0
   m_Name: CT_Climb_CoatStand1
   m_TagString: Climb
@@ -10849,8 +11061,21 @@ Transform:
   m_LocalScale: {x: 1.4429998, y: 1.5825593, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &574318365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574318361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &575792214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11135,6 +11360,7 @@ GameObject:
   - component: {fileID: 582063597}
   - component: {fileID: 582063599}
   - component: {fileID: 582063598}
+  - component: {fileID: 582063600}
   m_Layer: 0
   m_Name: CT_Climb_Traste4
   m_TagString: Climb
@@ -11188,7 +11414,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11220,6 +11446,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &582063600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582063596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &582829560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5280544690768671157, guid: 5b11b2d0639296a41b9caf275ee5aaba,
@@ -11434,6 +11673,7 @@ GameObject:
   - component: {fileID: 613843913}
   - component: {fileID: 613843912}
   - component: {fileID: 613843911}
+  - component: {fileID: 613843914}
   m_Layer: 0
   m_Name: CT_Climb_Traste5
   m_TagString: Climb
@@ -11500,7 +11740,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11532,6 +11772,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &613843914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613843909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &618314566
 GameObject:
   m_ObjectHideFlags: 0
@@ -12075,6 +12328,7 @@ GameObject:
   - component: {fileID: 636453281}
   - component: {fileID: 636453280}
   - component: {fileID: 636453282}
+  - component: {fileID: 636453283}
   m_Layer: 0
   m_Name: CT_Climb_long_Rope
   m_TagString: Climb
@@ -12145,7 +12399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.1765001, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &636453282
 BoxCollider:
@@ -12285,6 +12539,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1710425572717105975, guid: 8ce738f6c878d5f449696fe6534b41ce, type: 3}
+--- !u!114 &636453283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636453279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &652850908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12629,6 +12896,7 @@ GameObject:
   - component: {fileID: 666904380}
   - component: {fileID: 666904379}
   - component: {fileID: 666904378}
+  - component: {fileID: 666904381}
   m_Layer: 0
   m_Name: Tubo5x22_5 (3)
   m_TagString: Climb
@@ -12714,6 +12982,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &666904381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666904377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &668909840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 576abfbf40c3ceb4dbf328f3085f1253,
@@ -12918,6 +13199,7 @@ GameObject:
   - component: {fileID: 693872452}
   - component: {fileID: 693872451}
   - component: {fileID: 693872450}
+  - component: {fileID: 693872453}
   m_Layer: 0
   m_Name: Tubo5x22_5 (13)
   m_TagString: Climb
@@ -13003,6 +13285,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &693872453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693872449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &697339619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13696,6 +13991,7 @@ GameObject:
   - component: {fileID: 738221799}
   - component: {fileID: 738221798}
   - component: {fileID: 738221797}
+  - component: {fileID: 738221800}
   m_Layer: 0
   m_Name: CT_Climb_Curtain1
   m_TagString: Climb
@@ -13779,8 +14075,21 @@ Transform:
   m_LocalScale: {x: 1.5356251, y: 1.4875, z: 1.9501}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738221800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738221796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &745848805
 GameObject:
   m_ObjectHideFlags: 0
@@ -14714,6 +15023,7 @@ GameObject:
   - component: {fileID: 774016857}
   - component: {fileID: 774016856}
   - component: {fileID: 774016855}
+  - component: {fileID: 774016858}
   m_Layer: 0
   m_Name: Tubo5x22_5
   m_TagString: Climb
@@ -14799,6 +15109,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &774016858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774016854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &778142109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6564422006009888512, guid: 6038264f863c6a04387f8816e66d0ab9,
@@ -14920,6 +15243,7 @@ GameObject:
   - component: {fileID: 785833126}
   - component: {fileID: 785833125}
   - component: {fileID: 785833124}
+  - component: {fileID: 785833127}
   m_Layer: 0
   m_Name: Tubo5x22_5 (19)
   m_TagString: Climb
@@ -15005,6 +15329,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &785833127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785833123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &787841338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15538,6 +15875,7 @@ GameObject:
   - component: {fileID: 827683520}
   - component: {fileID: 827683519}
   - component: {fileID: 827683518}
+  - component: {fileID: 827683521}
   m_Layer: 0
   m_Name: Tubo5x22_5 (1)
   m_TagString: Climb
@@ -15623,6 +15961,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &827683521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827683517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &827728985
 GameObject:
   m_ObjectHideFlags: 0
@@ -15783,6 +16134,7 @@ GameObject:
   - component: {fileID: 832631198}
   - component: {fileID: 832631200}
   - component: {fileID: 832631199}
+  - component: {fileID: 832631201}
   m_Layer: 0
   m_Name: CT_Climb_BedHeader
   m_TagString: Climb
@@ -15802,7 +16154,7 @@ Transform:
   m_LocalScale: {x: 1.4830625, y: 1.4830629, z: 1.2058834}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &832631199
 BoxCollider:
@@ -15868,6 +16220,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &832631201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832631197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &836499856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16213,6 +16578,7 @@ GameObject:
   - component: {fileID: 845911602}
   - component: {fileID: 845911601}
   - component: {fileID: 845911600}
+  - component: {fileID: 845911603}
   m_Layer: 0
   m_Name: Tubo5x22_5 (21)
   m_TagString: Climb
@@ -16298,6 +16664,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &845911603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845911599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &847294241
 GameObject:
   m_ObjectHideFlags: 0
@@ -16309,6 +16688,7 @@ GameObject:
   - component: {fileID: 847294244}
   - component: {fileID: 847294243}
   - component: {fileID: 847294242}
+  - component: {fileID: 847294245}
   m_Layer: 0
   m_Name: CT_Climb_ClotheRack2
   m_TagString: Climb
@@ -16392,8 +16772,21 @@ Transform:
   m_LocalScale: {x: 1.6624212, y: 1.6624217, z: 1.6624215}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847294245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847294241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &852876630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17278,6 +17671,7 @@ GameObject:
   - component: {fileID: 908948709}
   - component: {fileID: 908948711}
   - component: {fileID: 908948710}
+  - component: {fileID: 908948712}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (3)
   m_TagString: Climb
@@ -17297,7 +17691,7 @@ Transform:
   m_LocalScale: {x: 1.375, y: 1.07165, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &908948710
 BoxCollider:
@@ -17363,6 +17757,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &908948712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908948708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &913340235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17603,6 +18010,7 @@ GameObject:
   - component: {fileID: 919388532}
   - component: {fileID: 919388534}
   - component: {fileID: 919388533}
+  - component: {fileID: 919388535}
   m_Layer: 0
   m_Name: CT_Climb_Long_Cables (4)
   m_TagString: Climb
@@ -17656,7 +18064,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17688,6 +18096,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &919388535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919388531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &925017153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a0b30d8b9a2e9d345a186c2a426d0859,
@@ -17718,6 +18139,7 @@ GameObject:
   - component: {fileID: 928872415}
   - component: {fileID: 928872417}
   - component: {fileID: 928872416}
+  - component: {fileID: 928872418}
   m_Layer: 0
   m_Name: CT_Climb_CoatStand3
   m_TagString: Climb
@@ -17771,7 +18193,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17803,6 +18225,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &928872418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928872414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &932402929
 GameObject:
   m_ObjectHideFlags: 0
@@ -17814,6 +18249,7 @@ GameObject:
   - component: {fileID: 932402932}
   - component: {fileID: 932402931}
   - component: {fileID: 932402930}
+  - component: {fileID: 932402933}
   m_Layer: 0
   m_Name: Tubo5x22_5 (10)
   m_TagString: Climb
@@ -17899,6 +18335,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &932402933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932402929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &932669927
 GameObject:
   m_ObjectHideFlags: 0
@@ -17976,6 +18425,7 @@ GameObject:
   - component: {fileID: 933707984}
   - component: {fileID: 933707983}
   - component: {fileID: 933707982}
+  - component: {fileID: 933707985}
   m_Layer: 0
   m_Name: Tubo5x20 (1)
   m_TagString: Climb
@@ -18061,6 +18511,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &933707985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933707981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &944011746
 GameObject:
   m_ObjectHideFlags: 0
@@ -18814,6 +19277,7 @@ GameObject:
   - component: {fileID: 987261392}
   - component: {fileID: 987261391}
   - component: {fileID: 987261390}
+  - component: {fileID: 987261393}
   m_Layer: 0
   m_Name: Tubo5x22_5 (2)
   m_TagString: Climb
@@ -18899,6 +19363,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &987261393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987261389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1003880115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19249,6 +19726,7 @@ GameObject:
   - component: {fileID: 1019606755}
   - component: {fileID: 1019606754}
   - component: {fileID: 1019606753}
+  - component: {fileID: 1019606756}
   m_Layer: 0
   m_Name: Tubo5x22_5 (4)
   m_TagString: Climb
@@ -19334,6 +19812,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1019606756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019606752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1021047652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19489,6 +19980,7 @@ GameObject:
   - component: {fileID: 1023436750}
   - component: {fileID: 1023436752}
   - component: {fileID: 1023436751}
+  - component: {fileID: 1023436753}
   m_Layer: 0
   m_Name: CT_Climb_Pintura_8x1
   m_TagString: Climb
@@ -19508,7 +20000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1023436751
 BoxCollider:
@@ -19574,6 +20066,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1023436753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023436749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1027248245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21065,6 +21570,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 569002079}
+    - target: {fileID: 196765193965766382, guid: ff044cd3922a22d4f829786fd35f0f01,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1946111841}
     - target: {fileID: 919132149155446097, guid: ff044cd3922a22d4f829786fd35f0f01,
         type: 3}
       propertyPath: m_Name
@@ -21105,7 +21615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1144883496
 Transform:
   m_ObjectHideFlags: 0
@@ -21188,6 +21698,7 @@ GameObject:
   - component: {fileID: 1153153200}
   - component: {fileID: 1153153199}
   - component: {fileID: 1153153198}
+  - component: {fileID: 1153153201}
   m_Layer: 0
   m_Name: CT_Climb_Traste2
   m_TagString: Climb
@@ -21254,7 +21765,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21286,6 +21797,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1153153201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153153196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1155794526
 GameObject:
   m_ObjectHideFlags: 0
@@ -21303,7 +21827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1155794527
 Transform:
   m_ObjectHideFlags: 0
@@ -21650,7 +22174,7 @@ Transform:
   m_LocalScale: {x: 1.1375, y: 1.4875, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1172180264
 BoxCollider:
@@ -21677,6 +22201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!21 &1175579686
 Material:
   serializedVersion: 6
@@ -23324,10 +23849,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269769184}
-  - component: {fileID: 1269769188}
-  - component: {fileID: 1269769187}
-  - component: {fileID: 1269769186}
   - component: {fileID: 1269769185}
+  - component: {fileID: 1269769189}
+  - component: {fileID: 1269769186}
+  - component: {fileID: 1269769187}
   m_Layer: 0
   m_Name: Plane (4)
   m_TagString: Climb
@@ -23342,13 +23867,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269769183}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -51.07459, y: -31.619247, z: -4.3219414}
-  m_LocalScale: {x: 0.49999982, y: 1, z: 0.69999987}
+  m_LocalRotation: {x: -0, y: -0.9999663, z: -0, w: -0.008206855}
+  m_LocalPosition: {x: -51.07459, y: -30.85, z: -7.9501333}
+  m_LocalScale: {x: 0.49999982, y: 0.66553, z: 0.69999987}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 90}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: -180.94, z: 0}
 --- !u!65 &1269769185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23360,42 +23885,28 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 11.274611, z: 10.000002}
-  m_Center: {x: 0, y: 4.3173065, z: 1.9852257e-14}
---- !u!64 &1269769186
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269769183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1269769187
-MeshRenderer:
+  m_Size: {x: 7.524334, y: 9.991405, z: 16.365385}
+  m_Center: {x: -0.103151105, y: 0.11133484, z: 3.1826804}
+--- !u!212 &1269769186
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269769183}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 0
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6305d8c7e01e42241bf9f11c290b6fa5, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23408,7 +23919,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -23416,15 +23927,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1269769188
-MeshFilter:
+  m_Sprite: {fileID: 21300000, guid: 873ae716a8b88994cbe9cbb12220294a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 10}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1269769187
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269769183}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
+--- !u!114 &1269769189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269769183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 6305d8c7e01e42241bf9f11c290b6fa5, type: 2}
 --- !u!1 &1277255313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8798776993887069757, guid: 868cc20992a31374da81441e93fd67e5,
@@ -23456,6 +23995,7 @@ GameObject:
   - component: {fileID: 1278442560}
   - component: {fileID: 1278442562}
   - component: {fileID: 1278442561}
+  - component: {fileID: 1278442563}
   m_Layer: 0
   m_Name: CT_Climb_Pintura_6x_75
   m_TagString: Climb
@@ -23475,7 +24015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1278442561
 BoxCollider:
@@ -23541,6 +24081,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1278442563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278442559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1281209923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23677,6 +24230,7 @@ GameObject:
   - component: {fileID: 1285021100}
   - component: {fileID: 1285021099}
   - component: {fileID: 1285021098}
+  - component: {fileID: 1285021101}
   m_Layer: 0
   m_Name: Tubo5x22_5 (14)
   m_TagString: Climb
@@ -23762,6 +24316,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1285021101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285021097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &1289734310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3952999537488154059, guid: 7b5ffb594bd8fb845b676386cb89f124,
@@ -23783,10 +24350,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1294890424}
-  - component: {fileID: 1294890428}
-  - component: {fileID: 1294890427}
   - component: {fileID: 1294890426}
   - component: {fileID: 1294890425}
+  - component: {fileID: 1294890427}
+  - component: {fileID: 1294890428}
   m_Layer: 0
   m_Name: Plane (17)
   m_TagString: Climb
@@ -23801,13 +24368,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294890423}
-  m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
-  m_LocalPosition: {x: 110, y: 15, z: -35}
-  m_LocalScale: {x: 1, y: 1, z: 0.75}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 108.82, y: 14.901093, z: -35.66423}
+  m_LocalScale: {x: 0.841173, y: 0.69622, z: 0.522165}
   m_Children: []
   m_Father: {fileID: 1802202276}
   m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!65 &1294890425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23819,8 +24386,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 8, z: 10.000002}
-  m_Center: {x: 0, y: 2.68, z: 0}
+  m_Size: {x: 14.976544, y: 15.067549, z: 19.853237}
+  m_Center: {x: -0.04365592, y: -0.009872068, z: 4.9266305}
 --- !u!64 &1294890426
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23835,26 +24402,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1294890427
-MeshRenderer:
+--- !u!212 &1294890427
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294890423}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 0
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d98a708b5eb44c4c9f79ffc2b3d13c9, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23867,7 +24434,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -23875,15 +24442,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1294890428
-MeshFilter:
+  m_Sprite: {fileID: 21300000, guid: 3efe16c2f92ef2d478663e605c45ba29, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15, y: 15}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1294890428
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294890423}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1307526952
 GameObject:
   m_ObjectHideFlags: 0
@@ -23895,6 +24477,7 @@ GameObject:
   - component: {fileID: 1307526955}
   - component: {fileID: 1307526954}
   - component: {fileID: 1307526953}
+  - component: {fileID: 1307526956}
   m_Layer: 0
   m_Name: CT_Climb_Short_Cables (1)
   m_TagString: Climb
@@ -23978,8 +24561,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307526956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307526952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!114 &1309586119 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 124633253732237106, guid: 45eec9558b6bcf34db573b9e5a65b4f2,
@@ -24333,6 +24929,7 @@ GameObject:
   - component: {fileID: 1317124248}
   - component: {fileID: 1317124247}
   - component: {fileID: 1317124246}
+  - component: {fileID: 1317124249}
   m_Layer: 0
   m_Name: CT_Climb_CoatStand2
   m_TagString: Climb
@@ -24416,8 +25013,21 @@ Transform:
   m_LocalScale: {x: 1.32678, y: 1.6258552, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317124249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317124245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1333202871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25370,7 +25980,6 @@ Transform:
   - {fileID: 582063597}
   - {fileID: 613843910}
   - {fileID: 928872415}
-  - {fileID: 1802202276}
   - {fileID: 1269769184}
   - {fileID: 473006781}
   - {fileID: 832631198}
@@ -25397,6 +26006,7 @@ Transform:
   - {fileID: 467442333}
   - {fileID: 430910344}
   - {fileID: 908948709}
+  - {fileID: 1802202276}
   m_Father: {fileID: 1468924933}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25542,6 +26152,7 @@ GameObject:
   - component: {fileID: 1369602632}
   - component: {fileID: 1369602631}
   - component: {fileID: 1369602630}
+  - component: {fileID: 1369602633}
   m_Layer: 0
   m_Name: CT_Climb_Curtain2
   m_TagString: Climb
@@ -25625,8 +26236,21 @@ Transform:
   m_LocalScale: {x: 1.5356251, y: 1.4875, z: 1.9501}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369602633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369602629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1376974888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26033,6 +26657,7 @@ GameObject:
   - component: {fileID: 1395693835}
   - component: {fileID: 1395693837}
   - component: {fileID: 1395693836}
+  - component: {fileID: 1395693838}
   m_Layer: 0
   m_Name: CT_Climb_Pintura1x1
   m_TagString: Climb
@@ -26052,7 +26677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1395693836
 BoxCollider:
@@ -26118,6 +26743,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1395693838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395693834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1396667432
 GameObject:
   m_ObjectHideFlags: 0
@@ -26213,6 +26851,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396667432}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1404477810
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Instance of Piano2_Madera3_BaseColor
+  m_Shader: {fileID: -6465566751694194690, guid: 656cc6ee304297f49bf69adedc90e628,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_97C8EC94:
+        m_Texture: {fileID: 2800000, guid: d27f698c99c28794d9796c7ed9f7c769, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DB342F0C:
+        m_Texture: {fileID: 2800000, guid: 33d042d32cb29c846aef03a56a79e4f7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 33d042d32cb29c846aef03a56a79e4f7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 33d042d32cb29c846aef03a56a79e4f7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1DEF9DF4: 300
+    - Vector1_3C3B6420: 1
+    - Vector1_9605CCA4: 20.6
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Metallic: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.005
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - Color_6A162E48: {r: 1, g: 1, b: 1, a: 0}
+    - Color_6C9C775A: {r: 1, g: 1, b: 0, a: 0}
+    - Color_9A9462B: {r: 0.41509432, g: 0.21694551, b: 0.3259409, a: 1}
+    - Color_D2A04608: {r: 1, g: 1, b: 1, a: 0}
+    - Color_D840FCE7: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor: {r: 0.3647059, g: 0.18431373, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _L1_color: {r: 7.2243237, g: 10.008913, b: 11.179245, a: 0.99}
+    - _L1_dir: {r: -0.08876792, g: 0.39091396, b: 0.91613674, a: 0}
+    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L3_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L3_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L4_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L4_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L5_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L5_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L6_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L6_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1408453773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27198,6 +27973,7 @@ GameObject:
   - component: {fileID: 1440432771}
   - component: {fileID: 1440432770}
   - component: {fileID: 1440432769}
+  - component: {fileID: 1440432772}
   m_Layer: 0
   m_Name: Tubo5x7_5
   m_TagString: Climb
@@ -27283,6 +28059,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1440432772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440432768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1446811443
 GameObject:
   m_ObjectHideFlags: 0
@@ -29023,6 +29812,7 @@ GameObject:
   - component: {fileID: 1543248875}
   - component: {fileID: 1543248874}
   - component: {fileID: 1543248873}
+  - component: {fileID: 1543248876}
   m_Layer: 0
   m_Name: Tubo5x22_5 (12)
   m_TagString: Climb
@@ -29108,6 +29898,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1543248876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543248872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1546747049
 GameObject:
   m_ObjectHideFlags: 0
@@ -29200,6 +30003,7 @@ GameObject:
   - component: {fileID: 1559056139}
   - component: {fileID: 1559056138}
   - component: {fileID: 1559056137}
+  - component: {fileID: 1559056140}
   m_Layer: 0
   m_Name: Tubo5x22_5 (18)
   m_TagString: Climb
@@ -29285,6 +30089,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1559056140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559056136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1562342922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b0f854f096d120439c6e34d769b5a8c,
@@ -29968,6 +30785,7 @@ GameObject:
   - component: {fileID: 1576731787}
   - component: {fileID: 1576731789}
   - component: {fileID: 1576731788}
+  - component: {fileID: 1576731790}
   m_Layer: 0
   m_Name: CT_Climb_Pintura_5x_7
   m_TagString: Climb
@@ -29987,7 +30805,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1576731788
 BoxCollider:
@@ -30053,6 +30871,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1576731790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576731786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &1578753631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a56a9dec41fd8c44b97af4d8b5a530cd,
@@ -30165,6 +30996,7 @@ GameObject:
   - component: {fileID: 1585672263}
   - component: {fileID: 1585672262}
   - component: {fileID: 1585672261}
+  - component: {fileID: 1585672264}
   m_Layer: 0
   m_Name: CT_Climb_ClotheRack1
   m_TagString: Climb
@@ -30248,8 +31080,21 @@ Transform:
   m_LocalScale: {x: 1.6924447, y: 1.6260883, z: 2.039483}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1585672264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585672260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1595873873
 GameObject:
   m_ObjectHideFlags: 0
@@ -31998,13 +32843,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6805be95d273c7f478da57b38a45d9c9,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -220.08
+      propertyPath: m_LocalPosition.y
+      value: -83.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6805be95d273c7f478da57b38a45d9c9,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -83.13
+      propertyPath: m_LocalPosition.x
+      value: -220.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6805be95d273c7f478da57b38a45d9c9,
         type: 3}
@@ -32287,6 +33132,7 @@ GameObject:
   - component: {fileID: 1669296565}
   - component: {fileID: 1669296564}
   - component: {fileID: 1669296563}
+  - component: {fileID: 1669296566}
   m_Layer: 0
   m_Name: CT_Climb_Traste3
   m_TagString: Climb
@@ -32353,7 +33199,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b0ed98f6f0db89b46b1b810b882b2f2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32385,6 +33231,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1669296566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669296561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1669975840
 GameObject:
   m_ObjectHideFlags: 0
@@ -32497,7 +33356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1679739983
 Transform:
   m_ObjectHideFlags: 0
@@ -32760,6 +33619,7 @@ GameObject:
   - component: {fileID: 1684881974}
   - component: {fileID: 1684881973}
   - component: {fileID: 1684881972}
+  - component: {fileID: 1684881975}
   m_Layer: 0
   m_Name: Tubo5x22_5 (5)
   m_TagString: Climb
@@ -32845,6 +33705,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1684881975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684881971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1704156692
 GameObject:
   m_ObjectHideFlags: 0
@@ -33251,6 +34124,7 @@ GameObject:
   - component: {fileID: 1725545883}
   - component: {fileID: 1725545882}
   - component: {fileID: 1725545881}
+  - component: {fileID: 1725545884}
   m_Layer: 0
   m_Name: Tubo5x22_5 (15)
   m_TagString: Climb
@@ -33336,6 +34210,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1725545884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725545880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1001 &1729290896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34079,6 +34966,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1175579686}
+    - target: {fileID: 4021605051790950240, guid: 7ec2729a3be16c44083c4ef594c0df29,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1404477810}
     - target: {fileID: 4250288165900144425, guid: 7ec2729a3be16c44083c4ef594c0df29,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -35409,7 +36301,7 @@ Transform:
   - {fileID: 845911602}
   - {fileID: 1294890424}
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 8
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1810263660 stripped
 Transform:
@@ -35517,6 +36409,7 @@ GameObject:
   - component: {fileID: 1815948838}
   - component: {fileID: 1815948840}
   - component: {fileID: 1815948839}
+  - component: {fileID: 1815948841}
   m_Layer: 0
   m_Name: CT_Climb_Pintura1_5x1_5
   m_TagString: Climb
@@ -35536,7 +36429,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1815948839
 BoxCollider:
@@ -35602,6 +36495,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1815948841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815948837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1821585309
 GameObject:
   m_ObjectHideFlags: 0
@@ -35613,6 +36519,7 @@ GameObject:
   - component: {fileID: 1821585312}
   - component: {fileID: 1821585311}
   - component: {fileID: 1821585310}
+  - component: {fileID: 1821585313}
   m_Layer: 0
   m_Name: CT_Climb_Short_Rope (1)
   m_TagString: Climb
@@ -35696,8 +36603,21 @@ Transform:
   m_LocalScale: {x: 1.375, y: 2.1638076, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821585313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821585309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1827521908
 GameObject:
   m_ObjectHideFlags: 0
@@ -35790,6 +36710,7 @@ GameObject:
   - component: {fileID: 1828479421}
   - component: {fileID: 1828479420}
   - component: {fileID: 1828479419}
+  - component: {fileID: 1828479422}
   m_Layer: 0
   m_Name: Tubo5x22_5 (7)
   m_TagString: Climb
@@ -35875,6 +36796,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1828479422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828479418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &1828640809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1798019625665616703, guid: f646a63ef2175924fb01da9bb3c8238c,
@@ -35898,7 +36832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1830600099
 Transform:
   m_ObjectHideFlags: 0
@@ -35954,6 +36888,7 @@ GameObject:
   - component: {fileID: 1834819562}
   - component: {fileID: 1834819561}
   - component: {fileID: 1834819560}
+  - component: {fileID: 1834819563}
   m_Layer: 0
   m_Name: Tubo5x22_5 (9)
   m_TagString: Climb
@@ -36039,6 +36974,19 @@ Transform:
   m_Father: {fileID: 1802202276}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1834819563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834819559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!4 &1836222365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5280544690768671157, guid: 5b11b2d0639296a41b9caf275ee5aaba,
@@ -36414,6 +37362,7 @@ GameObject:
   - component: {fileID: 1847078550}
   - component: {fileID: 1847078549}
   - component: {fileID: 1847078548}
+  - component: {fileID: 1847078551}
   m_Layer: 0
   m_Name: CT_Climb_Short_Cables
   m_TagString: Climb
@@ -36497,8 +37446,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0912002, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847078551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847078547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1860629828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3544302846850784042, guid: 76da7753984e7e74486d40f2e11a7aa1,
@@ -36657,6 +37619,7 @@ GameObject:
   - component: {fileID: 1867274184}
   - component: {fileID: 1867274186}
   - component: {fileID: 1867274185}
+  - component: {fileID: 1867274187}
   m_Layer: 0
   m_Name: CT_Climb_Curtain4
   m_TagString: Climb
@@ -36676,7 +37639,7 @@ Transform:
   m_LocalScale: {x: 1.5782814, y: 1.6593616, z: 1}
   m_Children: []
   m_Father: {fileID: 1361621130}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1867274185
 BoxCollider:
@@ -36742,6 +37705,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1867274187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867274183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf80455e08916f4e9f4857897ec121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 0}
 --- !u!1 &1873504819
 GameObject:
   m_ObjectHideFlags: 0
@@ -38699,6 +39675,143 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1710425572717105975, guid: 8ce738f6c878d5f449696fe6534b41ce, type: 3}
+--- !u!21 &1946111841
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Instance of Helper material
+  m_Shader: {fileID: -6465566751694194690, guid: 656cc6ee304297f49bf69adedc90e628,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_97C8EC94:
+        m_Texture: {fileID: 2800000, guid: d27f698c99c28794d9796c7ed9f7c769, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DB342F0C:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1DEF9DF4: 20
+    - Vector1_3C3B6420: -1
+    - Vector1_9605CCA4: 10
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Metallic: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.005
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - Color_6A162E48: {r: 1, g: 1, b: 1, a: 0}
+    - Color_6C9C775A: {r: 1, g: 1, b: 1, a: 0}
+    - Color_9A9462B: {r: 0, g: 0, b: 0, a: 0}
+    - Color_D2A04608: {r: 1, g: 1, b: 1, a: 0}
+    - Color_D840FCE7: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _L1_color: {r: 7.2243237, g: 10.008913, b: 11.179245, a: 0.99}
+    - _L1_dir: {r: -0.08876792, g: 0.39091396, b: 0.91613674, a: 0}
+    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L3_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L3_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L4_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L4_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L5_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L5_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _L6_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L6_dir: {r: 0, g: 1, b: 0, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1955743736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55191,13 +56304,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7023667944218092727, guid: 9ca64cc301577b74d80c7c1ce4c72529,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2256955
+      propertyPath: m_LocalPosition.x
+      value: -275.34
       objectReference: {fileID: 0}
     - target: {fileID: 7023667944218092727, guid: 9ca64cc301577b74d80c7c1ce4c72529,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -275.34
+      propertyPath: m_LocalScale.y
+      value: 1.2256955
       objectReference: {fileID: 0}
     - target: {fileID: 7023667944218092727, guid: 9ca64cc301577b74d80c7c1ce4c72529,
         type: 3}
