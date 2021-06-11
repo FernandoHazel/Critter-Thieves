@@ -21,6 +21,11 @@ public class Restart : MonoBehaviour
         SceneManager.LoadScene("LevelBuilder");
     }
 
+    public void onRestartPress()
+    {
+        SceneManager.LoadScene("Corridor");
+    }
+
 
     // Update is called once per frame
     void Update()

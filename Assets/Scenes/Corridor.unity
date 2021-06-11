@@ -12178,8 +12178,8 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles:
-  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!81 &1529198142
 AudioListener:
@@ -14181,6 +14181,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1757432945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763128152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 124633253732237106, guid: 45eec9558b6bcf34db573b9e5a65b4f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1938833552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddb24cb00c10784c8b14e9337906b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1768123573
 GameObject:
   m_ObjectHideFlags: 0
@@ -15101,6 +15113,61 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1900164043}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221569033875605492, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763128152}
+    - target: {fileID: 8221569033875605492, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onRestartPress
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e605c2b99411e994e982c4571c891d6c, type: 3}
 --- !u!224 &1833124036 stripped
@@ -15963,6 +16030,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1900164043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4679401250408103578, guid: e37df7155a19e7a4897b61b987069795,
+    type: 3}
+  m_PrefabInstance: {fileID: 246258835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7695cf4482d892c478fdaccb5669355f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910554758
 GameObject:
   m_ObjectHideFlags: 0
