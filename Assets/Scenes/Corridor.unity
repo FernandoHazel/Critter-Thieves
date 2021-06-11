@@ -14397,7 +14397,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ecd3e556763fdfc46b39d225425f9407, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.067
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -16863,6 +16863,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231404572}
     m_Modifications:
+    - target: {fileID: 1851272005508543058, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b3d38600b1c136d449ad42823f74fb22, type: 2}
     - target: {fileID: 1936455710858463526, guid: e605c2b99411e994e982c4571c891d6c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -17068,9 +17073,44 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3794152983074949709, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911922411794223331, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911922412271428319, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4513737384616975601, guid: e605c2b99411e994e982c4571c891d6c,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773741574411568648, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773741574411568648, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773741574411568648, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773741574411568648, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7743933758734712449, guid: e605c2b99411e994e982c4571c891d6c,
@@ -17127,6 +17167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onRestartPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729286931774371234, guid: e605c2b99411e994e982c4571c891d6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e605c2b99411e994e982c4571c891d6c, type: 3}
