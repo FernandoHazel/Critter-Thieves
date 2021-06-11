@@ -9,7 +9,6 @@ public class IntroTypeWrittingEffect : MonoBehaviour
     public string fullText;
     private string currentText = "";
 
-    private float timeCounter;
 
     // Start is called before the first frame update
     void Start()
