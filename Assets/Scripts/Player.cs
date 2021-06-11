@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         {
 
             verticalVelocity = -gravity * Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && glueTraped == false)
             {
                 SoundManager.PlaySound("jump");
                 verticalVelocity = jumpForce;
@@ -264,6 +264,7 @@ public class Player : MonoBehaviour
     {
         if (transform.position.x - BossCam.position.x <= -14)
         {
+            SoundManager.PlaySound("die");
             Die();
         }
     }
@@ -413,6 +414,7 @@ public class Player : MonoBehaviour
             final.SetActive(true);
             timeCounter += Time.deltaTime;
             finishGame();
+            SceneManager.LoadScene("Outro");
         }
         if (other.gameObject.tag == "Climb")
         {
